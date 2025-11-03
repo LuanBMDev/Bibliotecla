@@ -9,16 +9,16 @@ namespace Bibliotecla.model
 {
     internal class Pessoa
     {
-        private string cpf;
-        private string nome;
-        private Endereco endereco;
-        private string email;
-        private string telefone;
+        private string cpfPessoa;
+        private string nomePessoa;
+        private Endereco enderecoPessoa;
+        private string emailPessoa;
+        private string telefonePessoa;
 
-        public string Cpf { get => cpf; set => cpf = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public Endereco Endereco { get => endereco; set => endereco = value; }
-        public string Email { get => email; set => email = value; }
-        public string Telefone { get => telefone; set => telefone = value; }
+        public string Cpf { get => cpfPessoa; set => cpfPessoa = value; }
+        public string Nome { get => nomePessoa; set => nomePessoa = value; }
+        public Endereco Endereco { get => enderecoPessoa; set => enderecoPessoa = value; }
+        public string Email { get => emailPessoa; set => emailPessoa = value; }
+        public string Telefone { get => telefonePessoa; set => telefonePessoa = value; }
     }
 }

@@ -8,6 +8,14 @@ namespace Bibliotecla.model
 {
     internal class Exemplar
     {
+        private int codExemplar;
+        private string anoPubli;
+        private string estadoFisico;
+        private string editoraExemplar;
 
+        public int CodExemplar { get => codExemplar; set => codExemplar = value; }
+        public string AnoPubli { get => anoPubli; set => anoPubli = value; }
+        public string EstadoFisico { get => estadoFisico; set => estadoFisico = value; }
+        public string EditoraExemplar { get => editoraExemplar; set => editoraExemplar = value; }
     }
 }

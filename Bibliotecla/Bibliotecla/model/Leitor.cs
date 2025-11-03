@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bibliotecla.model
 {
-    internal class Leitor
+    internal class Leitor : Pessoa
     {
 
     }
