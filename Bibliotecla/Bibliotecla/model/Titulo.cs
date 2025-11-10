@@ -13,6 +13,19 @@ namespace Bibliotecla.model
         private string generoTitulo;
         private string autorTitulo;
 
+        public Titulo() { }
+
+        public Titulo(int codTitulo, 
+                      string nomeTitulo, 
+                      string generoTitulo, 
+                      string autorTitulo)
+        {
+            this.codTitulo = codTitulo;
+            this.nomeTitulo = nomeTitulo;
+            this.generoTitulo = generoTitulo;
+            this.autorTitulo = autorTitulo;
+        }
+
         public int CodTitulo { get => codTitulo; set => codTitulo = value; }
         public string NomeTitulo { get => nomeTitulo; set => nomeTitulo = value; }
         public string GeneroTitulo { get => generoTitulo; set => generoTitulo = value; }

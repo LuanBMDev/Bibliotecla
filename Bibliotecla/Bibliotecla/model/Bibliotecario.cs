@@ -12,24 +12,23 @@ namespace Bibliotecla.model
         public Bibliotecario() { }
 
         public Bibliotecario(int codFuncionario,
-                           string cpfFuncionario,
-                           string nomeFuncionario,
-                           Endereco enderecoFuncionario,
-                           string emailFuncionario,
-                           string telefoneFuncionario,
-                           string usuario,
-                           string senha,
-                           string cargo)
-            : base(codFuncionario,
-                   cpfFuncionario,
-                   nomeFuncionario,
-                   enderecoFuncionario,
-                   emailFuncionario,
-                   telefoneFuncionario,
-                   usuario,
-                   senha,
-                   cargo)
-        {
-        }
+                             string cpfFuncionario,
+                             string nomeFuncionario,
+                             Endereco enderecoFuncionario,
+                             string emailFuncionario,
+                             string telefoneFuncionario,
+                             string usuario,
+                             string senha,
+                             string cargo)
+              : base(codFuncionario,
+                     usuario,
+                     senha,
+                     cargo,
+                     cpfFuncionario,
+                     nomeFuncionario,
+                     enderecoFuncionario,
+                     emailFuncionario,
+                     telefoneFuncionario)
+        { }
     }
 }

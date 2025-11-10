@@ -17,21 +17,21 @@ namespace Bibliotecla.model
         public Funcionario() { }
 
         public Funcionario(int codFuncionario,
-                           string cpfFuncionario,
+                           string usuario, 
+                           string senha, 
+                           string cargo,
+                           string cpfPessoa,
                            string nomeFuncionario,
                            Endereco enderecoFuncionario,
                            string emailFuncionario,
-                           string telefoneFuncionario,
-                           string usuario, 
-                           string senha, 
-                           string cargo)
+                           string telefoneFuncionario)
+               : base (cpfPessoa,
+                      nomeFuncionario,
+                      enderecoFuncionario,
+                      emailFuncionario,
+                      telefoneFuncionario)
         {
             this.codFuncionario = codFuncionario;
-            this.Cpf = cpfFuncionario;
-            this.Nome = nomeFuncionario;
-            this.Endereco = enderecoFuncionario;
-            this.Email = emailFuncionario;
-            this.Telefone = telefoneFuncionario;
             this.usuario = usuario;
             this.senha = senha;
             this.cargo = cargo;

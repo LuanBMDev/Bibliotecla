@@ -60,10 +60,10 @@
     <Compile Include="model\Gerente.cs" />
     <Compile Include="model\Leitor.cs" />
     <Compile Include="model\Pessoa.cs" />
-    <Compile Include="model\Relatorio.cs" />
-    <Compile Include="model\RelatorioAtrasos.cs" />
-    <Compile Include="model\RelatorioDanos.cs" />
-    <Compile Include="model\RelatorioPreferencias.cs" />
+    <Compile Include="geral\Relatorio.cs" />
+    <Compile Include="geral\RelatorioAtrasos.cs" />
+    <Compile Include="geral\RelatorioDanos.cs" />
+    <Compile Include="geral\RelatorioPreferencias.cs" />
     <Compile Include="model\Titulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

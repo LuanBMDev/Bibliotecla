@@ -15,6 +15,21 @@ namespace Bibliotecla.model
         private string emailPessoa;
         private string telefonePessoa;
 
+        public Pessoa() { }
+
+        public Pessoa(string cpfPessoa,
+                      string nomePessoa,
+                      Endereco enderecoPessoa,
+                      string emailPessoa,
+                      string telefonePessoa)
+        {
+            this.cpfPessoa = cpfPessoa;
+            this.nomePessoa = nomePessoa;
+            this.enderecoPessoa = enderecoPessoa;
+            this.emailPessoa = emailPessoa;
+            this.telefonePessoa = telefonePessoa;
+        }
+
         public string Cpf { get => cpfPessoa; set => cpfPessoa = value; }
         public string Nome { get => nomePessoa; set => nomePessoa = value; }
         public Endereco Endereco { get => enderecoPessoa; set => enderecoPessoa = value; }
