@@ -52,6 +52,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="geral\Endereco.cs" />
+    <Compile Include="model\Bibliotecario.cs" />
+    <Compile Include="model\Diretora.cs" />
+    <Compile Include="model\Exemplar.cs" />
+    <Compile Include="model\Funcionario.cs" />
+    <Compile Include="model\Gerente.cs" />
+    <Compile Include="model\Leitor.cs" />
+    <Compile Include="model\Pessoa.cs" />
+    <Compile Include="geral\Relatorio.cs" />
+    <Compile Include="geral\RelatorioAtrasos.cs" />
+    <Compile Include="geral\RelatorioDanos.cs" />
+    <Compile Include="geral\RelatorioPreferencias.cs" />
+    <Compile Include="model\Titulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -75,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="view-controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
