@@ -12,6 +12,6 @@ namespace Bibliotecla.DAO
         T GetByID(int id);
         void Update(T entity);
         void Delete(T entity);
-        List<T> GetAll();
+        List<T> GetAll(string critério);
     }
 }

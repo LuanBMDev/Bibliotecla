@@ -50,7 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BibliotecarioDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
+    <Compile Include="DAO\DiretoraDAO.cs" />
+    <Compile Include="DAO\ExemplarDAO.cs" />
+    <Compile Include="DAO\GerenteDAO.cs" />
+    <Compile Include="DAO\LeitorDAO.cs" />
+    <Compile Include="DAO\TituloDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
