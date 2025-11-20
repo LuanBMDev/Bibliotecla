@@ -18,5 +18,13 @@ namespace Bibliotecla.banco
             conexao.Open();
             return conexao;
         }
+
+        public static void Desconectar(MySqlConnection conexao)
+        {
+            if (conexao != null && conexao.State == System.Data.ConnectionState.Open)
+            {
+                conexao.Close();
+            }
+        }
     }
 }

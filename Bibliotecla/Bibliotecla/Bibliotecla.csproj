@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="banco\Conexao.cs" />
     <Compile Include="DAO\BibliotecarioDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DiretoraDAO.cs" />

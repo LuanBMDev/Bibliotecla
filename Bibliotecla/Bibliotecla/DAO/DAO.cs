@@ -8,10 +8,10 @@ namespace Bibliotecla.DAO
 {
     internal interface DAO<T>
     {
-        void Add(T entity);
-        T GetByID(int id);
-        void Update(T entity);
-        void Delete(T entity);
-        List<T> GetAll(string critério);
+        bool Inserir(T entity);
+        T BuscarID(T entity);
+        bool Alterar(T entity);
+        bool Remover(T entity);
+        List<T> Listar(string critério);
     }
 }

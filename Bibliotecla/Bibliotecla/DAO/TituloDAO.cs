@@ -18,106 +18,129 @@ namespace Bibliotecla.DAO
             this.conexao = conexao;
         }
 
-        public void Add(Titulo entity)
+        public bool Inserir(Titulo entity)
         {
-            string sql = "INSERT INTO Titulo (NomeTitulo, Genero, Autor) " +
-                         "VALUES (@NomeTitulo, @Genero, @Autor)";
+            string sql = "INSERT INTO titulo (nomeTitulo, generoTitulo, autorTitulo) " +
+                         "VALUES (@nomeTitulo, @generoTitulo, @autorTitulo)";
 
-            using (var cmd = new MySqlCommand(sql, conexao))
+            int linhas_afetadas = 0;
+
+            conexao.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@NomeTitulo", entity.NomeTitulo);
-                cmd.Parameters.AddWithValue("@Genero", entity.GeneroTitulo);
-                cmd.Parameters.AddWithValue("@Autor", entity.AutorTitulo);
+                cmd.Parameters.AddWithValue("@nomeTitulo", entity.NomeTitulo);
+                cmd.Parameters.AddWithValue("@generoTitulo", entity.GeneroTitulo);
+                cmd.Parameters.AddWithValue("@autorTitulo", entity.AutorTitulo);
 
-                cmd.ExecuteNonQuery();
+                linhas_afetadas = cmd.ExecuteNonQuery();
+                conexao.Close();
             }
+
+            return linhas_afetadas >= 1;
         }
 
-        public void Delete(Titulo entity)
+        public bool Alterar(Titulo entity)
+        {
+            string sql = "UPDATE Titulo SET " +
+                         "nomeTitulo = @nomeTitulo, " +
+                         "generoTitulo = @generoTitulo, " +
+                         "autorTitulo = @autorTitulo " +
+                         "WHERE CodTitulo = @CodTitulo";
+            int linhas_afetadas = 0;
+            conexao.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+            {
+                cmd.Parameters.AddWithValue("@nomeTitulo", entity.NomeTitulo);
+                cmd.Parameters.AddWithValue("@generoTitulo", entity.GeneroTitulo);
+                cmd.Parameters.AddWithValue("@autorTitulo", entity.AutorTitulo);
+                cmd.Parameters.AddWithValue("@codTitulo", entity.CodTitulo);
+                linhas_afetadas = cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+
+            return linhas_afetadas >= 1;
+        }
+
+        public bool Remover(Titulo entity)
         {
             string sql = "DELETE FROM Titulo WHERE CodTitulo = @CodTitulo";
 
-            using (var cmd = new MySqlCommand(sql, conexao))
-            {
-                cmd.Parameters.AddWithValue("@CodTitulo", entity.CodTitulo);
+            int linhas_afetadas = 0;
 
-                cmd.ExecuteNonQuery();
+            conexao.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+            {
+                cmd.Parameters.AddWithValue("@codTitulo", entity.CodTitulo);
+                linhas_afetadas = cmd.ExecuteNonQuery();
+                conexao.Close();
             }
+
+            return linhas_afetadas >= 1;
         }
 
-        public List<Titulo> GetAll(string criterio)
-        {
-            string sql = "SELECT * FROM Titulo";
-
-            if (!string.IsNullOrEmpty(criterio))
-            {
-                sql += " WHERE NomeTitulo LIKE @Criterio " +
-                       "OR Genero LIKE @Criterio " +
-                       "OR Autor LIKE @Criterio";
-            }
-
-            var titulos = new List<Titulo>();
-            using (var cmd = new MySqlCommand(sql, conexao))
-            {
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        titulos.Add(new Titulo
-                        {
-                            CodTitulo = reader.GetInt32("CodTitulo"),
-                            NomeTitulo = reader.GetString("NomeTitulo"),
-                            GeneroTitulo = reader.GetString("Genero"),
-                            AutorTitulo = reader.GetString("Autor")
-                        });
-                    }
-                }
-            }
-            return titulos;
-        }
-
-        public Titulo GetByID(int id)
+        public Titulo BuscarID(Titulo entity)
         {
             string sql = "SELECT * FROM Titulo WHERE CodTitulo = @CodTitulo";
+            Titulo titulo = null;
+            conexao.Open();
 
-            using (var cmd = new MySqlCommand(sql, conexao))
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodTitulo", id);
-                using (var reader = cmd.ExecuteReader())
+                cmd.Parameters.AddWithValue("@codTitulo", entity.CodTitulo);
+                using (DbDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        return new Titulo
+                        titulo = new Titulo
                         {
-                            CodTitulo = reader.GetInt32("CodTitulo"),
-                            NomeTitulo = reader.GetString("NomeTitulo"),
-                            GeneroTitulo = reader.GetString("Genero"),
-                            AutorTitulo = reader.GetString("Autor")
+                            CodTitulo = Convert.ToInt32(reader["CodTitulo"]),
+                            NomeTitulo = reader["nomeTitulo"].ToString(),
+                            GeneroTitulo = reader["generoTitulo"].ToString(),
+                            AutorTitulo = reader["autorTitulo"].ToString()
                         };
                     }
-                    else
-                    {
-                        return null;
-                    }
                 }
+                conexao.Close();
             }
+
+            return titulo;
         }
 
-        public void Update(Titulo entity)
+        public List<Titulo> Listar(string critério)
         {
-            string sql = "UPDATE Titulo SET NomeTitulo = @NomeTitulo, " +
-                         "Genero = @Genero, Autor = @Autor " +
-                         "WHERE CodTitulo = @CodTitulo";
+            string sql = "SELECT * FROM Titulo";
 
-            using (var cmd = new MySqlCommand(sql, conexao))
+            if (!string.IsNullOrEmpty(critério))
             {
-                cmd.Parameters.AddWithValue("@NomeTitulo", entity.NomeTitulo);
-                cmd.Parameters.AddWithValue("@Genero", entity.GeneroTitulo);
-                cmd.Parameters.AddWithValue("@Autor", entity.AutorTitulo);
-                cmd.Parameters.AddWithValue("@CodTitulo", entity.CodTitulo);
-
-                cmd.ExecuteNonQuery();
+                sql += " WHERE " + critério;
             }
+            List<Titulo> titulos = new List<Titulo>();
+            Titulo titulo = null;
+
+            conexao.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+            {
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        titulo = new Titulo
+                        {
+                            CodTitulo = Convert.ToInt32(reader["CodTitulo"]),
+                            NomeTitulo = reader["nomeTitulo"].ToString(),
+                            GeneroTitulo = reader["generoTitulo"].ToString(),
+                            AutorTitulo = reader["autorTitulo"].ToString()
+                        };
+                        titulos.Add(titulo);
+                    }
+                }
+                conexao.Close();
+            }
+            return titulos;
         }
     }
 }
