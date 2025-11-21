@@ -10,6 +10,7 @@ CREATE TABLE LeitorFuncio
 	Cargo VARCHAR(12),
   	Usuario VARCHAR(20),
 	Senha VARCHAR(10),
+	CEP VARCHAR(9),
 	Rua VARCHAR(100),
 	NumRes VARCHAR(100),
 	Cidade VARCHAR(100),
@@ -56,4 +57,5 @@ CREATE TABLE Multa
   	CodEmpres INT,
 	FOREIGN KEY (CodEmpres) REFERENCES Emprestimo(CodEmpres),
 	FOREIGN KEY (CodLeitor) REFERENCES LeitorFuncio(CodPessoa)
+
 );
