@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.model;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +10,34 @@ namespace Bibliotecla.DAO
 {
     internal class LeitorDAO : DAO<Leitor>
     {
-        public void Add(Leitor entity)
+        private readonly MySqlConnection conexao;
+
+        public LeitorDAO(MySqlConnection conexao)
+        {
+            this.conexao = conexao;
+        }
+
+        public bool Inserir(Leitor entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Leitor entity)
+        public bool Alterar(Leitor entity)
         {
             throw new NotImplementedException();
         }
 
-        public List<Leitor> GetAll()
+        public bool Remover(Leitor entity)
         {
             throw new NotImplementedException();
         }
 
-        public Leitor GetByID(int id)
+        public Leitor BuscarID(Leitor entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Leitor entity)
+        public List<Leitor> Listar(string critério)
         {
             throw new NotImplementedException();
         }

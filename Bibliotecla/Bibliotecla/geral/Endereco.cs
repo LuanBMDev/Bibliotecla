@@ -14,7 +14,6 @@ namespace Bibliotecla.geral
         private string numero;
         private string bairro;
         private string cidade;
-        private string estado;
 
         // CUIDADO: Pra ser "Brasil" (descoberto, durrr)
         public int CodEndereco { get => codEndereco; set => codEndereco = value; }
@@ -23,6 +22,5 @@ namespace Bibliotecla.geral
         public string Numero { get => numero; set => numero = value; }
         public string Bairro { get => bairro; set => bairro = value; }
         public string Cidade { get => cidade; set => cidade = value; }
-        public string Estado { get => estado; set => estado = value; }
     }
 }

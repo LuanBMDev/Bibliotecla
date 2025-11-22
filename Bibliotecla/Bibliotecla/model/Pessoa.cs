@@ -9,6 +9,7 @@ namespace Bibliotecla.model
 {
     internal class Pessoa
     {
+        private int codPessoa;
         private string cpfPessoa;
         private string nomePessoa;
         private Endereco enderecoPessoa;
@@ -17,12 +18,14 @@ namespace Bibliotecla.model
 
         public Pessoa() { }
 
-        public Pessoa(string cpfPessoa,
+        public Pessoa(int codPessoa,
+                      string cpfPessoa,
                       string nomePessoa,
                       Endereco enderecoPessoa,
                       string emailPessoa,
                       string telefonePessoa)
         {
+            this.codPessoa = codPessoa;
             this.cpfPessoa = cpfPessoa;
             this.nomePessoa = nomePessoa;
             this.enderecoPessoa = enderecoPessoa;
@@ -30,6 +33,7 @@ namespace Bibliotecla.model
             this.telefonePessoa = telefonePessoa;
         }
 
+        public int Cod {  get => codPessoa; set => codPessoa = value; }
         public string Cpf { get => cpfPessoa; set => cpfPessoa = value; }
         public string Nome { get => nomePessoa; set => nomePessoa = value; }
         public Endereco Endereco { get => enderecoPessoa; set => enderecoPessoa = value; }

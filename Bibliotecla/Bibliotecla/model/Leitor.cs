@@ -22,5 +22,6 @@ namespace Bibliotecla.model
                     emailLeitor,
                     telefoneLeitor)
         { }
+
     }
 }
