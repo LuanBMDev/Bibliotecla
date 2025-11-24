@@ -10,13 +10,13 @@ namespace Bibliotecla.model
     {
         private int codEmprestimo;
         private Exemplar exemplar;
-        private Leitor leitor;
+        private LeitorFuncio leitor;
         private string dataEmprestimo;
         private string dataDevol;
         private string prazoDevol;
         private int isAtrasado;
 
-        public Emprestimo(Exemplar exemplar, Leitor leitor)
+        public Emprestimo(Exemplar exemplar, LeitorFuncio leitor)
         {
             this.exemplar = exemplar;
             this.leitor = leitor;
@@ -24,7 +24,7 @@ namespace Bibliotecla.model
 
         public Emprestimo(int codEmprestimo,
                           Exemplar exemplar,
-                          Leitor leitor,
+                          LeitorFuncio leitor,
                           string dataEmprestimo,
                           string dataDevol,
                           string prazoDevol,
@@ -41,7 +41,7 @@ namespace Bibliotecla.model
 
         public int CodEmprestimo { get => codEmprestimo; set => codEmprestimo = value; }
         public Exemplar Exemplar { get => exemplar; set => exemplar = value; }
-        public Leitor Leitor { get => leitor; set => leitor = value; }
+        public LeitorFuncio Leitor { get => leitor; set => leitor = value; }
         public string DataEmprestimo { get => dataEmprestimo; set => dataEmprestimo = value; }
         public string DataDevol { get => dataDevol; set => dataDevol = value; }
         public string PrazoDevol { get => prazoDevol; set => prazoDevol = value; }

@@ -51,13 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="banco\Conexao.cs" />
-    <Compile Include="DAO\BibliotecarioDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
-    <Compile Include="DAO\DiretoraDAO.cs" />
     <Compile Include="DAO\EmprestimoDAO.cs" />
     <Compile Include="DAO\ExemplarDAO.cs" />
-    <Compile Include="DAO\GerenteDAO.cs" />
-    <Compile Include="DAO\LeitorDAO.cs" />
+    <Compile Include="DAO\LeitorFuncioDAO.cs" />
     <Compile Include="DAO\MultaDAO.cs" />
     <Compile Include="DAO\TituloDAO.cs" />
     <Compile Include="Form1.cs">
@@ -66,16 +63,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="geral\Endereco.cs" />
-    <Compile Include="model\Bibliotecario.cs" />
-    <Compile Include="model\Diretora.cs" />
     <Compile Include="model\Emprestimo.cs" />
     <Compile Include="model\Exemplar.cs" />
-    <Compile Include="model\Funcionario.cs" />
-    <Compile Include="model\Gerente.cs" />
-    <Compile Include="model\Leitor.cs" />
+    <Compile Include="model\LeitorFuncio.cs" />
     <Compile Include="model\Multa.cs" />
-    <Compile Include="model\Pessoa.cs" />
     <Compile Include="geral\Relatorio.cs" />
     <Compile Include="geral\RelatorioAtrasos.cs" />
     <Compile Include="geral\RelatorioDanos.cs" />

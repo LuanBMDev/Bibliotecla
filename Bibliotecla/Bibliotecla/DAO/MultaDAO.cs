@@ -27,7 +27,7 @@ namespace Bibliotecla.DAO
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.Cod);
+                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.CodPessoa);
                 cmd.Parameters.AddWithValue("@PrecoMulta", entity.PrecoMulta);
                 cmd.Parameters.AddWithValue("@CodEmpres", entity.Emprestimo.CodEmprestimo);
 
@@ -52,7 +52,7 @@ namespace Bibliotecla.DAO
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.Cod);
+                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.CodPessoa);
                 cmd.Parameters.AddWithValue("@PrecoMulta", entity.PrecoMulta);
                 cmd.Parameters.AddWithValue("@CodEmpres", entity.Emprestimo);
                 cmd.Parameters.AddWithValue("@CodMulta", entity.CodMulta);
@@ -95,8 +95,8 @@ namespace Bibliotecla.DAO
                     {
                         int codMulta = reader.GetInt32("@CodMulta");
                         int codLeitor = reader.GetInt32("@CodLeitor");
-                        LeitorDAO leitorDAO = new LeitorDAO(conexao);
-                        Leitor leitor = leitorDAO.BuscarID(new Leitor { Cod = codLeitor });
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         double precoMulta = reader.GetDouble("@PrecoMulta");
                         int codEmpres = reader.GetInt32("@CodEmpres");
                         EmprestimoDAO empresDAO = new EmprestimoDAO(conexao);
@@ -114,8 +114,35 @@ namespace Bibliotecla.DAO
             string sql = "SELECT * FROM Multa";
             if (!string.IsNullOrEmpty(critério))
             {
-                sql += " WHERE "
+                sql += " WHERE " + critério;
             }
+
+            List<Multa> multas = new List<Multa>();
+
+            conexao.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+            {
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int codMulta = reader.GetInt32("CodMulta");
+                        int codLeitor = reader.GetInt32("CodLeitor");
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
+                        double precoMulta = reader.GetDouble("PrecoMulta");
+                        int codEmpres = reader.GetInt32("CodEmpres");
+                        EmprestimoDAO empresDAO = new EmprestimoDAO(conexao);
+                        Emprestimo emprestimo = empresDAO.BuscarID(new Emprestimo(null, null) { CodEmprestimo = codEmpres });
+                        Multa multa = new Multa(codMulta, leitor, precoMulta, emprestimo);
+                        multas.Add(multa);
+                    }
+                }
+                conexao.Close();
+            }
+
+            return multas;
         }
     }
 }

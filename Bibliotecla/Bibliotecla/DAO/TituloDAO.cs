@@ -20,8 +20,8 @@ namespace Bibliotecla.DAO
 
         public bool Inserir(Titulo entity)
         {
-            string sql = "INSERT INTO Titulo (NomeTitulo, GeneroTitulo, AutorTitulo) " +
-                         "VALUES (@NomeTitulo, @GeneroTitulo, @AutorTitulo)";
+            string sql = "INSERT INTO Titulo (NomeTitulo, Genero, Autor) " +
+                         "VALUES (@NomeTitulo, @Genero, @Autor)";
 
             int linhas_afetadas = 0;
 
@@ -30,8 +30,8 @@ namespace Bibliotecla.DAO
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
                 cmd.Parameters.AddWithValue("@NomeTitulo", entity.NomeTitulo);
-                cmd.Parameters.AddWithValue("@GeneroTitulo", entity.GeneroTitulo);
-                cmd.Parameters.AddWithValue("@AutorTitulo", entity.AutorTitulo);
+                cmd.Parameters.AddWithValue("@Genero", entity.GeneroTitulo);
+                cmd.Parameters.AddWithValue("@Autor", entity.AutorTitulo);
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -43,9 +43,9 @@ namespace Bibliotecla.DAO
         public bool Alterar(Titulo entity)
         {
             string sql = "UPDATE Titulo SET " +
-                         "nomeTitulo = @NomeTitulo, " +
-                         "generoTitulo = @GeneroTitulo, " +
-                         "autorTitulo = @AutorTitulo " +
+                         "NomeTitulo = @NomeTitulo, " +
+                         "Genero = @Genero, " +
+                         "Autor = @Autor " +
                          "WHERE CodTitulo = @CodTitulo";
             int linhas_afetadas = 0;
             conexao.Open();
@@ -53,8 +53,8 @@ namespace Bibliotecla.DAO
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
                 cmd.Parameters.AddWithValue("@NomeTitulo", entity.NomeTitulo);
-                cmd.Parameters.AddWithValue("@GeneroTitulo", entity.GeneroTitulo);
-                cmd.Parameters.AddWithValue("@AutorTitulo", entity.AutorTitulo);
+                cmd.Parameters.AddWithValue("@Genero", entity.GeneroTitulo);
+                cmd.Parameters.AddWithValue("@Autor", entity.AutorTitulo);
                 cmd.Parameters.AddWithValue("@CodTitulo", entity.CodTitulo);
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -98,8 +98,8 @@ namespace Bibliotecla.DAO
                         {
                             CodTitulo = Convert.ToInt32(reader["CodTitulo"]),
                             NomeTitulo = reader["NomeTitulo"].ToString(),
-                            GeneroTitulo = reader["GeneroTitulo"].ToString(),
-                            AutorTitulo = reader["AutorTitulo"].ToString()
+                            GeneroTitulo = reader["Genero"].ToString(),
+                            AutorTitulo = reader["Autor"].ToString()
                         };
                     }
                 }
@@ -132,8 +132,8 @@ namespace Bibliotecla.DAO
                         {
                             CodTitulo = Convert.ToInt32(reader["CodTitulo"]),
                             NomeTitulo = reader["NomeTitulo"].ToString(),
-                            GeneroTitulo = reader["GeneroTitulo"].ToString(),
-                            AutorTitulo = reader["AutorTitulo"].ToString()
+                            GeneroTitulo = reader["Genero"].ToString(),
+                            AutorTitulo = reader["Autor"].ToString()
                         };
                         titulos.Add(titulo);
                     }

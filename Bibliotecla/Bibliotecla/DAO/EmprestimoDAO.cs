@@ -20,7 +20,7 @@ namespace Bibliotecla.DAO
 
         public bool Inserir(Emprestimo entity)
         {
-            string sql = "INSERT INTO Emprestimo (CodExemplar, CodLeitor, DataEmprestimo, PrazoDevol, isAtrasado) " +
+            string sql = "INSERT INTO Emprestimo (CodExemplar, CodLeitor, DataEmpres, PrazoDevol, isAtrasado) " +
                          "VALUES (@CodExemplar, @CodLeitor, @DataEmprestimo, @PrazoDevol, @isAtrasado)";
 
             int linhas_afetadas = 0;
@@ -30,8 +30,8 @@ namespace Bibliotecla.DAO
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
                 cmd.Parameters.AddWithValue("@CodExemplar", entity.Exemplar.CodExemplar);
-                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.Cod);
-                cmd.Parameters.AddWithValue("@DataEmprestimo", entity.DataEmprestimo);
+                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.CodPessoa);
+                cmd.Parameters.AddWithValue("@DataEmpres", entity.DataEmprestimo);
                 cmd.Parameters.AddWithValue("@PrazoDevol", entity.PrazoDevol);
                 cmd.Parameters.AddWithValue("@isAtrasado", entity.IsAtrasado);
 
@@ -50,7 +50,7 @@ namespace Bibliotecla.DAO
                          "DataDevol = @DataDevol" +
                          "PrazoDevol = @PrazoDevol" +
                          "isAtrasado = @isAtrasado" +
-                         "WHERE CodEmprestimo = @CodEmprestimo";
+                         "WHERE CodEmpres = @CodEmpres";
             int linhas_afetadas = 0;
 
             conexao.Open();
@@ -58,11 +58,12 @@ namespace Bibliotecla.DAO
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
                 cmd.Parameters.AddWithValue("@CodExemplar", entity.Exemplar.CodExemplar);
-                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.Cod);
+                cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.CodPessoa);
                 cmd.Parameters.AddWithValue("@DataEmpres", entity.DataEmprestimo);
                 cmd.Parameters.AddWithValue("@DataDevol", entity.DataDevol);
                 cmd.Parameters.AddWithValue("@PrazoDevol", entity.PrazoDevol);
                 cmd.Parameters.AddWithValue("@isAtrasado", entity.IsAtrasado);
+                cmd.Parameters.AddWithValue("@CodEmpres", entity.CodEmprestimo);
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -102,10 +103,10 @@ namespace Bibliotecla.DAO
                         int codEmpres = reader.GetInt32("CodEmpres");
                         int codExemplar = reader.GetInt32("CodExemplar");
                         ExemplarDAO exDAO = new ExemplarDAO(conexao);
-                        Exemplar exemplar = exDAO.BuscarID(new Exemplar(entity.Exemplar.Titulo) { CodExemplar = codExemplar });
+                        Exemplar exemplar = exDAO.BuscarID(new Exemplar(null) { CodExemplar = codExemplar });
                         int codLeitor = reader.GetInt32("CodLeitor");
-                        LeitorDAO leitorDAO = new LeitorDAO(conexao);
-                        Leitor leitor = leitorDAO.BuscarID(new Leitor { Cod = codLeitor });
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         string dataEmpres = reader.GetString("DataEmpres");
                         string dataDevol = reader.GetString("DataDevol");
                         string prazoDevol = reader.GetString("PrazoDevol");
@@ -139,10 +140,10 @@ namespace Bibliotecla.DAO
                         int codEmpres = reader.GetInt32("CodEmpres");
                         int codExemplar = reader.GetInt32("CodExemplar");
                         ExemplarDAO exDAO = new ExemplarDAO(conexao);
-                        Exemplar exemplar = exDAO.BuscarID(new Exemplar(new Titulo()) { CodExemplar = codExemplar });
+                        Exemplar exemplar = exDAO.BuscarID(new Exemplar(null) { CodExemplar = codExemplar });
                         int codLeitor = reader.GetInt32("CodLeitor");
-                        LeitorDAO leitorDAO = new LeitorDAO(conexao);
-                        Leitor leitor = leitorDAO.BuscarID(new Leitor { Cod = codLeitor });
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         string dataEmpres = reader.GetString("DataEmpres");
                         string dataDevol = reader.GetString("DataDevol");
                         string prazoDevol = reader.GetString("PrazoDevol");

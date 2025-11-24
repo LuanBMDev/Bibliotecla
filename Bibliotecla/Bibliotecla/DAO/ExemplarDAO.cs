@@ -19,17 +19,17 @@ namespace Bibliotecla.DAO
 
         public bool Inserir(Exemplar entity)
         {
-            string sql = "INSERT INTO exemplar (anoPubli, estadoFisico, editoraExemplar, codTitulo) " +
-                         "VALUES (@anoPubli, @estadoFisico, @editoraExemplar, @codTitulo)";
+            string sql = "INSERT INTO Exemplar (AnoPubli, EstadoFisc, Editora, CodTitulo) " +
+                         "VALUES (@AnoPubli, @EstadoFisc, @Editora, @CodTitulo)";
             int linhas_afetadas = 0;
             conexao.Open();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@anoPubli", entity.AnoPubli);
-                cmd.Parameters.AddWithValue("@estadoFisico", entity.EstadoFisico);
-                cmd.Parameters.AddWithValue("@editoraExemplar", entity.EditoraExemplar);
-                cmd.Parameters.AddWithValue("@codTitulo", entity.Titulo.CodTitulo);
+                cmd.Parameters.AddWithValue("@AnoPubli", entity.AnoPubli);
+                cmd.Parameters.AddWithValue("@EstadoFisc", entity.EstadoFisico);
+                cmd.Parameters.AddWithValue("@Editora", entity.EditoraExemplar);
+                cmd.Parameters.AddWithValue("@CodTitulo", entity.Titulo.CodTitulo);
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
@@ -39,23 +39,23 @@ namespace Bibliotecla.DAO
 
         public bool Alterar(Exemplar entity)
         {
-            string sql = "UPDATE exemplar SET " +
-                         "anoPubli = @anoPubli, " +
-                         "estadoFisico = @estadoFisico, " +
-                         "editoraExemplar = @editoraExemplar, " +
-                         "codTitulo = @codTitulo " +
-                         "WHERE codExemplar = @codExemplar";
+            string sql = "UPDATE Exemplar SET " +
+                         "AnoPubli = @AnoPubli, " +
+                         "EstadoFisc = @EstadoFisc, " +
+                         "Editora = @Editora, " +
+                         "CodTitulo = @CodTitulo " +
+                         "WHERE CodExempl = @CodExempl";
             int linhas_afetadas = 0;
 
             conexao.Open();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@anoPubli", entity.AnoPubli);
-                cmd.Parameters.AddWithValue("@estadoFisico", entity.EstadoFisico);
-                cmd.Parameters.AddWithValue("@editoraExemplar", entity.EditoraExemplar);
-                cmd.Parameters.AddWithValue("@codTitulo", entity.Titulo.CodTitulo);
-                cmd.Parameters.AddWithValue("@codExemplar", entity.CodExemplar);
+                cmd.Parameters.AddWithValue("@AnoPubli", entity.AnoPubli);
+                cmd.Parameters.AddWithValue("@EstadoFisc", entity.EstadoFisico);
+                cmd.Parameters.AddWithValue("@Editora", entity.EditoraExemplar);
+                cmd.Parameters.AddWithValue("@CodTitulo", entity.Titulo.CodTitulo);
+                cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
 
@@ -67,13 +67,13 @@ namespace Bibliotecla.DAO
         
         public bool Remover(Exemplar entity)
         {
-            string sql = "DELETE FROM Exemplar WHERE CodExemplar = @CodExemplar";
+            string sql = "DELETE FROM Exemplar WHERE CodExempl = @CodExempl";
             int linhas_afetadas = 0;
             conexao.Open();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodExemplar", entity.CodExemplar);
+                cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
@@ -83,22 +83,22 @@ namespace Bibliotecla.DAO
 
         public Exemplar BuscarID(Exemplar entity)
         {
-            string sql = "SELECT * FROM Exemplar WHERE CodExemplar = @CodExemplar";
+            string sql = "SELECT * FROM Exemplar WHERE CodExempl = @CodExempl";
             Exemplar exemplar = null;
             conexao.Open();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodExemplar", entity.CodExemplar);
+                cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        int codExemplar = reader.GetInt32("codExemplar");
-                        string anoPubli = reader.GetString("anoPubli");
-                        string estadoFisico = reader.GetString("estadoFisico");
-                        string editoraExemplar = reader.GetString("editoraExemplar");
-                        int codTitulo = reader.GetInt32("codTitulo");
+                        int codExemplar = reader.GetInt32("CodExempl");
+                        string anoPubli = reader.GetString("AnoPubli");
+                        string estadoFisico = reader.GetString("EstadoFisc");
+                        string editoraExemplar = reader.GetString("Editora");
+                        int codTitulo = reader.GetInt32("CodTitulo");
                         TituloDAO tituloDAO = new TituloDAO(conexao);
                         Titulo titulo = tituloDAO.BuscarID(new Titulo { CodTitulo = codTitulo });
                         exemplar = new Exemplar(codExemplar, anoPubli, estadoFisico, editoraExemplar, titulo);
@@ -128,11 +128,11 @@ namespace Bibliotecla.DAO
                 {
                     while (reader.Read())
                     {
-                        int codExemplar = reader.GetInt32("codExemplar");
-                        string anoPubli = reader.GetString("anoPubli");
-                        string estadoFisico = reader.GetString("estadoFisico");
-                        string editoraExemplar = reader.GetString("editoraExemplar");
-                        int codTitulo = reader.GetInt32("codTitulo");
+                        int codExemplar = reader.GetInt32("CodExempl");
+                        string anoPubli = reader.GetString("AnoPubli");
+                        string estadoFisico = reader.GetString("EstadoFisc");
+                        string editoraExemplar = reader.GetString("Editora");
+                        int codTitulo = reader.GetInt32("CodTitulo");
                         TituloDAO tituloDAO = new TituloDAO(conexao);
                         Titulo titulo = tituloDAO.BuscarID(new Titulo { CodTitulo = codTitulo });
                         Exemplar exemplar = new Exemplar(codExemplar, anoPubli, estadoFisico, editoraExemplar, titulo);
