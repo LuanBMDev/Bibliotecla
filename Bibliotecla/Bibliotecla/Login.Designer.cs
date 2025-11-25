@@ -1,6 +1,6 @@
 ﻿namespace Bibliotecla
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btn_Login = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.txt_senha = new Guna.UI.WinForms.GunaTextBox();
@@ -48,29 +48,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Bibliotecla";
             // 
-            // gunaButton1
+            // btn_Login
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.SaddleBrown;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(339, 312);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(160, 42);
-            this.gunaButton1.TabIndex = 10;
-            this.gunaButton1.Text = "Entrar";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Login.AnimationHoverSpeed = 0.07F;
+            this.btn_Login.AnimationSpeed = 0.03F;
+            this.btn_Login.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Login.BorderColor = System.Drawing.Color.Black;
+            this.btn_Login.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Login.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_Login.Image = null;
+            this.btn_Login.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Login.Location = new System.Drawing.Point(339, 312);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Login.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Login.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Login.OnHoverImage = null;
+            this.btn_Login.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Login.Size = new System.Drawing.Size(160, 42);
+            this.btn_Login.TabIndex = 10;
+            this.btn_Login.Text = "Entrar";
+            this.btn_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gunaLabel2
             // 
@@ -126,20 +126,23 @@
             this.txt_cadastro.Size = new System.Drawing.Size(164, 30);
             this.txt_cadastro.TabIndex = 6;
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.txt_cadastro);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btn_Login;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox txt_senha;

@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bibliotecla.telas
+namespace Bibliotecla
 {
-    public partial class Menu_principal : Form
+    public partial class Menu_Principal : Form
     {
-        public Menu_principal()
+        public Menu_Principal()
         {
             InitializeComponent();
         }
-
     }
 }

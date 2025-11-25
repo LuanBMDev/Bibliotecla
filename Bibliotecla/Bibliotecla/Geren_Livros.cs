@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bibliotecla.telas
+namespace Bibliotecla
 {
-    public partial class Empre_Dev : Form
+    public partial class Geren_Livros : Form
     {
-        public Empre_Dev()
+        public Geren_Livros()
         {
             InitializeComponent();
         }
