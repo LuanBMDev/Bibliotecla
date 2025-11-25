@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bibliotecla
 {
-    public partial class Colsul_Titulos : Form
+    public partial class Form1 : Form
     {
-        public Colsul_Titulos()
+        public Form1()
         {
             InitializeComponent();
         }
