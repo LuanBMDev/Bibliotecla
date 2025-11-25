@@ -43,7 +43,7 @@
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.txt_Ano_Publi = new Guna.UI.WinForms.GunaTextBox();
             this.txt_Editora = new Guna.UI.WinForms.GunaTextBox();
-            this.cmb_EstExemplar = new Guna.UI.WinForms.GunaComboBox();
+            this.cmb_Filtro = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.txt_id = new Guna.UI.WinForms.GunaTextBox();
             this.SuspendLayout();
@@ -278,23 +278,23 @@
             this.txt_Editora.Size = new System.Drawing.Size(206, 26);
             this.txt_Editora.TabIndex = 56;
             // 
-            // cmb_EstExemplar
+            // cmb_Filtro
             // 
-            this.cmb_EstExemplar.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_EstExemplar.BaseColor = System.Drawing.Color.White;
-            this.cmb_EstExemplar.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_EstExemplar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_EstExemplar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_EstExemplar.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_EstExemplar.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_EstExemplar.ForeColor = System.Drawing.Color.Black;
-            this.cmb_EstExemplar.FormattingEnabled = true;
-            this.cmb_EstExemplar.Location = new System.Drawing.Point(522, 242);
-            this.cmb_EstExemplar.Name = "cmb_EstExemplar";
-            this.cmb_EstExemplar.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_EstExemplar.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_EstExemplar.Size = new System.Drawing.Size(202, 26);
-            this.cmb_EstExemplar.TabIndex = 57;
+            this.cmb_Filtro.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_Filtro.BaseColor = System.Drawing.Color.White;
+            this.cmb_Filtro.BorderColor = System.Drawing.Color.Silver;
+            this.cmb_Filtro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_Filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Filtro.FocusedColor = System.Drawing.Color.Empty;
+            this.cmb_Filtro.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmb_Filtro.ForeColor = System.Drawing.Color.Black;
+            this.cmb_Filtro.FormattingEnabled = true;
+            this.cmb_Filtro.Location = new System.Drawing.Point(522, 242);
+            this.cmb_Filtro.Name = "cmb_Filtro";
+            this.cmb_Filtro.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmb_Filtro.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmb_Filtro.Size = new System.Drawing.Size(202, 26);
+            this.cmb_Filtro.TabIndex = 57;
             // 
             // gunaLabel7
             // 
@@ -331,7 +331,7 @@
             this.ClientSize = new System.Drawing.Size(830, 457);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.gunaLabel7);
-            this.Controls.Add(this.cmb_EstExemplar);
+            this.Controls.Add(this.cmb_Filtro);
             this.Controls.Add(this.txt_Editora);
             this.Controls.Add(this.txt_Ano_Publi);
             this.Controls.Add(this.gunaLabel6);
@@ -348,6 +348,7 @@
             this.Controls.Add(this.txt_Titulo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Cadastro_Exemplares";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro_Exemplares";
@@ -373,7 +374,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaTextBox txt_Ano_Publi;
         private Guna.UI.WinForms.GunaTextBox txt_Editora;
-        private Guna.UI.WinForms.GunaComboBox cmb_EstExemplar;
+        private Guna.UI.WinForms.GunaComboBox cmb_Filtro;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaTextBox txt_id;
     }

@@ -101,6 +101,18 @@
     <Compile Include="Cadastro_Exemplares.Designer.cs">
       <DependentUpon>Cadastro_Exemplares.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastro_Funcionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro_Funcionarios.Designer.cs">
+      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_Leitores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro_Leitores.Designer.cs">
+      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro_Titulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +125,23 @@
     <Compile Include="Colsul_Titulos.Designer.cs">
       <DependentUpon>Colsul_Titulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta_Leitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta_Leitor.Designer.cs">
+      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consul_Exemplares.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consul_Exemplares.Designer.cs">
       <DependentUpon>Consul_Exemplares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consul_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consul_Funcionario.Designer.cs">
+      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
     </Compile>
     <Compile Include="EmprEDev.cs">
       <SubType>Form</SubType>
@@ -125,11 +149,23 @@
     <Compile Include="EmprEDev.Designer.cs">
       <DependentUpon>EmprEDev.cs</DependentUpon>
     </Compile>
+    <Compile Include="Geren_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Geren_Cadastro.Designer.cs">
+      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Geren_Livros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Geren_Livros.Designer.cs">
       <DependentUpon>Geren_Livros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geren_Relatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Geren_Relatorios.Designer.cs">
+      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -156,10 +192,40 @@
     <Compile Include="geral\RelatorioDanos.cs" />
     <Compile Include="geral\RelatorioPreferencias.cs" />
     <Compile Include="model\Titulo.cs" />
+    <Compile Include="Multa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Multa.Designer.cs">
+      <DependentUpon>Multa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorio_Atraso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio_Atraso.Designer.cs">
+      <DependentUpon>Relatorio_Atraso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio_Dano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio_Dano.Designer.cs">
+      <DependentUpon>Relatorio_Dano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio_Pref.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio_Pref.Designer.cs">
+      <DependentUpon>Relatorio_Pref.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cadastro_Exemplares.resx">
       <DependentUpon>Cadastro_Exemplares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro_Funcionarios.resx">
+      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro_Leitores.resx">
+      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_Titulos.resx">
       <DependentUpon>Cadastro_Titulos.cs</DependentUpon>
@@ -167,20 +233,35 @@
     <EmbeddedResource Include="Colsul_Titulos.resx">
       <DependentUpon>Colsul_Titulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta_Leitor.resx">
+      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consul_Exemplares.resx">
       <DependentUpon>Consul_Exemplares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consul_Funcionario.resx">
+      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmprEDev.resx">
       <DependentUpon>EmprEDev.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Geren_Cadastro.resx">
+      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Geren_Livros.resx">
       <DependentUpon>Geren_Livros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geren_Relatorios.resx">
+      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Principal.resx">
       <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Multa.resx">
+      <DependentUpon>Multa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -191,6 +272,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Relatorio_Atraso.resx">
+      <DependentUpon>Relatorio_Atraso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio_Dano.resx">
+      <DependentUpon>Relatorio_Dano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio_Pref.resx">
+      <DependentUpon>Relatorio_Pref.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
