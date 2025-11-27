@@ -180,13 +180,7 @@
     <Compile Include="Menu_Principal.Designer.cs">
       <DependentUpon>Menu_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\Bibliotecario.cs" />
-    <Compile Include="model\Diretora.cs" />
     <Compile Include="model\Exemplar.cs" />
-    <Compile Include="model\Funcionario.cs" />
-    <Compile Include="model\Gerente.cs" />
-    <Compile Include="model\Leitor.cs" />
-    <Compile Include="model\Pessoa.cs" />
     <Compile Include="geral\Relatorio.cs" />
     <Compile Include="geral\RelatorioAtrasos.cs" />
     <Compile Include="geral\RelatorioDanos.cs" />

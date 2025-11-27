@@ -14,7 +14,7 @@ namespace Bibliotecla.model
         private string editoraExemplar;
         private Titulo titulo;
 
-        public Exemplar(Titulo titulo) 
+        public Exemplar(Titulo titulo)
         {
             this.titulo = titulo;
         }
