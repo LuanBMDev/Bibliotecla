@@ -71,6 +71,7 @@
             this.btn_Login.TabIndex = 10;
             this.btn_Login.Text = "Entrar";
             this.btn_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // gunaLabel2
             // 

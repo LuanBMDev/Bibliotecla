@@ -60,6 +60,7 @@
             this.btn_Sair.TabIndex = 14;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
             // btn_relatorio
             // 
@@ -84,6 +85,7 @@
             this.btn_relatorio.TabIndex = 13;
             this.btn_relatorio.Text = "Relatórios";
             this.btn_relatorio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
             // 
             // btn_Geren_Cad
             // 
@@ -108,6 +110,7 @@
             this.btn_Geren_Cad.TabIndex = 12;
             this.btn_Geren_Cad.Text = "Gerenciar Cadastro";
             this.btn_Geren_Cad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Geren_Cad.Click += new System.EventHandler(this.btn_Geren_Cad_Click);
             // 
             // btn_Multa
             // 
@@ -132,6 +135,7 @@
             this.btn_Multa.TabIndex = 11;
             this.btn_Multa.Text = "Multa";
             this.btn_Multa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Multa.Click += new System.EventHandler(this.btn_Multa_Click);
             // 
             // btn_Livros
             // 
@@ -156,6 +160,7 @@
             this.btn_Livros.TabIndex = 10;
             this.btn_Livros.Text = "Livros";
             this.btn_Livros.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Livros.Click += new System.EventHandler(this.btn_Livros_Click);
             // 
             // btn_Emp_Dev
             // 
@@ -180,6 +185,7 @@
             this.btn_Emp_Dev.TabIndex = 9;
             this.btn_Emp_Dev.Text = "Empréstimo e Devolução";
             this.btn_Emp_Dev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Emp_Dev.Click += new System.EventHandler(this.btn_Emp_Dev_Click);
             // 
             // label1
             // 
