@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-	</Reference>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.5.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.5\MySql.Data.dll</HintPath>
@@ -148,7 +148,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastro_Exemplares.cs" />
     <Compile Include="banco\Conexao.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\EmprestimoDAO.cs" />
@@ -156,97 +155,12 @@
     <Compile Include="DAO\LeitorFuncioDAO.cs" />
     <Compile Include="DAO\MultaDAO.cs" />
     <Compile Include="DAO\TituloDAO.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cadastro_Funcionarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cadastro_Funcionarios.Designer.cs">
-      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cadastro_Leitores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cadastro_Leitores.Designer.cs">
-      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cadastro_Titulos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cadastro_Titulos.Designer.cs">
-      <DependentUpon>Cadastro_Titulos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Colsul_Titulos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Colsul_Titulos.Designer.cs">
-      <DependentUpon>Colsul_Titulos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Consulta_Leitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consulta_Leitor.Designer.cs">
-      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Consul_Exemplares.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consul_Exemplares.Designer.cs">
-      <DependentUpon>Consul_Exemplares.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Consul_Funcionario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consul_Funcionario.Designer.cs">
-      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\EmprestimoDAO.cs" />
     <Compile Include="DAO\ExemplarDAO.cs" />
     <Compile Include="DAO\LeitorFuncioDAO.cs" />
     <Compile Include="DAO\MultaDAO.cs" />
     <Compile Include="DAO\TituloDAO.cs" />
-    <Compile Include="EmprEDev.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmprEDev.Designer.cs">
-      <DependentUpon>EmprEDev.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Geren_Cadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Geren_Cadastro.Designer.cs">
-      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Geren_Livros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Geren_Livros.Designer.cs">
-      <DependentUpon>Geren_Livros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Geren_Relatorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Geren_Relatorios.Designer.cs">
-      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="geral\Endereco.cs" />
-    <Compile Include="Menu_Principal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu_Principal.Designer.cs">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
-    </Compile>
     <Compile Include="model\Emprestimo.cs" />
     <Compile Include="model\Exemplar.cs" />
     <Compile Include="geral\Relatorio.cs" />
@@ -258,6 +172,114 @@
     <Compile Include="model\Titulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view-controller\Cadastro_Exemplares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Exemplares.Designer.cs">
+      <DependentUpon>Cadastro_Exemplares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Funcionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Funcionarios.Designer.cs">
+      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Leitores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Leitores.Designer.cs">
+      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Titulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Cadastro_Titulos.Designer.cs">
+      <DependentUpon>Cadastro_Titulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Colsul_Titulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Colsul_Titulos.Designer.cs">
+      <DependentUpon>Colsul_Titulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Consulta_Leitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Consulta_Leitor.Designer.cs">
+      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Consul_Exemplares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Consul_Exemplares.Designer.cs">
+      <DependentUpon>Consul_Exemplares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Consul_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Consul_Funcionario.Designer.cs">
+      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\EmprEDev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\EmprEDev.Designer.cs">
+      <DependentUpon>EmprEDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Geren_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Geren_Cadastro.Designer.cs">
+      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Geren_Livros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Geren_Livros.Designer.cs">
+      <DependentUpon>Geren_Livros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Geren_Relatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Geren_Relatorios.Designer.cs">
+      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Menu_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Menu_Principal.Designer.cs">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Multa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Multa.Designer.cs">
+      <DependentUpon>Multa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Relatorio_Atraso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Relatorio_Atraso.Designer.cs">
+      <DependentUpon>Relatorio_Atraso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Relatorio_Dano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Relatorio_Dano.Designer.cs">
+      <DependentUpon>Relatorio_Dano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view-controller\Relatorio_Pref.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view-controller\Relatorio_Pref.Designer.cs">
+      <DependentUpon>Relatorio_Pref.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -267,6 +289,60 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view-controller\Cadastro_Exemplares.resx">
+      <DependentUpon>Cadastro_Exemplares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Cadastro_Funcionarios.resx">
+      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Cadastro_Leitores.resx">
+      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Cadastro_Titulos.resx">
+      <DependentUpon>Cadastro_Titulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Colsul_Titulos.resx">
+      <DependentUpon>Colsul_Titulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Consulta_Leitor.resx">
+      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Consul_Exemplares.resx">
+      <DependentUpon>Consul_Exemplares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Consul_Funcionario.resx">
+      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\EmprEDev.resx">
+      <DependentUpon>EmprEDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Geren_Cadastro.resx">
+      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Geren_Livros.resx">
+      <DependentUpon>Geren_Livros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Geren_Relatorios.resx">
+      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Menu_Principal.resx">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Multa.resx">
+      <DependentUpon>Multa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Relatorio_Atraso.resx">
+      <DependentUpon>Relatorio_Atraso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Relatorio_Dano.resx">
+      <DependentUpon>Relatorio_Dano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view-controller\Relatorio_Pref.resx">
+      <DependentUpon>Relatorio_Pref.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -280,8 +356,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="view-controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
