@@ -244,17 +244,17 @@
     <Compile Include="view-controller\Geren_Relatorios.Designer.cs">
       <DependentUpon>Geren_Relatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Login.cs">
+    <Compile Include="view-controller\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Menu_Principal.cs">
+    <Compile Include="view-controller\frm_Menu_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Menu_Principal.Designer.cs">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Menu_Principal.Designer.cs">
+      <DependentUpon>frm_Menu_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="view-controller\Multa.cs">
       <SubType>Form</SubType>
@@ -325,11 +325,11 @@
     <EmbeddedResource Include="view-controller\Geren_Relatorios.resx">
       <DependentUpon>Geren_Relatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Menu_Principal.resx">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Menu_Principal.resx">
+      <DependentUpon>frm_Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view-controller\Multa.resx">
       <DependentUpon>Multa.cs</DependentUpon>

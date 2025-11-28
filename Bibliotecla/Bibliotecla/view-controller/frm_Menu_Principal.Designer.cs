@@ -1,6 +1,6 @@
 ﻿namespace Bibliotecla
 {
-    partial class Menu_Principal
+    partial class frm_Menu_Principal
     {
         /// <summary>
         /// Required designer variable.

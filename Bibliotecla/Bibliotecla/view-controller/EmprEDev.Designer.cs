@@ -72,6 +72,7 @@
             this.btn_Voltar.TabIndex = 38;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // btn_Devolucao
             // 

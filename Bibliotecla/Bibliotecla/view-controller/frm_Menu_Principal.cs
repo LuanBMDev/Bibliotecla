@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Bibliotecla
 {
-    public partial class Menu_Principal : Form
+    public partial class frm_Menu_Principal : Form
     {
-        public Menu_Principal()
+        public frm_Menu_Principal()
         {
             InitializeComponent();
         }

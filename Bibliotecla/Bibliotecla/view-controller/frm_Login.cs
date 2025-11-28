@@ -20,7 +20,7 @@ namespace Bibliotecla
         private void btn_Login_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            Menu_Principal novoFormulario = new Menu_Principal();
+            frm_Menu_Principal novoFormulario = new frm_Menu_Principal();
 
             // 2. Exibe o novo formulário.
             novoFormulario.Show();
