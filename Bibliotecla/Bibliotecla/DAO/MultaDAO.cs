@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bibliotecla.DAO
 {
-    internal class MultaDAO : DAO<Multa>
+    internal class MultaDAO : DAO<Bibliotecla.model.Multa>
     {
         private readonly MySqlConnection conexao;
 
@@ -17,7 +17,7 @@ namespace Bibliotecla.DAO
             this.conexao = conexao;
         }
 
-        public bool Inserir(Multa entity)
+        public bool Inserir(Bibliotecla.model.Multa entity)
         {
             string sql = "INSERT INTO Multa (CodLeitor, PrecoMulta, CodEmpres) " +
                          "VALUES (@CodLeitor, @PrecoMulta, @CodEmpres)";
@@ -38,7 +38,7 @@ namespace Bibliotecla.DAO
             return linhas_afetadas >= 1;
         }
 
-        public bool Alterar(Multa entity)
+        public bool Alterar(Bibliotecla.model.Multa entity)
         {
             string sql = "UPDATE Multa SET " +
                          "CodLeitor = @CodLeitor, " +
@@ -63,7 +63,7 @@ namespace Bibliotecla.DAO
             return linhas_afetadas >= 1;
         }
 
-        public bool Remover(Multa entity)
+        public bool Remover(Bibliotecla.model.Multa entity)
         {
             string sql = "DELETE FROM Multa WHERE CodMulta = @CodMulta";
             int linhas_afetadas = 0;
@@ -80,10 +80,10 @@ namespace Bibliotecla.DAO
             return linhas_afetadas >= 1;
         }
 
-        public Multa BuscarID(Multa entity)
+        public Bibliotecla.model.Multa BuscarID(Bibliotecla.model.Multa entity)
         {
             string sql = "SELECT * FROM Multa WHERE CodMulta = @CodMulta";
-            Multa multa = null;
+            Bibliotecla.model.Multa multa = null;
             conexao.Open();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
@@ -101,7 +101,7 @@ namespace Bibliotecla.DAO
                         int codEmpres = reader.GetInt32("@CodEmpres");
                         EmprestimoDAO empresDAO = new EmprestimoDAO(conexao);
                         Emprestimo emprestimo = empresDAO.BuscarID(new Emprestimo(null, null) { CodEmprestimo = codEmpres });
-                        multa = new Multa(codMulta, leitor, precoMulta, emprestimo);
+                        multa = new Bibliotecla.model.Multa(codMulta, leitor, precoMulta, emprestimo);
                     }
                 }
                 conexao.Close();
@@ -109,7 +109,7 @@ namespace Bibliotecla.DAO
             return multa;
         }
 
-        public List<Multa> Listar(string critério)
+        public List<Bibliotecla.model.Multa> Listar(string critério)
         {
             string sql = "SELECT * FROM Multa";
             if (!string.IsNullOrEmpty(critério))
@@ -117,7 +117,7 @@ namespace Bibliotecla.DAO
                 sql += " WHERE " + critério;
             }
 
-            List<Multa> multas = new List<Multa>();
+            List<Bibliotecla.model.Multa> multas = new List<Bibliotecla.model.Multa>();
 
             conexao.Open();
 
@@ -135,7 +135,7 @@ namespace Bibliotecla.DAO
                         int codEmpres = reader.GetInt32("CodEmpres");
                         EmprestimoDAO empresDAO = new EmprestimoDAO(conexao);
                         Emprestimo emprestimo = empresDAO.BuscarID(new Emprestimo(null, null) { CodEmprestimo = codEmpres });
-                        Multa multa = new Multa(codMulta, leitor, precoMulta, emprestimo);
+                        Bibliotecla.model.Multa multa = new Bibliotecla.model.Multa(codMulta, leitor, precoMulta, emprestimo);
                         multas.Add(multa);
                     }
                 }

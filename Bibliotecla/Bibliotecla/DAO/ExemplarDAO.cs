@@ -64,7 +64,7 @@ namespace Bibliotecla.DAO
 
             return linhas_afetadas >= 1;
         }
-        
+
         public bool Remover(Exemplar entity)
         {
             string sql = "DELETE FROM Exemplar WHERE CodExempl = @CodExempl";
