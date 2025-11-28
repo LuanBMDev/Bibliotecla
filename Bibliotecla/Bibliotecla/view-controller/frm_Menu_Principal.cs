@@ -21,7 +21,7 @@ namespace Bibliotecla
         private void btn_Emp_Dev_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            EmprEDev novoFormulario = new EmprEDev();
+            frm_EmprEDev novoFormulario = new frm_EmprEDev();
 
             // 2. Exibe o novo formulário.
             novoFormulario.Show();
@@ -33,7 +33,7 @@ namespace Bibliotecla
         private void btn_Livros_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            Geren_Livros novoFormulario = new Geren_Livros();
+            frm_Geren_Livros novoFormulario = new frm_Geren_Livros();
 
             // 2. Exibe o novo formulário.
             novoFormulario.Show();
@@ -45,7 +45,7 @@ namespace Bibliotecla
         private void btn_Multa_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            Multa novoFormulario = new Multa();
+            frm_Multa novoFormulario = new frm_Multa();
 
             // 2. Exibe o novo formulário.
             novoFormulario.Show();
@@ -57,7 +57,7 @@ namespace Bibliotecla
         private void btn_Geren_Cad_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            Geren_Cadastro novoFormulario = new Geren_Cadastro();
+            frm_Geren_Cadastro novoFormulario = new frm_Geren_Cadastro();
 
             // 2. Exibe o novo formulário.
             novoFormulario.Show();
@@ -69,7 +69,7 @@ namespace Bibliotecla
         private void btn_relatorio_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            Geren_Relatorios novoFormulario = new Geren_Relatorios();
+            frm_Geren_Relatorios novoFormulario = new frm_Geren_Relatorios();
 
             // 2. Exibe o novo formulário.
             novoFormulario.Show();

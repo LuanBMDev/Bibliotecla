@@ -172,77 +172,77 @@
     <Compile Include="model\Titulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view-controller\Cadastro_Exemplares.cs">
+    <Compile Include="view-controller\frm_Cadastro_Exemplares.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Exemplares.Designer.cs">
-      <DependentUpon>Cadastro_Exemplares.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Cadastro_Exemplares.Designer.cs">
+      <DependentUpon>frm_Cadastro_Exemplares.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Funcionarios.cs">
+    <Compile Include="view-controller\frm_Cadastro_Funcionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Funcionarios.Designer.cs">
-      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Cadastro_Funcionarios.Designer.cs">
+      <DependentUpon>frm_Cadastro_Funcionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Leitores.cs">
+    <Compile Include="view-controller\frm_Cadastro_Leitores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Leitores.Designer.cs">
-      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Cadastro_Leitores.Designer.cs">
+      <DependentUpon>frm_Cadastro_Leitores.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Titulos.cs">
+    <Compile Include="view-controller\frm_Cadastro_Titulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Cadastro_Titulos.Designer.cs">
-      <DependentUpon>Cadastro_Titulos.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Cadastro_Titulos.Designer.cs">
+      <DependentUpon>frm_Cadastro_Titulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Colsul_Titulos.cs">
+    <Compile Include="view-controller\frm_Colsul_Titulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Colsul_Titulos.Designer.cs">
-      <DependentUpon>Colsul_Titulos.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Colsul_Titulos.Designer.cs">
+      <DependentUpon>frm_Colsul_Titulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Consulta_Leitor.cs">
+    <Compile Include="view-controller\frm_Consulta_Leitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Consulta_Leitor.Designer.cs">
-      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Consulta_Leitor.Designer.cs">
+      <DependentUpon>frm_Consulta_Leitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Consul_Exemplares.cs">
+    <Compile Include="view-controller\frm_Consul_Exemplares.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Consul_Exemplares.Designer.cs">
-      <DependentUpon>Consul_Exemplares.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Consul_Exemplares.Designer.cs">
+      <DependentUpon>frm_Consul_Exemplares.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Consul_Funcionario.cs">
+    <Compile Include="view-controller\frm_Consul_Funcionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Consul_Funcionario.Designer.cs">
-      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Consul_Funcionario.Designer.cs">
+      <DependentUpon>frm_Consul_Funcionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\EmprEDev.cs">
+    <Compile Include="view-controller\frm_EmprEDev.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\EmprEDev.Designer.cs">
-      <DependentUpon>EmprEDev.cs</DependentUpon>
+    <Compile Include="view-controller\frm_EmprEDev.Designer.cs">
+      <DependentUpon>frm_EmprEDev.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Geren_Cadastro.cs">
+    <Compile Include="view-controller\frm_Geren_Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Geren_Cadastro.Designer.cs">
-      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Geren_Cadastro.Designer.cs">
+      <DependentUpon>frm_Geren_Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Geren_Livros.cs">
+    <Compile Include="view-controller\frm_Geren_Livros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Geren_Livros.Designer.cs">
-      <DependentUpon>Geren_Livros.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Geren_Livros.Designer.cs">
+      <DependentUpon>frm_Geren_Livros.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Geren_Relatorios.cs">
+    <Compile Include="view-controller\frm_Geren_Relatorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Geren_Relatorios.Designer.cs">
-      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Geren_Relatorios.Designer.cs">
+      <DependentUpon>frm_Geren_Relatorios.cs</DependentUpon>
     </Compile>
     <Compile Include="view-controller\frm_Login.cs">
       <SubType>Form</SubType>
@@ -256,29 +256,29 @@
     <Compile Include="view-controller\frm_Menu_Principal.Designer.cs">
       <DependentUpon>frm_Menu_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Multa.cs">
+    <Compile Include="view-controller\frm_Multa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Multa.Designer.cs">
-      <DependentUpon>Multa.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Multa.Designer.cs">
+      <DependentUpon>frm_Multa.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Relatorio_Atraso.cs">
+    <Compile Include="view-controller\frm_Relatorio_Atraso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Relatorio_Atraso.Designer.cs">
-      <DependentUpon>Relatorio_Atraso.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Relatorio_Atraso.Designer.cs">
+      <DependentUpon>frm_Relatorio_Atraso.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Relatorio_Dano.cs">
+    <Compile Include="view-controller\frm_Relatorio_Dano.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Relatorio_Dano.Designer.cs">
-      <DependentUpon>Relatorio_Dano.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Relatorio_Dano.Designer.cs">
+      <DependentUpon>frm_Relatorio_Dano.cs</DependentUpon>
     </Compile>
-    <Compile Include="view-controller\Relatorio_Pref.cs">
+    <Compile Include="view-controller\frm_Relatorio_Pref.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view-controller\Relatorio_Pref.Designer.cs">
-      <DependentUpon>Relatorio_Pref.cs</DependentUpon>
+    <Compile Include="view-controller\frm_Relatorio_Pref.Designer.cs">
+      <DependentUpon>frm_Relatorio_Pref.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -289,41 +289,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view-controller\Cadastro_Exemplares.resx">
-      <DependentUpon>Cadastro_Exemplares.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Cadastro_Exemplares.resx">
+      <DependentUpon>frm_Cadastro_Exemplares.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Cadastro_Funcionarios.resx">
-      <DependentUpon>Cadastro_Funcionarios.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Cadastro_Funcionarios.resx">
+      <DependentUpon>frm_Cadastro_Funcionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Cadastro_Leitores.resx">
-      <DependentUpon>Cadastro_Leitores.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Cadastro_Leitores.resx">
+      <DependentUpon>frm_Cadastro_Leitores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Cadastro_Titulos.resx">
-      <DependentUpon>Cadastro_Titulos.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Cadastro_Titulos.resx">
+      <DependentUpon>frm_Cadastro_Titulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Colsul_Titulos.resx">
-      <DependentUpon>Colsul_Titulos.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Colsul_Titulos.resx">
+      <DependentUpon>frm_Colsul_Titulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Consulta_Leitor.resx">
-      <DependentUpon>Consulta_Leitor.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Consulta_Leitor.resx">
+      <DependentUpon>frm_Consulta_Leitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Consul_Exemplares.resx">
-      <DependentUpon>Consul_Exemplares.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Consul_Exemplares.resx">
+      <DependentUpon>frm_Consul_Exemplares.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Consul_Funcionario.resx">
-      <DependentUpon>Consul_Funcionario.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Consul_Funcionario.resx">
+      <DependentUpon>frm_Consul_Funcionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\EmprEDev.resx">
-      <DependentUpon>EmprEDev.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_EmprEDev.resx">
+      <DependentUpon>frm_EmprEDev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Geren_Cadastro.resx">
-      <DependentUpon>Geren_Cadastro.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Geren_Cadastro.resx">
+      <DependentUpon>frm_Geren_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Geren_Livros.resx">
-      <DependentUpon>Geren_Livros.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Geren_Livros.resx">
+      <DependentUpon>frm_Geren_Livros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Geren_Relatorios.resx">
-      <DependentUpon>Geren_Relatorios.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Geren_Relatorios.resx">
+      <DependentUpon>frm_Geren_Relatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view-controller\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
@@ -331,17 +331,17 @@
     <EmbeddedResource Include="view-controller\frm_Menu_Principal.resx">
       <DependentUpon>frm_Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Multa.resx">
-      <DependentUpon>Multa.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Multa.resx">
+      <DependentUpon>frm_Multa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Relatorio_Atraso.resx">
-      <DependentUpon>Relatorio_Atraso.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Relatorio_Atraso.resx">
+      <DependentUpon>frm_Relatorio_Atraso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Relatorio_Dano.resx">
-      <DependentUpon>Relatorio_Dano.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Relatorio_Dano.resx">
+      <DependentUpon>frm_Relatorio_Dano.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view-controller\Relatorio_Pref.resx">
-      <DependentUpon>Relatorio_Pref.cs</DependentUpon>
+    <EmbeddedResource Include="view-controller\frm_Relatorio_Pref.resx">
+      <DependentUpon>frm_Relatorio_Pref.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
