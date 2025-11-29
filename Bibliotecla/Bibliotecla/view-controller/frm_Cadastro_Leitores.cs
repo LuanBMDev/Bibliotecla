@@ -28,5 +28,10 @@ namespace Bibliotecla
             // 3. Fecha o formulário atual.
             this.Hide();
         }
+
+        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
