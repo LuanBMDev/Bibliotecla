@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Funcionario = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.btn_Pref = new Guna.UI.WinForms.GunaButton();
+            this.btn_Danos = new Guna.UI.WinForms.GunaButton();
+            this.btn_Atrasos = new Guna.UI.WinForms.GunaButton();
+            this.btn_voltar = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // label1
@@ -47,102 +47,105 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Relatórios";
             // 
-            // btn_Funcionario
+            // btn_Pref
             // 
-            this.btn_Funcionario.AnimationHoverSpeed = 0.07F;
-            this.btn_Funcionario.AnimationSpeed = 0.03F;
-            this.btn_Funcionario.BaseColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Funcionario.BorderColor = System.Drawing.Color.Black;
-            this.btn_Funcionario.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_Funcionario.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_Funcionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Funcionario.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_Funcionario.Image = null;
-            this.btn_Funcionario.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Funcionario.Location = new System.Drawing.Point(294, 129);
-            this.btn_Funcionario.Name = "btn_Funcionario";
-            this.btn_Funcionario.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_Funcionario.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Funcionario.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_Funcionario.OnHoverImage = null;
-            this.btn_Funcionario.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Funcionario.Size = new System.Drawing.Size(215, 42);
-            this.btn_Funcionario.TabIndex = 67;
-            this.btn_Funcionario.Text = "Preferências";
-            this.btn_Funcionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Pref.AnimationHoverSpeed = 0.07F;
+            this.btn_Pref.AnimationSpeed = 0.03F;
+            this.btn_Pref.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Pref.BorderColor = System.Drawing.Color.Black;
+            this.btn_Pref.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Pref.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Pref.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pref.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_Pref.Image = null;
+            this.btn_Pref.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Pref.Location = new System.Drawing.Point(294, 129);
+            this.btn_Pref.Name = "btn_Pref";
+            this.btn_Pref.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Pref.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Pref.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Pref.OnHoverImage = null;
+            this.btn_Pref.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Pref.Size = new System.Drawing.Size(215, 42);
+            this.btn_Pref.TabIndex = 67;
+            this.btn_Pref.Text = "Preferências";
+            this.btn_Pref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Pref.Click += new System.EventHandler(this.btn_Pref_Click);
             // 
-            // gunaButton1
+            // btn_Danos
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.SaddleBrown;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(294, 202);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(215, 42);
-            this.gunaButton1.TabIndex = 68;
-            this.gunaButton1.Text = "Danos";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Danos.AnimationHoverSpeed = 0.07F;
+            this.btn_Danos.AnimationSpeed = 0.03F;
+            this.btn_Danos.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Danos.BorderColor = System.Drawing.Color.Black;
+            this.btn_Danos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Danos.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Danos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Danos.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_Danos.Image = null;
+            this.btn_Danos.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Danos.Location = new System.Drawing.Point(294, 202);
+            this.btn_Danos.Name = "btn_Danos";
+            this.btn_Danos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Danos.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Danos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Danos.OnHoverImage = null;
+            this.btn_Danos.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Danos.Size = new System.Drawing.Size(215, 42);
+            this.btn_Danos.TabIndex = 68;
+            this.btn_Danos.Text = "Danos";
+            this.btn_Danos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Danos.Click += new System.EventHandler(this.btn_Danos_Click);
             // 
-            // gunaButton2
+            // btn_Atrasos
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.SaddleBrown;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaButton2.Image = null;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(294, 279);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(215, 42);
-            this.gunaButton2.TabIndex = 69;
-            this.gunaButton2.Text = "Atrasos";
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Atrasos.AnimationHoverSpeed = 0.07F;
+            this.btn_Atrasos.AnimationSpeed = 0.03F;
+            this.btn_Atrasos.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Atrasos.BorderColor = System.Drawing.Color.Black;
+            this.btn_Atrasos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Atrasos.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Atrasos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Atrasos.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_Atrasos.Image = null;
+            this.btn_Atrasos.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Atrasos.Location = new System.Drawing.Point(294, 279);
+            this.btn_Atrasos.Name = "btn_Atrasos";
+            this.btn_Atrasos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Atrasos.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Atrasos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Atrasos.OnHoverImage = null;
+            this.btn_Atrasos.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Atrasos.Size = new System.Drawing.Size(215, 42);
+            this.btn_Atrasos.TabIndex = 69;
+            this.btn_Atrasos.Text = "Atrasos";
+            this.btn_Atrasos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Atrasos.Click += new System.EventHandler(this.btn_Atrasos_Click);
             // 
-            // gunaButton3
+            // btn_voltar
             // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.SaddleBrown;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaButton3.Image = null;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(294, 357);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(215, 42);
-            this.gunaButton3.TabIndex = 70;
-            this.gunaButton3.Text = "Voltar";
-            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            this.btn_voltar.AnimationHoverSpeed = 0.07F;
+            this.btn_voltar.AnimationSpeed = 0.03F;
+            this.btn_voltar.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_voltar.BorderColor = System.Drawing.Color.Black;
+            this.btn_voltar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_voltar.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_voltar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_voltar.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_voltar.Image = null;
+            this.btn_voltar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_voltar.Location = new System.Drawing.Point(294, 357);
+            this.btn_voltar.Name = "btn_voltar";
+            this.btn_voltar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_voltar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_voltar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_voltar.OnHoverImage = null;
+            this.btn_voltar.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_voltar.Size = new System.Drawing.Size(215, 42);
+            this.btn_voltar.TabIndex = 70;
+            this.btn_voltar.Text = "Voltar";
+            this.btn_voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_voltar.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // frm_Geren_Relatorios
             // 
@@ -150,10 +153,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
-            this.Controls.Add(this.gunaButton3);
-            this.Controls.Add(this.gunaButton2);
-            this.Controls.Add(this.gunaButton1);
-            this.Controls.Add(this.btn_Funcionario);
+            this.Controls.Add(this.btn_voltar);
+            this.Controls.Add(this.btn_Atrasos);
+            this.Controls.Add(this.btn_Danos);
+            this.Controls.Add(this.btn_Pref);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -168,9 +171,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaButton btn_Funcionario;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Guna.UI.WinForms.GunaButton btn_Pref;
+        private Guna.UI.WinForms.GunaButton btn_Danos;
+        private Guna.UI.WinForms.GunaButton btn_Atrasos;
+        private Guna.UI.WinForms.GunaButton btn_voltar;
     }
 }

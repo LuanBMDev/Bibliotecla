@@ -82,6 +82,7 @@
             this.btn_Voltar.TabIndex = 86;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // gunaLabel2
             // 
@@ -124,7 +125,7 @@
             this.label1.TabIndex = 85;
             this.label1.Text = "Danos";
             // 
-            // Relatorio_Dano
+            // frm_Relatorio_Dano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,7 +138,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Relatorio_Dano";
+            this.Name = "frm_Relatorio_Dano";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio_Dano";
             this.ResumeLayout(false);
