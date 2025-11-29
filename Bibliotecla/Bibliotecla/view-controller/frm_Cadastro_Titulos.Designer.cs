@@ -205,6 +205,7 @@
             this.btn_Cadastrar.TabIndex = 41;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // frm_Cadastro_Titulos
             // 

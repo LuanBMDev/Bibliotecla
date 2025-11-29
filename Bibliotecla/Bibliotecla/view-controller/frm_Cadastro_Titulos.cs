@@ -1,4 +1,6 @@
-﻿using Bibliotecla.geral;
+﻿using Bibliotecla.banco;
+using Bibliotecla.geral;
+using Bibliotecla.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,15 @@ namespace Bibliotecla
 
         public bool VerificarCampos()
         {
-            throw new NotImplementedException();
+            bool isPreenchido = false;
+            if (!string.IsNullOrWhiteSpace(txt_Titulo.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Autor.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Genero.Text))
+            {
+                isPreenchido = true;
+            }
+
+            return isPreenchido;
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
@@ -33,6 +43,23 @@ namespace Bibliotecla
 
             // 3. Fecha o formulário atual.
             this.Hide();
+        }
+
+        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        {
+            if (VerificarCampos())
+            {
+                string titulo = txt_Titulo.Text;
+                string autor = txt_Autor.Text;
+                string genero = txt_Genero.Text;
+
+                Titulo objTitulo = new Titulo(titulo, autor, genero);
+
+            }
+            else
+            {
+                MensagensPadrao.MsgCamposObrigatorios();
+            }
         }
     }
 }
