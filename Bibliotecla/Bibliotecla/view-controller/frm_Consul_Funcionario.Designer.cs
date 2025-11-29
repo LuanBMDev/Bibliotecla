@@ -177,8 +177,9 @@
             this.btn_Voltar.TabIndex = 73;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
-            // Consul_Funcinario
+            // frm_Consul_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +195,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Consul_Funcinario";
+            this.Name = "frm_Consul_Funcionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consul_Funcinario";
             this.ResumeLayout(false);

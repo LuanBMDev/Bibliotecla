@@ -177,8 +177,9 @@
             this.btn_Voltar.TabIndex = 60;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
-            // Colsul_Titulos
+            // frm_Colsul_Titulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +195,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Colsul_Titulos";
+            this.Name = "frm_Colsul_Titulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colsul_Titulos";
             this.ResumeLayout(false);

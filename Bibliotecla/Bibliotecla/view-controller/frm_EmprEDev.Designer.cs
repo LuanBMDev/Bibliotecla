@@ -121,6 +121,7 @@
             this.btn_Cadas_Leitor.TabIndex = 36;
             this.btn_Cadas_Leitor.Text = "Cadastro Leitor";
             this.btn_Cadas_Leitor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Cadas_Leitor.Click += new System.EventHandler(this.btn_Cadas_Leitor_Click);
             // 
             // btn_Multa
             // 
@@ -145,6 +146,7 @@
             this.btn_Multa.TabIndex = 35;
             this.btn_Multa.Text = "Multa";
             this.btn_Multa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Multa.Click += new System.EventHandler(this.btn_Multa_Click);
             // 
             // btn_Emprestimo
             // 
@@ -366,7 +368,7 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Empréstimo e Devolução";
             // 
-            // EmprEDev
+            // frm_EmprEDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -393,7 +395,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "EmprEDev";
+            this.Name = "frm_EmprEDev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmprEDev";
             this.ResumeLayout(false);

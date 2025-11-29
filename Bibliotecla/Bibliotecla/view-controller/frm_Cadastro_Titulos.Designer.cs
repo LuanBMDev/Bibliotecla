@@ -156,6 +156,7 @@
             this.btn_Voltar.TabIndex = 39;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // btn_Editar
             // 
@@ -205,7 +206,7 @@
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Cadastro_Titulos
+            // frm_Cadastro_Titulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,7 +224,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Cadastro_Titulos";
+            this.Name = "frm_Cadastro_Titulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro_Titulos";
             this.ResumeLayout(false);

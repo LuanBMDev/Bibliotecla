@@ -128,6 +128,7 @@
             this.btn_Pago.TabIndex = 79;
             this.btn_Pago.Text = "Pago";
             this.btn_Pago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Pago.Click += new System.EventHandler(this.btn_Pago_Click);
             // 
             // btn_Cancelar
             // 
@@ -152,8 +153,9 @@
             this.btn_Cancelar.TabIndex = 78;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // Multa
+            // frm_Multa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +170,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Multa";
+            this.Name = "frm_Multa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Multa";
             this.ResumeLayout(false);

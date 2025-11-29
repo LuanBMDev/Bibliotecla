@@ -214,6 +214,7 @@
             this.btn_Voltar.TabIndex = 61;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // gunaLabel5
             // 
@@ -352,7 +353,7 @@
             this.gunaLabel8.TabIndex = 69;
             this.gunaLabel8.Text = "Senha";
             // 
-            // Cadastro_Funcionarios
+            // frm_Cadastro_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,7 +381,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Cadastro_Funcionarios";
+            this.Name = "frm_Cadastro_Funcionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro_Funcionarios";
             this.ResumeLayout(false);

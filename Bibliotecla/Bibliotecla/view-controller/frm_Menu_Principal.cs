@@ -80,14 +80,7 @@ namespace Bibliotecla
 
         private void btn_Sair_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            Login novoFormulario = new Login();
 
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
         }
     }
 }

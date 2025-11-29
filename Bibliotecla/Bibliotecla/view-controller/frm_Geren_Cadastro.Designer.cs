@@ -84,6 +84,7 @@
             this.btn_Consul_Leitores.TabIndex = 20;
             this.btn_Consul_Leitores.Text = "Consulta de Leitores";
             this.btn_Consul_Leitores.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Consul_Leitores.Click += new System.EventHandler(this.btn_Consul_Leitores_Click);
             // 
             // btn_Leitor
             // 
@@ -108,6 +109,7 @@
             this.btn_Leitor.TabIndex = 19;
             this.btn_Leitor.Text = "Leitores";
             this.btn_Leitor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Leitor.Click += new System.EventHandler(this.btn_Leitor_Click);
             // 
             // btn_Consul_Funcionario
             // 
@@ -132,6 +134,7 @@
             this.btn_Consul_Funcionario.TabIndex = 18;
             this.btn_Consul_Funcionario.Text = "Consulta de Funcionários";
             this.btn_Consul_Funcionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Consul_Funcionario.Click += new System.EventHandler(this.btn_Consul_Funcionario_Click);
             // 
             // btn_Funcionario
             // 
@@ -156,6 +159,7 @@
             this.btn_Funcionario.TabIndex = 17;
             this.btn_Funcionario.Text = "Funcionários";
             this.btn_Funcionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Funcionario.Click += new System.EventHandler(this.btn_Funcionario_Click);
             // 
             // label1
             // 
@@ -169,7 +173,7 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Gerenciar Cadastro";
             // 
-            // Geren_Cadastro
+            // frm_Geren_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +187,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Geren_Cadastro";
+            this.Name = "frm_Geren_Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Geren_Cadastro";
             this.ResumeLayout(false);

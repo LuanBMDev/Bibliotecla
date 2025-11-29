@@ -71,6 +71,7 @@
             this.btn_Titulos.TabIndex = 11;
             this.btn_Titulos.Text = "Títulos";
             this.btn_Titulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Titulos.Click += new System.EventHandler(this.btn_Titulos_Click);
             // 
             // btn_Consul_Titulo
             // 
@@ -95,6 +96,7 @@
             this.btn_Consul_Titulo.TabIndex = 12;
             this.btn_Consul_Titulo.Text = "Consulta de Títulos";
             this.btn_Consul_Titulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Consul_Titulo.Click += new System.EventHandler(this.btn_Consul_Titulo_Click);
             // 
             // btn_Exemplar
             // 
@@ -119,6 +121,7 @@
             this.btn_Exemplar.TabIndex = 13;
             this.btn_Exemplar.Text = "Exemplares";
             this.btn_Exemplar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Exemplar.Click += new System.EventHandler(this.btn_Exemplar_Click);
             // 
             // btn_Consul_Exemplar
             // 
@@ -143,6 +146,7 @@
             this.btn_Consul_Exemplar.TabIndex = 14;
             this.btn_Consul_Exemplar.Text = "Consulta de Exemplares";
             this.btn_Consul_Exemplar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Consul_Exemplar.Click += new System.EventHandler(this.btn_Consul_Exemplar_Click);
             // 
             // btn_Voltar
             // 
@@ -169,7 +173,7 @@
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
-            // Geren_Livros
+            // frm_Geren_Livros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +187,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Geren_Livros";
+            this.Name = "frm_Geren_Livros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Geren_Livros";
             this.ResumeLayout(false);

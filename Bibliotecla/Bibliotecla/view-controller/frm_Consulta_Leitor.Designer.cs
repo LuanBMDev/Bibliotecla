@@ -109,6 +109,7 @@
             this.btn_Voltar.TabIndex = 68;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // gunaLabel2
             // 
@@ -178,7 +179,7 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "Consulta de Leitores";
             // 
-            // Consulta_Leitor
+            // frm_Consulta_Leitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +195,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Consulta_Leitor";
+            this.Name = "frm_Consulta_Leitor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta_Leitor";
             this.ResumeLayout(false);

@@ -16,5 +16,22 @@ namespace Bibliotecla
         {
             InitializeComponent();
         }
+
+        private void btn_Pago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            // 1. Cria uma instância do novo formulário.
+            frm_Menu_Principal novoFormulario = new frm_Menu_Principal();
+
+            // 2. Exibe o novo formulário.
+            novoFormulario.Show();
+
+            // 3. Fecha o formulário atual.
+            this.Hide();
+        }
     }
 }

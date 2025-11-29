@@ -28,5 +28,53 @@ namespace Bibliotecla
             // 3. Fecha o formulário atual.
             this.Hide();
         }
+
+        private void btn_Titulos_Click(object sender, EventArgs e)
+        {
+            // 1. Cria uma instância do novo formulário.
+            frm_Cadastro_Titulos novoFormulario = new frm_Cadastro_Titulos();
+
+            // 2. Exibe o novo formulário.
+            novoFormulario.Show();
+
+            // 3. Fecha o formulário atual.
+            this.Hide();
+        }
+
+        private void btn_Consul_Titulo_Click(object sender, EventArgs e)
+        {
+            // 1. Cria uma instância do novo formulário.
+            frm_Colsul_Titulos novoFormulario = new frm_Colsul_Titulos();
+
+            // 2. Exibe o novo formulário.
+            novoFormulario.Show();
+
+            // 3. Fecha o formulário atual.
+            this.Hide();
+        }
+
+        private void btn_Exemplar_Click(object sender, EventArgs e)
+        {
+            // 1. Cria uma instância do novo formulário.
+            frm_Cadastro_Exemplares novoFormulario = new frm_Cadastro_Exemplares();
+
+            // 2. Exibe o novo formulário.
+            novoFormulario.Show();
+
+            // 3. Fecha o formulário atual.
+            this.Hide();
+        }
+
+        private void btn_Consul_Exemplar_Click(object sender, EventArgs e)
+        {
+            // 1. Cria uma instância do novo formulário.
+            frm_Consul_Exemplares novoFormulario = new frm_Consul_Exemplares();
+
+            // 2. Exibe o novo formulário.
+            novoFormulario.Show();
+
+            // 3. Fecha o formulário atual.
+            this.Hide();
+        }
     }
 }

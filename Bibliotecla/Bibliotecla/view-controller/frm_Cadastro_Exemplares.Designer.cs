@@ -131,6 +131,7 @@
             this.btn_Voltar.TabIndex = 49;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // gunaLabel3
             // 
@@ -323,7 +324,7 @@
             this.txt_id.Size = new System.Drawing.Size(206, 26);
             this.txt_id.TabIndex = 59;
             // 
-            // Cadastro_Exemplares
+            // frm_Cadastro_Exemplares
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,7 +350,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Cadastro_Exemplares";
+            this.Name = "frm_Cadastro_Exemplares";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro_Exemplares";
             this.ResumeLayout(false);
