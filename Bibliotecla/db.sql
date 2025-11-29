@@ -5,6 +5,7 @@ USE Bibliotecla;
 CREATE TABLE LeitorFuncio
 ( 
 	CodPessoa INT PRIMARY KEY AUTO_INCREMENT,
+	CPF VARCHAR(14),
 	Telefone VARCHAR(10),
 	Nome VARCHAR(100),
 	Cargo VARCHAR(12),
