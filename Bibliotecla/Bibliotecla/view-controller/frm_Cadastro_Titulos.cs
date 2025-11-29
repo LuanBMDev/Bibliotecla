@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibliotecla.geral;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace Bibliotecla
 {
-    public partial class frm_Cadastro_Titulos : Form
+    public partial class frm_Cadastro_Titulos : Form, CadastroEdicao
     {
         public frm_Cadastro_Titulos()
         {
             InitializeComponent();
+        }
+
+        public void VerificarCampos()
+        {
+            throw new NotImplementedException();
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
