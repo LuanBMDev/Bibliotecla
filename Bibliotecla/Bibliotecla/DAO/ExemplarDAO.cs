@@ -99,7 +99,7 @@ namespace Bibliotecla.DAO
                         string estadoFisico = reader.GetString("EstadoFisc");
                         string editoraExemplar = reader.GetString("Editora");
                         int codTitulo = reader.GetInt32("CodTitulo");
-                        TituloDAO tituloDAO = new TituloDAO(conexao);
+                        TituloDAO tituloDAO = new TituloDAO();
                         Titulo titulo = tituloDAO.BuscarID(new Titulo { CodTitulo = codTitulo });
                         exemplar = new Exemplar(codExemplar, anoPubli, estadoFisico, editoraExemplar, titulo);
                     }
@@ -133,7 +133,7 @@ namespace Bibliotecla.DAO
                         string estadoFisico = reader.GetString("EstadoFisc");
                         string editoraExemplar = reader.GetString("Editora");
                         int codTitulo = reader.GetInt32("CodTitulo");
-                        TituloDAO tituloDAO = new TituloDAO(conexao);
+                        TituloDAO tituloDAO = new TituloDAO();
                         Titulo titulo = tituloDAO.BuscarID(new Titulo { CodTitulo = codTitulo });
                         Exemplar exemplar = new Exemplar(codExemplar, anoPubli, estadoFisico, editoraExemplar, titulo);
                         exemplares.Add(exemplar);

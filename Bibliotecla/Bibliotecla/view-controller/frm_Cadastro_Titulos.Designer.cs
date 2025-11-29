@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Titulo = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -38,6 +39,7 @@
             this.btn_Voltar = new Guna.UI.WinForms.GunaButton();
             this.btn_Editar = new Guna.UI.WinForms.GunaButton();
             this.btn_Cadastrar = new Guna.UI.WinForms.GunaButton();
+            this.tip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -181,6 +183,7 @@
             this.btn_Editar.TabIndex = 40;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Cadastrar
             // 
@@ -245,5 +248,6 @@
         private Guna.UI.WinForms.GunaButton btn_Voltar;
         private Guna.UI.WinForms.GunaButton btn_Editar;
         private Guna.UI.WinForms.GunaButton btn_Cadastrar;
+        private System.Windows.Forms.ToolTip tip;
     }
 }
