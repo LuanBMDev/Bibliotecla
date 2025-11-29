@@ -8,6 +8,6 @@ namespace Bibliotecla.geral
 {
     internal interface CadastroEdicao
     {
-        void VerificarCampos();
+        bool VerificarCampos();
     }
 }

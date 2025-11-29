@@ -18,7 +18,7 @@ namespace Bibliotecla
             InitializeComponent();
         }
 
-        public void VerificarCampos()
+        public bool VerificarCampos()
         {
             throw new NotImplementedException();
         }
