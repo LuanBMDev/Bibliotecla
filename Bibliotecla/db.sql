@@ -45,7 +45,7 @@ CREATE TABLE Emprestimo
 	DataEmpres VARCHAR(12),
   	DataDevol VARCHAR(20),
 	PrazoDevol VARCHAR(10),
-	isAtrasado INT
+	isAtrasado INT,
 	FOREIGN KEY (CodExemplar) REFERENCES Exemplar(CodExemplar),
 	FOREIGN KEY (CodLeitor) REFERENCES LeitorFuncio(CodPessoa)
 );
