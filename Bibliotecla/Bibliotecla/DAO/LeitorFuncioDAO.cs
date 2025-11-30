@@ -1,4 +1,5 @@
-﻿using Bibliotecla.model;
+﻿using Bibliotecla.banco;
+using Bibliotecla.model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,7 @@ namespace Bibliotecla.DAO
 {
     internal class LeitorFuncioDAO : DAO<LeitorFuncio>
     {
-        private readonly MySqlConnection conexao;
-
-        public LeitorFuncioDAO(MySqlConnection conexao)
-        {
-            this.conexao = conexao;
-        }
+        private MySqlConnection conexao;
 
         public bool Inserir(LeitorFuncio entity)
         {
@@ -28,7 +24,7 @@ namespace Bibliotecla.DAO
                 string sql = "INSERT INTO LeitorFuncio (CPF, Telefone, Email, Nome, Cargo, Usuario, Senha, CEP, Rua, NumRes, Bairro, Cidade) " +
                              "VALUES (@CPF, @Telefone, @Email, @Nome, @Cargo, @Usuario, @Senha, @CEP, @Rua, @NumRes, @Bairro, @Cidade)";
 
-                conexao.Open();
+                conexao = Conexao.Conectar();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
                 {
@@ -48,14 +44,14 @@ namespace Bibliotecla.DAO
                     linhas_afetadas = cmd.ExecuteNonQuery();
                 }
 
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
             else if (entity.Cargo.ToLower() == "leitor")
             {
                 string sql = "INSERT INTO LeitorFuncio (CPF, Telefone, Email, Nome, CEP, Rua, NumRes, Bairro, Cidade, IsDevedor) " +
                              "VALUES (@CPF, @Telefone, @Email, @Nome, @CEP, @Rua, @NumRes, @Bairro, @Cidade, @IsDevedor)";
 
-                conexao.Open();
+                conexao = Conexao.Conectar();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
                 {
@@ -73,7 +69,7 @@ namespace Bibliotecla.DAO
                     linhas_afetadas = cmd.ExecuteNonQuery();
                 }
 
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
             else
             {
@@ -106,7 +102,7 @@ namespace Bibliotecla.DAO
                              "Cidade = @Cidade " +
                              "WHERE CodPessoa = @CodPessoa";
 
-                conexao.Open();
+                conexao = Conexao.Conectar();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
                 {
@@ -126,7 +122,7 @@ namespace Bibliotecla.DAO
 
                     linhas_afetadas = cmd.ExecuteNonQuery();
                 }
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
             else if (entity.Cargo.ToLower() == "leitor")
             {
@@ -143,7 +139,7 @@ namespace Bibliotecla.DAO
                              "IsDevedor = @IsDevedor " +
                              "WHERE CodPessoa = @CodPessoa";
 
-                conexao.Open();
+                    
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
                 {
@@ -161,7 +157,7 @@ namespace Bibliotecla.DAO
 
                     linhas_afetadas = cmd.ExecuteNonQuery();
                 }
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
             else
             {
@@ -177,7 +173,7 @@ namespace Bibliotecla.DAO
 
             int linhas_afetadas = 0;
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -186,7 +182,7 @@ namespace Bibliotecla.DAO
                 linhas_afetadas = cmd.ExecuteNonQuery();
             }
 
-            conexao.Close();
+            Conexao.Desconectar(conexao);
 
             return linhas_afetadas >= 1;
         }
@@ -195,7 +191,7 @@ namespace Bibliotecla.DAO
         {
             string sql = "SELECT * FROM LeitorFuncio WHERE CodPessoa = @CodPessoa";
             LeitorFuncio leitorFuncio = null;
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -225,7 +221,7 @@ namespace Bibliotecla.DAO
                 }
             }
 
-            conexao.Close();
+            Conexao.Desconectar(conexao);
 
             return leitorFuncio;
         }
@@ -240,7 +236,7 @@ namespace Bibliotecla.DAO
 
             List<LeitorFuncio> lista = new List<LeitorFuncio>();
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -269,7 +265,7 @@ namespace Bibliotecla.DAO
                     }
                 }
 
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return lista;

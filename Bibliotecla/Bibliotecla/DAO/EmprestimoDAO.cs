@@ -105,7 +105,7 @@ namespace Bibliotecla.DAO
                         ExemplarDAO exDAO = new ExemplarDAO();
                         Exemplar exemplar = exDAO.BuscarID(new Exemplar(null) { CodExemplar = codExemplar });
                         int codLeitor = reader.GetInt32("CodLeitor");
-                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO();
                         LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         string dataEmpres = reader.GetString("DataEmpres");
                         string dataDevol = reader.GetString("DataDevol");
@@ -142,7 +142,7 @@ namespace Bibliotecla.DAO
                         ExemplarDAO exDAO = new ExemplarDAO();
                         Exemplar exemplar = exDAO.BuscarID(new Exemplar(null) { CodExemplar = codExemplar });
                         int codLeitor = reader.GetInt32("CodLeitor");
-                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO();
                         LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         string dataEmpres = reader.GetString("DataEmpres");
                         string dataDevol = reader.GetString("DataDevol");

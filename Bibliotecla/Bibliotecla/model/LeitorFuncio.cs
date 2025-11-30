@@ -50,6 +50,29 @@ namespace Bibliotecla.model
             this.isDevedor = isDevedor;
         }
 
+        public LeitorFuncio(string cpf, string telefone, string cargo,
+                            string email, string nome, string cep,
+                            string rua, string numRes, string bairro, string cidade)
+        {
+            this.cpf = cpf;
+            this.telefone = telefone;
+            this.email = email;
+            this.nome = nome;
+            this.cep = cep;
+            this.rua = rua;
+            this.numRes = numRes;
+            this.bairro = bairro;
+            this.cidade = cidade;
+            this.cargo = cargo;
+        }
+
+        public LeitorFuncio(string cargo, string usuario, string senha)
+        {
+            this.cargo = cargo;
+            this.usuario = usuario;
+            this.senha = senha;
+        }
+
         public int CodPessoa { get => codPessoa; set => codPessoa = value; }
         public string CPF { get => cpf; set => cpf = value; }
         public string Telefone { get => telefone; set => telefone = value; }

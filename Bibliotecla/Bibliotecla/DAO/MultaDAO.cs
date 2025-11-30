@@ -95,7 +95,7 @@ namespace Bibliotecla.DAO
                     {
                         int codMulta = reader.GetInt32("@CodMulta");
                         int codLeitor = reader.GetInt32("@CodLeitor");
-                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO();
                         LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         double precoMulta = reader.GetDouble("@PrecoMulta");
                         int codEmpres = reader.GetInt32("@CodEmpres");
@@ -129,7 +129,7 @@ namespace Bibliotecla.DAO
                     {
                         int codMulta = reader.GetInt32("CodMulta");
                         int codLeitor = reader.GetInt32("CodLeitor");
-                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO(conexao);
+                        LeitorFuncioDAO leitorDAO = new LeitorFuncioDAO();
                         LeitorFuncio leitor = leitorDAO.BuscarID(new LeitorFuncio { CodPessoa = codLeitor });
                         double precoMulta = reader.GetDouble("PrecoMulta");
                         int codEmpres = reader.GetInt32("CodEmpres");
