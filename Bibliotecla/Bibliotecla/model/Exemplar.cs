@@ -32,6 +32,17 @@ namespace Bibliotecla.model
             this.titulo = titulo;
         }
 
+        public Exemplar(Titulo titulo,
+                        string anoPubli,
+                        string estadoFisico,
+                        string editoraExemplar)
+        {
+            this.titulo = titulo;
+            this.anoPubli = anoPubli;
+            this.estadoFisico = estadoFisico;
+            this.editoraExemplar = editoraExemplar;
+        }
+
         public int CodExemplar { get => codExemplar; set => codExemplar = value; }
         public string AnoPubli { get => anoPubli; set => anoPubli = value; }
         public string EstadoFisico { get => estadoFisico; set => estadoFisico = value; }

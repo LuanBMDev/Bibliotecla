@@ -43,5 +43,20 @@ namespace Bibliotecla.geral
                             "Falha de Cadastro",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static void MsgEdicaoSucesso(Entidade entidade)
+        {
+            MessageBox.Show(entidade.ToString() + " editado(a) com sucesso!",
+                            "Sucesso na Edição",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void MsgFalhaEdicao(Entidade entidade, Exception ex)
+        {
+            MessageBox.Show("Falha durante a edição de " + entidade.ToString() + "! \n" +
+                            ex.Message,
+                            "Falha de Edição",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

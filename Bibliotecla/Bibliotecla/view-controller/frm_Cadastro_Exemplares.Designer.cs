@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Cadastrar = new Guna.UI.WinForms.GunaButton();
             this.btn_Editar = new Guna.UI.WinForms.GunaButton();
@@ -42,10 +43,10 @@
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.txt_Ano_Publi = new Guna.UI.WinForms.GunaTextBox();
             this.txt_Editora = new Guna.UI.WinForms.GunaTextBox();
-            this.cmb_Titulo = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
-            this.txt_id = new Guna.UI.WinForms.GunaTextBox();
+            this.cmb_Estado = new Guna.UI.WinForms.GunaComboBox();
             this.cmb_Titulos = new System.Windows.Forms.ComboBox();
+            this.lbl_Dica = new System.Windows.Forms.Label();
+            this.tip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +84,7 @@
             this.btn_Cadastrar.TabIndex = 9;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // btn_Editar
             // 
@@ -107,6 +109,7 @@
             this.btn_Editar.TabIndex = 10;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Voltar
             // 
@@ -160,6 +163,7 @@
             this.txt_Autor.BaseColor = System.Drawing.Color.White;
             this.txt_Autor.BorderColor = System.Drawing.Color.Silver;
             this.txt_Autor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Autor.Enabled = false;
             this.txt_Autor.FocusedBaseColor = System.Drawing.Color.White;
             this.txt_Autor.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txt_Autor.FocusedForeColor = System.Drawing.SystemColors.ControlText;
@@ -176,6 +180,7 @@
             this.txt_Genero.BaseColor = System.Drawing.Color.White;
             this.txt_Genero.BorderColor = System.Drawing.Color.Silver;
             this.txt_Genero.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Genero.Enabled = false;
             this.txt_Genero.FocusedBaseColor = System.Drawing.Color.White;
             this.txt_Genero.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txt_Genero.FocusedForeColor = System.Drawing.SystemColors.ControlText;
@@ -263,55 +268,29 @@
             this.txt_Editora.Size = new System.Drawing.Size(206, 26);
             this.txt_Editora.TabIndex = 5;
             // 
-            // cmb_Titulo
+            // cmb_Estado
             // 
-            this.cmb_Titulo.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_Titulo.BaseColor = System.Drawing.Color.White;
-            this.cmb_Titulo.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_Titulo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_Titulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Titulo.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_Titulo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_Titulo.ForeColor = System.Drawing.Color.Black;
-            this.cmb_Titulo.FormattingEnabled = true;
-            this.cmb_Titulo.Items.AddRange(new object[] {
+            this.cmb_Estado.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_Estado.BaseColor = System.Drawing.Color.White;
+            this.cmb_Estado.BorderColor = System.Drawing.Color.Silver;
+            this.cmb_Estado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Estado.FocusedColor = System.Drawing.Color.Empty;
+            this.cmb_Estado.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmb_Estado.ForeColor = System.Drawing.Color.Black;
+            this.cmb_Estado.FormattingEnabled = true;
+            this.cmb_Estado.Items.AddRange(new object[] {
+            "",
             "Novo",
             "Uso Moderado",
             "Danos Leves",
             "Danos Graves"});
-            this.cmb_Titulo.Location = new System.Drawing.Point(522, 242);
-            this.cmb_Titulo.Name = "cmb_Titulo";
-            this.cmb_Titulo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_Titulo.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Titulo.Size = new System.Drawing.Size(202, 26);
-            this.cmb_Titulo.TabIndex = 6;
-            // 
-            // gunaLabel7
-            // 
-            this.gunaLabel7.AutoSize = true;
-            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel7.Location = new System.Drawing.Point(187, 276);
-            this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(27, 21);
-            this.gunaLabel7.TabIndex = 58;
-            this.gunaLabel7.Text = "ID";
-            // 
-            // txt_id
-            // 
-            this.txt_id.BaseColor = System.Drawing.Color.White;
-            this.txt_id.BorderColor = System.Drawing.Color.Silver;
-            this.txt_id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_id.FocusedBaseColor = System.Drawing.Color.White;
-            this.txt_id.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txt_id.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_id.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_id.Location = new System.Drawing.Point(98, 300);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.PasswordChar = '\0';
-            this.txt_id.SelectedText = "";
-            this.txt_id.Size = new System.Drawing.Size(206, 26);
-            this.txt_id.TabIndex = 8;
+            this.cmb_Estado.Location = new System.Drawing.Point(522, 242);
+            this.cmb_Estado.Name = "cmb_Estado";
+            this.cmb_Estado.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmb_Estado.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmb_Estado.Size = new System.Drawing.Size(202, 26);
+            this.cmb_Estado.TabIndex = 6;
             // 
             // cmb_Titulos
             // 
@@ -320,7 +299,21 @@
             this.cmb_Titulos.Location = new System.Drawing.Point(98, 113);
             this.cmb_Titulos.Name = "cmb_Titulos";
             this.cmb_Titulos.Size = new System.Drawing.Size(626, 25);
+            this.cmb_Titulos.Sorted = true;
             this.cmb_Titulos.TabIndex = 1;
+            this.cmb_Titulos.SelectedIndexChanged += new System.EventHandler(this.cmb_Titulos_SelectedIndexChanged);
+            // 
+            // lbl_Dica
+            // 
+            this.lbl_Dica.AutoSize = true;
+            this.lbl_Dica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Dica.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_Dica.Location = new System.Drawing.Point(270, 373);
+            this.lbl_Dica.Name = "lbl_Dica";
+            this.lbl_Dica.Size = new System.Drawing.Size(14, 16);
+            this.lbl_Dica.TabIndex = 101;
+            this.lbl_Dica.Text = "?";
+            this.tip.SetToolTip(this.lbl_Dica, "Selecione um Exemplar na tela de Consulta para editá-lo...");
             // 
             // frm_Cadastro_Exemplares
             // 
@@ -328,10 +321,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.lbl_Dica);
             this.Controls.Add(this.cmb_Titulos);
-            this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.gunaLabel7);
-            this.Controls.Add(this.cmb_Titulo);
+            this.Controls.Add(this.cmb_Estado);
             this.Controls.Add(this.txt_Editora);
             this.Controls.Add(this.txt_Ano_Publi);
             this.Controls.Add(this.gunaLabel6);
@@ -372,9 +364,9 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaTextBox txt_Ano_Publi;
         private Guna.UI.WinForms.GunaTextBox txt_Editora;
-        private Guna.UI.WinForms.GunaComboBox cmb_Titulo;
-        private Guna.UI.WinForms.GunaLabel gunaLabel7;
-        private Guna.UI.WinForms.GunaTextBox txt_id;
+        private Guna.UI.WinForms.GunaComboBox cmb_Estado;
         private System.Windows.Forms.ComboBox cmb_Titulos;
+        private System.Windows.Forms.Label lbl_Dica;
+        private System.Windows.Forms.ToolTip tip;
     }
 }
