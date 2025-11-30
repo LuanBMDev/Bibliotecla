@@ -52,6 +52,7 @@
             this.Col_Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_Funcionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,15 +265,17 @@
             this.Col_Cidade,
             this.Col_Bairro,
             this.Col_Usuario,
-            this.Col_Senha});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dgv_Consul_Funcionario.DefaultCellStyle = dataGridViewCellStyle6;
+
+            this.Col_Senha,
+            this.Col_Cargo});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_Consul_Funcionario.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_Consul_Funcionario.EnableHeadersVisualStyles = false;
             this.Dgv_Consul_Funcionario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.Dgv_Consul_Funcionario.Location = new System.Drawing.Point(94, 144);
@@ -371,6 +374,12 @@
             this.Col_Senha.Name = "Col_Senha";
             this.Col_Senha.ReadOnly = true;
             // 
+            // Col_Cargo
+            // 
+            this.Col_Cargo.HeaderText = "Cargo";
+            this.Col_Cargo.Name = "Col_Cargo";
+            this.Col_Cargo.ReadOnly = true;
+            // 
             // frm_Consul_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,5 +430,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cargo;
     }
 }
