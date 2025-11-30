@@ -34,6 +34,7 @@
             this.btn_Consul_Funcionario = new Guna.UI.WinForms.GunaButton();
             this.btn_Funcionario = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_InfoAcesso = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -173,12 +174,24 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Gerenciar Cadastro";
             // 
+            // lbl_InfoAcesso
+            // 
+            this.lbl_InfoAcesso.AutoSize = true;
+            this.lbl_InfoAcesso.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_InfoAcesso.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lbl_InfoAcesso.Location = new System.Drawing.Point(686, 9);
+            this.lbl_InfoAcesso.Name = "lbl_InfoAcesso";
+            this.lbl_InfoAcesso.Size = new System.Drawing.Size(50, 15);
+            this.lbl_InfoAcesso.TabIndex = 22;
+            this.lbl_InfoAcesso.Text = "Acesso: ";
+            // 
             // frm_Geren_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.lbl_InfoAcesso);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Consul_Leitores);
             this.Controls.Add(this.btn_Leitor);
@@ -203,5 +216,6 @@
         private Guna.UI.WinForms.GunaButton btn_Consul_Funcionario;
         private Guna.UI.WinForms.GunaButton btn_Funcionario;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaLabel lbl_InfoAcesso;
     }
 }

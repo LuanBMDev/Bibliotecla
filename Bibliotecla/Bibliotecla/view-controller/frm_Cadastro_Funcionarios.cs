@@ -158,5 +158,17 @@ namespace Bibliotecla
             txt_Usuario.Clear();
             txt_Senha.Clear();
         }
+
+        private void chk_MostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chk_MostrarSenha.Checked)
+            {
+                txt_Senha.PasswordChar = '●';
+            }
+            else
+            {
+                txt_Senha.PasswordChar = '\0';
+            }
+        }
     }
 }

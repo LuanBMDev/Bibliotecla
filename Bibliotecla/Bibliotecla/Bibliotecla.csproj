@@ -172,6 +172,7 @@
     <Compile Include="geral\FazerJsonemPDF.cs" />
     <Compile Include="geral\MensagensPadrao.cs" />
     <Compile Include="geral\Navegacao.cs" />
+    <Compile Include="geral\UsuarioLogado.cs" />
     <Compile Include="model\Emprestimo.cs" />
     <Compile Include="model\Espera.cs" />
     <Compile Include="model\Exemplar.cs" />

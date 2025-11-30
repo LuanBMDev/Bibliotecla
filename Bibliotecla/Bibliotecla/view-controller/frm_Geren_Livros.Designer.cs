@@ -34,6 +34,7 @@
             this.btn_Exemplar = new Guna.UI.WinForms.GunaButton();
             this.btn_Consul_Exemplar = new Guna.UI.WinForms.GunaButton();
             this.btn_Voltar = new Guna.UI.WinForms.GunaButton();
+            this.lbl_InfoAcesso = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -173,12 +174,24 @@
             this.btn_Voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
+            // lbl_InfoAcesso
+            // 
+            this.lbl_InfoAcesso.AutoSize = true;
+            this.lbl_InfoAcesso.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_InfoAcesso.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lbl_InfoAcesso.Location = new System.Drawing.Point(686, 9);
+            this.lbl_InfoAcesso.Name = "lbl_InfoAcesso";
+            this.lbl_InfoAcesso.Size = new System.Drawing.Size(50, 15);
+            this.lbl_InfoAcesso.TabIndex = 16;
+            this.lbl_InfoAcesso.Text = "Acesso: ";
+            // 
             // frm_Geren_Livros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.lbl_InfoAcesso);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Consul_Exemplar);
             this.Controls.Add(this.btn_Exemplar);
@@ -203,5 +216,6 @@
         private Guna.UI.WinForms.GunaButton btn_Exemplar;
         private Guna.UI.WinForms.GunaButton btn_Consul_Exemplar;
         private Guna.UI.WinForms.GunaButton btn_Voltar;
+        private Guna.UI.WinForms.GunaLabel lbl_InfoAcesso;
     }
 }
