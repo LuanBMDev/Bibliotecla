@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.geral;
+using Bibliotecla.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,14 @@ namespace Bibliotecla
         public frm_Geren_Relatorios()
         {
             InitializeComponent();
+            CarregarAcesso();
+        }
+
+        private void CarregarAcesso()
+        {
+            LeitorFuncio usuario = UsuarioLogado.GetUsuario();
+
+            lbl_InfoAcesso.Text += usuario.Cargo.ToUpper();
         }
 
         private void gunaButton3_Click(object sender, EventArgs e)

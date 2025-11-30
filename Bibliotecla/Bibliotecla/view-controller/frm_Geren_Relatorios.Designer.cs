@@ -33,6 +33,7 @@
             this.btn_Danos = new Guna.UI.WinForms.GunaButton();
             this.btn_Atrasos = new Guna.UI.WinForms.GunaButton();
             this.btn_voltar = new Guna.UI.WinForms.GunaButton();
+            this.lbl_InfoAcesso = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -147,12 +148,24 @@
             this.btn_voltar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_voltar.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
+            // lbl_InfoAcesso
+            // 
+            this.lbl_InfoAcesso.AutoSize = true;
+            this.lbl_InfoAcesso.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_InfoAcesso.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lbl_InfoAcesso.Location = new System.Drawing.Point(686, 9);
+            this.lbl_InfoAcesso.Name = "lbl_InfoAcesso";
+            this.lbl_InfoAcesso.Size = new System.Drawing.Size(50, 15);
+            this.lbl_InfoAcesso.TabIndex = 71;
+            this.lbl_InfoAcesso.Text = "Acesso: ";
+            // 
             // frm_Geren_Relatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.lbl_InfoAcesso);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.btn_Atrasos);
             this.Controls.Add(this.btn_Danos);
@@ -175,5 +188,6 @@
         private Guna.UI.WinForms.GunaButton btn_Danos;
         private Guna.UI.WinForms.GunaButton btn_Atrasos;
         private Guna.UI.WinForms.GunaButton btn_voltar;
+        private Guna.UI.WinForms.GunaLabel lbl_InfoAcesso;
     }
 }

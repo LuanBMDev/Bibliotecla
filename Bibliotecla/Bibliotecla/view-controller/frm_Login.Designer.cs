@@ -34,6 +34,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.txt_senha = new Guna.UI.WinForms.GunaTextBox();
             this.txt_cadastro = new Guna.UI.WinForms.GunaTextBox();
+            this.chk_MostrarSenha = new Guna.UI.WinForms.GunaCheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -106,7 +107,7 @@
             this.txt_senha.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_senha.Location = new System.Drawing.Point(335, 221);
             this.txt_senha.Name = "txt_senha";
-            this.txt_senha.PasswordChar = '\0';
+            this.txt_senha.PasswordChar = '●';
             this.txt_senha.SelectedText = "";
             this.txt_senha.Size = new System.Drawing.Size(164, 30);
             this.txt_senha.TabIndex = 7;
@@ -127,12 +128,27 @@
             this.txt_cadastro.Size = new System.Drawing.Size(164, 30);
             this.txt_cadastro.TabIndex = 6;
             // 
-            // Login
+            // chk_MostrarSenha
+            // 
+            this.chk_MostrarSenha.BaseColor = System.Drawing.Color.White;
+            this.chk_MostrarSenha.CheckedOffColor = System.Drawing.Color.Gray;
+            this.chk_MostrarSenha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chk_MostrarSenha.FillColor = System.Drawing.Color.White;
+            this.chk_MostrarSenha.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.chk_MostrarSenha.Location = new System.Drawing.Point(335, 257);
+            this.chk_MostrarSenha.Name = "chk_MostrarSenha";
+            this.chk_MostrarSenha.Size = new System.Drawing.Size(104, 20);
+            this.chk_MostrarSenha.TabIndex = 79;
+            this.chk_MostrarSenha.Text = "Mostrar Senha";
+            this.chk_MostrarSenha.CheckedChanged += new System.EventHandler(this.chk_MostrarSenha_CheckedChanged);
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.chk_MostrarSenha);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
@@ -141,7 +157,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Login";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -157,6 +173,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox txt_senha;
         private Guna.UI.WinForms.GunaTextBox txt_cadastro;
+        private Guna.UI.WinForms.GunaCheckBox chk_MostrarSenha;
     }
 }
 

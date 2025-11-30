@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.geral;
+using Bibliotecla.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,38 @@ namespace Bibliotecla
         public frm_Menu_Principal()
         {
             InitializeComponent();
+            CarregarAcesso();
+        }
+
+        private void CarregarAcesso()
+        {
+            LeitorFuncio usuario = UsuarioLogado.GetUsuario();
+
+            lbl_InfoAcesso.Text += usuario.Cargo.ToUpper();
+
+            switch (usuario.Cargo.ToUpper())
+            {
+                case "BIBLIOTECARIO":
+                    btn_relatorio.Enabled = false; 
+                    break;
+
+                case "GERENTE":
+                    btn_relatorio.Enabled = true;
+                    break;
+
+                case "DIRETORA":
+                    btn_relatorio.Enabled = true;
+                    break;
+
+                default:
+                    btn_relatorio.Enabled = false;
+                    btn_Livros.Enabled = false;
+                    btn_Emp_Dev.Enabled = false;
+                    btn_Geren_Cad.Enabled = false;
+                    btn_Multa.Enabled = false;
+                    btn_Sair.Enabled = true;
+                    break;
+            }
         }
 
         private void btn_Emp_Dev_Click(object sender, EventArgs e)

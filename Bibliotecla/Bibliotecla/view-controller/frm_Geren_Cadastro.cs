@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.geral;
+using Bibliotecla.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,40 @@ namespace Bibliotecla
         public frm_Geren_Cadastro()
         {
             InitializeComponent();
+            CarregarAcesso();
+        }
+
+        private void CarregarAcesso()
+        {
+            LeitorFuncio usuario = UsuarioLogado.GetUsuario();
+
+            lbl_InfoAcesso.Text += usuario.Cargo.ToUpper();
+
+            switch (usuario.Cargo.ToUpper())
+            {
+                case "BIBLIOTECARIO":
+                    btn_Consul_Funcionario.Enabled = false;
+                    btn_Funcionario.Enabled = false;
+                    break;
+
+                case "GERENTE":
+                    btn_Consul_Funcionario.Enabled = false;
+                    btn_Funcionario.Enabled = false;
+                    break;
+
+                case "DIRETORA":
+                    btn_Consul_Funcionario.Enabled = true;
+                    btn_Funcionario.Enabled = true;
+                    break;
+
+                default:
+                    btn_Consul_Funcionario.Enabled = false;
+                    btn_Funcionario.Enabled = false;
+                    btn_Leitor.Enabled = false;
+                    btn_Consul_Leitores.Enabled = false;
+                    btn_Voltar.Enabled = true;
+                    break;
+            }
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
