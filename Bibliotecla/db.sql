@@ -62,5 +62,20 @@ CREATE TABLE Multa
 
 );
 
+CREATE TABLE Espera 
+(
+	CodEspera INT PRIMARY KEY AUTO_INCREMENT,
+	DataEspera VARCHAR(12),
+	DataLimite VARCHAR(12),
+	DataDevol VARCHAR(12),
+	CodPessoa INT,
+	CodEmpres INT,
+	CodExemplar INT,
+	FOREIGN KEY (CodEmpres) REFERENCES Emprestimo(CodEmpres),
+	FOREIGN KEY (DataDevol) REFERENCES Emprestimo(DataDevol),
+	FOREIGN KEY (CodPessoa) REFERENCES LeitorFuncio(CodPessoa),
+	FOREIGN KEY (CodExemplar) REFERENCES Emprestimo(CodExemplar)
+);
+
 
 
