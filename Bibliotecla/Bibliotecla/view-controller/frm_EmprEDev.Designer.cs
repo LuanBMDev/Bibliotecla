@@ -41,7 +41,6 @@
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.cmb_Exem_Emp = new Guna.UI.WinForms.GunaComboBox();
-            this.cmb_Titulo_Emp = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.cmb_Per_Emp = new Guna.UI.WinForms.GunaComboBox();
@@ -49,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.txt_Prazo = new System.Windows.Forms.MaskedTextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -290,24 +290,6 @@
             this.cmb_Exem_Emp.Size = new System.Drawing.Size(207, 26);
             this.cmb_Exem_Emp.TabIndex = 26;
             // 
-            // cmb_Titulo_Emp
-            // 
-            this.cmb_Titulo_Emp.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_Titulo_Emp.BaseColor = System.Drawing.Color.White;
-            this.cmb_Titulo_Emp.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_Titulo_Emp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_Titulo_Emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Titulo_Emp.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_Titulo_Emp.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_Titulo_Emp.ForeColor = System.Drawing.Color.Black;
-            this.cmb_Titulo_Emp.FormattingEnabled = true;
-            this.cmb_Titulo_Emp.Location = new System.Drawing.Point(100, 160);
-            this.cmb_Titulo_Emp.Name = "cmb_Titulo_Emp";
-            this.cmb_Titulo_Emp.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_Titulo_Emp.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Titulo_Emp.Size = new System.Drawing.Size(207, 26);
-            this.cmb_Titulo_Emp.TabIndex = 25;
-            // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
@@ -389,12 +371,22 @@
             this.txt_Prazo.Size = new System.Drawing.Size(207, 20);
             this.txt_Prazo.TabIndex = 40;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 13;
+            this.comboBox1.Location = new System.Drawing.Point(100, 160);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(207, 21);
+            this.comboBox1.TabIndex = 41;
+            // 
             // frm_EmprEDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txt_Prazo);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.btn_Voltar);
@@ -410,7 +402,6 @@
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.cmb_Exem_Emp);
-            this.Controls.Add(this.cmb_Titulo_Emp);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.cmb_Per_Emp);
@@ -441,7 +432,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaComboBox cmb_Exem_Emp;
-        private Guna.UI.WinForms.GunaComboBox cmb_Titulo_Emp;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaComboBox cmb_Per_Emp;
@@ -449,5 +439,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private System.Windows.Forms.MaskedTextBox txt_Prazo;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

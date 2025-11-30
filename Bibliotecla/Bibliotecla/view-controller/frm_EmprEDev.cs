@@ -52,5 +52,10 @@ namespace Bibliotecla
             // 3. Fecha o formulário atual.
             this.Hide();
         }
+
+        private void cmb_Titulo_Emp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
