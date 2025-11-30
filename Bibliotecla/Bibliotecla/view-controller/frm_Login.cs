@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bibliotecla.geral;
 
 namespace Bibliotecla
 {
@@ -19,14 +20,7 @@ namespace Bibliotecla
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Menu_Principal novoFormulario = new frm_Menu_Principal();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Menu_Principal());
         }
     }
 }

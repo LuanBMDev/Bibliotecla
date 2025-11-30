@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibliotecla.geral;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,14 +25,7 @@ namespace Bibliotecla
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Menu_Principal novoFormulario = new frm_Menu_Principal();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Menu_Principal());
         }
     }
 }

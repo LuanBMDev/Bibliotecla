@@ -171,13 +171,10 @@
     <Compile Include="geral\CriacaoDJson.cs" />
     <Compile Include="geral\FazerJsonemPDF.cs" />
     <Compile Include="geral\MensagensPadrao.cs" />
+    <Compile Include="geral\Navegacao.cs" />
     <Compile Include="model\Emprestimo.cs" />
     <Compile Include="model\Espera.cs" />
     <Compile Include="model\Exemplar.cs" />
-    <Compile Include="geral\Relatorio.cs" />
-    <Compile Include="geral\RelatorioAtrasos.cs" />
-    <Compile Include="geral\RelatorioDanos.cs" />
-    <Compile Include="geral\RelatorioPreferencias.cs" />
     <Compile Include="model\LeitorFuncio.cs" />
     <Compile Include="model\Multa.cs" />
     <Compile Include="model\Titulo.cs" />

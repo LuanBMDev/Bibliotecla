@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.DAO;
+using Bibliotecla.geral;
 using Bibliotecla.model;
 using System;
 using System.Windows.Forms;
@@ -54,9 +55,7 @@ namespace Bibliotecla
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             leitor = null;
-            frm_Geren_Cadastro novoFormulario = new frm_Geren_Cadastro();
-            novoFormulario.Show();
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Cadastro());
         }
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)

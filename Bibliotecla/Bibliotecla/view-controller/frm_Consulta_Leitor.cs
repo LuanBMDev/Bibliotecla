@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.DAO;
+using Bibliotecla.geral;
 using Bibliotecla.model;
 using System;
 using System.Collections.Generic;
@@ -39,14 +40,7 @@ namespace Bibliotecla
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Geren_Cadastro novoFormulario = new frm_Geren_Cadastro();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Cadastro());
         }
 
         private void popularTabela(List<LeitorFuncio> resultados)
@@ -59,7 +53,7 @@ namespace Bibliotecla
 
             if (resultados == null || resultados.Count == 0)
             {
-                MessageBox.Show("Nenhum resultado encontrado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Nenhum resultado encontrado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

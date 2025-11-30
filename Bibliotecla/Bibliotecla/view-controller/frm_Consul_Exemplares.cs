@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Bibliotecla.DAO;
+using Bibliotecla.geral;
+using Bibliotecla.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bibliotecla.DAO;
-using Bibliotecla.model;
 
 namespace Bibliotecla
 {
@@ -28,9 +29,7 @@ namespace Bibliotecla
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            frm_Geren_Livros novoFormulario = new frm_Geren_Livros();
-            novoFormulario.Show();
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Livros());
         }
 
         public bool verificarCampos()
