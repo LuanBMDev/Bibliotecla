@@ -48,7 +48,7 @@ namespace Bibliotecla.DAO
                          "EstadoFisc = @EstadoFisc, " +
                          "Editora = @Editora, " +
                          "CodTitulo = @CodTitulo " +
-                         "WHERE CodExempl = @CodExempl";
+                         "WHERE CodExemplar = @CodExemplar";
             int linhas_afetadas = 0;
 
             conexao = Conexao.Conectar();
@@ -59,7 +59,7 @@ namespace Bibliotecla.DAO
                 cmd.Parameters.AddWithValue("@EstadoFisc", entity.EstadoFisico);
                 cmd.Parameters.AddWithValue("@Editora", entity.EditoraExemplar);
                 cmd.Parameters.AddWithValue("@CodTitulo", entity.Titulo.CodTitulo);
-                cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
+                cmd.Parameters.AddWithValue("@CodExemplar", entity.CodExemplar);
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
 
@@ -77,13 +77,13 @@ namespace Bibliotecla.DAO
 
         public bool Remover(Exemplar entity)
         {
-            string sql = "DELETE FROM Exemplar WHERE CodExempl = @CodExempl";
+            string sql = "DELETE FROM Exemplar WHERE CodExemplar = @CodExemplar";
             int linhas_afetadas = 0;
             conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
+                cmd.Parameters.AddWithValue("@CodExemplar", entity.CodExemplar);
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 Conexao.Desconectar(conexao);
             }
@@ -99,18 +99,18 @@ namespace Bibliotecla.DAO
 
         public Exemplar BuscarID(Exemplar entity)
         {
-            string sql = "SELECT * FROM Exemplar WHERE CodExempl = @CodExempl";
+            string sql = "SELECT * FROM Exemplar WHERE CodExemplar = @CodExemplar";
             Exemplar exemplar = null;
             conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
-                cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
+                cmd.Parameters.AddWithValue("@CodExemplar", entity.CodExemplar);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        int codExemplar = reader.GetInt32("CodExempl");
+                        int codExemplar = reader.GetInt32("CodExemplar");
                         string anoPubli = reader.GetString("AnoPubli");
                         string estadoFisico = reader.GetString("EstadoFisc");
                         string editoraExemplar = reader.GetString("Editora");
@@ -144,7 +144,7 @@ namespace Bibliotecla.DAO
                 {
                     while (reader.Read())
                     {
-                        int codExemplar = reader.GetInt32("CodExempl");
+                        int codExemplar = reader.GetInt32("CodExemplar");
                         string anoPubli = reader.GetString("AnoPubli");
                         string estadoFisico = reader.GetString("EstadoFisc");
                         string editoraExemplar = reader.GetString("Editora");

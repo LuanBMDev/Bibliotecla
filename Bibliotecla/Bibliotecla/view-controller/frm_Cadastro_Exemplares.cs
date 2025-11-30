@@ -1,26 +1,17 @@
 ﻿using Bibliotecla.DAO;
-using Bibliotecla.geral;
 using Bibliotecla.model;
-using MySql.Data.MySqlClient;
+using Bibliotecla.geral; // adiciona MensagensPadrao e CadastroEdicao
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 
 namespace Bibliotecla
 {
     public partial class frm_Cadastro_Exemplares : Form, CadastroEdicao
     {
         private readonly ExemplarDAO exemplarDAO = new ExemplarDAO();
-
-        // Objeto que só recebe valor por meio da tela de Consulta de Exemplares
         private Exemplar exemplar = null;
-
         internal Exemplar Exemplar { get => exemplar; set => exemplar = value; }
 
         public frm_Cadastro_Exemplares()
@@ -118,14 +109,11 @@ namespace Bibliotecla
                 string anoPubli = txt_Ano_Publi.Text;
                 string editora = txt_Editora.Text;
                 string estadoFisico = cmb_Estado.Text;
-
                 try
                 {
-                    Exemplar exemplar = new Exemplar(titulo, anoPubli, estadoFisico, editora);
-                    exemplarDAO.Inserir(exemplar);
-
+                    Exemplar novo = new Exemplar(titulo, anoPubli, estadoFisico, editora);
+                    exemplarDAO.Inserir(novo);
                     MensagensPadrao.MsgCadastroSucesso(MensagensPadrao.Entidade.Exemplar);
-
                     LimparCampos();
                 }
                 catch (MySqlException ex)
@@ -133,10 +121,7 @@ namespace Bibliotecla
                     MensagensPadrao.MsgFalhaCadastro(MensagensPadrao.Entidade.Exemplar, ex);
                 }
             }
-            else
-            {
-                MensagensPadrao.MsgCamposObrigatorios();
-            }
+            else MensagensPadrao.MsgCamposObrigatorios();
         }
 
         public void LimparCampos()
@@ -157,16 +142,10 @@ namespace Bibliotecla
                 string anoPubli = txt_Ano_Publi.Text;
                 string editora = txt_Editora.Text;
                 string estadoFisico = cmb_Estado.Text;
-
                 try
                 {
-                    Exemplar exemplar = new Exemplar(this.exemplar.CodExemplar, 
-                                                     anoPubli,
-                                                     estadoFisico,
-                                                     editora,
-                                                     titulo);
-                    exemplarDAO.Alterar(exemplar);
-
+                    Exemplar att = new Exemplar(this.exemplar.CodExemplar, anoPubli, estadoFisico, editora, titulo);
+                    exemplarDAO.Alterar(att);
                     MensagensPadrao.MsgEdicaoSucesso(MensagensPadrao.Entidade.Exemplar);
                 }
                 catch (MySqlException ex)
@@ -174,10 +153,7 @@ namespace Bibliotecla
                     MensagensPadrao.MsgFalhaEdicao(MensagensPadrao.Entidade.Exemplar, ex);
                 }
             }
-            else
-            {
-                MensagensPadrao.MsgCamposObrigatorios();
-            }
+            else MensagensPadrao.MsgCamposObrigatorios();
         }
     }
 }

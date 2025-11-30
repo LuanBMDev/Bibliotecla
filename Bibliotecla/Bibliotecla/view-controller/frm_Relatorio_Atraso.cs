@@ -1,14 +1,7 @@
 ﻿using Bibliotecla.geral;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Bibliotecla
 {
@@ -21,55 +14,69 @@ namespace Bibliotecla
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
             frm_Geren_Relatorios novoFormulario = new frm_Geren_Relatorios();
-
-            // 2. Exibe o novo formulário.
             novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
             this.Hide();
         }
 
-        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
+        private bool JsonTemConteudo(string jsonFileName)
+        {
+            if (string.IsNullOrWhiteSpace(jsonFileName)) return false;
+            string relDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+            string caminho = Path.Combine(relDir, jsonFileName);
+            if (!File.Exists(caminho)) return false;
+            string texto = File.ReadAllText(caminho).Trim();
+            if (string.IsNullOrWhiteSpace(texto)) return false;
+            if (texto == "[]" || texto == "{}") return false;
+            return true;
+        }
+
+        private void GeneratePdfBySelection()
         {
             try
             {
-<<<<<<< Updated upstream
                 string selecionado = cmb_Filtro.SelectedItem as string;
-                if (string.IsNullOrEmpty(selecionado))
+                if (string.IsNullOrWhiteSpace(selecionado))
                 {
                     MessageBox.Show("Selecione um filtro.");
                     return;
                 }
 
-                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("atraso", selecionado);
+                try { CriacaoDJson.AtualizarTodosJson(); } catch (Exception exJson) { Console.WriteLine("Falha atualizar JSON: " + exJson.Message); }
 
-                if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
+                string filtroLimpo = selecionado.Trim();
+                string jsonName = filtroLimpo == "Geral" ? "AtrasosGeral.json" :
+                                   filtroLimpo == "Atrasos Não Quitados" ? "AtrasosNaoQuitados.json" :
+                                   filtroLimpo == "Atrasos Quitados" ? "AtrasoQuitados.json" : null;
+
+                if (jsonName == null)
                 {
-                    MessageBox.Show("Sem informação");
+                    MessageBox.Show("Filtro desconhecido.");
                     return;
                 }
 
-                MessageBox.Show("PDF gerado em: " + pdfPath);
-=======
-                // Para relatório de atrasos usamos o relatório de empréstimos (contém campo isAtrasado)
-                string pdfPath = FazerJsonemPDF.GerarRelatorioEmprestimosPdf();
+                if (!JsonTemConteudo(jsonName))
+                {
+                    MessageBox.Show("Nenhum dado disponível para o filtro selecionado. JSON=" + jsonName, "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-                if (!string.IsNullOrEmpty(pdfPath) && File.Exists(pdfPath))
+                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("atraso", filtroLimpo);
+
+                if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
                 {
-                    MessageBox.Show("PDF gerado em: " + pdfPath);
+                    MessageBox.Show("Falha ao gerar PDF (arquivo não encontrado).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Falha ao gerar o PDF de atrasos.");
-                }
->>>>>>> Stashed changes
+
+                MessageBox.Show("Relatório gerado com sucesso!\nArquivo: " + pdfPath, "Relatório Atrasos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao gerar PDFs: " + ex.Message);
+                MessageBox.Show("Erro ao gerar PDF: " + ex.Message);
             }
         }
+
+        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e) => GeneratePdfBySelection();
     }
 }

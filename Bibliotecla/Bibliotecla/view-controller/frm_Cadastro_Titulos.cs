@@ -1,17 +1,9 @@
 ﻿using Bibliotecla.banco;
 using Bibliotecla.DAO;
-using Bibliotecla.geral;
 using Bibliotecla.model;
+using Bibliotecla.geral; // adiciona interface CadastroEdicao e MensagensPadrao
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI;
 using System.Windows.Forms;
 
 namespace Bibliotecla
@@ -77,17 +69,14 @@ namespace Bibliotecla
         {
             if (VerificarCampos())
             {
-                string titulo = txt_Titulo.Text.Trim();
-                string autor = txt_Autor.Text.Trim();
-                string genero = txt_Genero.Text.Trim();
-
+                string t = txt_Titulo.Text.Trim();
+                string a = txt_Autor.Text.Trim();
+                string g = txt_Genero.Text.Trim();
                 try
                 {
-                    Titulo objTitulo = new Titulo(titulo, genero, autor);
+                    Titulo objTitulo = new Titulo(t, g, a);
                     tituloDAO.Inserir(objTitulo);
-
                     MensagensPadrao.MsgCadastroSucesso(MensagensPadrao.Entidade.Titulo);
-
                     LimparCampos();
                 }
                 catch (MySqlException ex)
@@ -95,25 +84,20 @@ namespace Bibliotecla
                     MensagensPadrao.MsgFalhaCadastro(MensagensPadrao.Entidade.Titulo, ex);
                 }
             }
-            else
-            {
-                MensagensPadrao.MsgCamposObrigatorios();
-            }
+            else MensagensPadrao.MsgCamposObrigatorios();
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             if (VerificarCampos())
             {
-                string titulo = txt_Titulo.Text.Trim();
-                string autor = txt_Autor.Text.Trim();
-                string genero = txt_Genero.Text.Trim();
-
+                string t = txt_Titulo.Text.Trim();
+                string a = txt_Autor.Text.Trim();
+                string g = txt_Genero.Text.Trim();
                 try
                 {
-                    Titulo objTitulo = new Titulo(this.titulo.CodTitulo, titulo, genero, autor);
+                    Titulo objTitulo = new Titulo(this.titulo.CodTitulo, t, g, a);
                     tituloDAO.Alterar(objTitulo);
-
                     MensagensPadrao.MsgEdicaoSucesso(MensagensPadrao.Entidade.Titulo);
                 }
                 catch (MySqlException ex)
@@ -121,10 +105,7 @@ namespace Bibliotecla
                     MensagensPadrao.MsgFalhaEdicao(MensagensPadrao.Entidade.Titulo, ex);
                 }
             }
-            else
-            {
-                MensagensPadrao.MsgCamposObrigatorios();
-            }
+            else MensagensPadrao.MsgCamposObrigatorios();
         }
 
         public void LimparCampos()

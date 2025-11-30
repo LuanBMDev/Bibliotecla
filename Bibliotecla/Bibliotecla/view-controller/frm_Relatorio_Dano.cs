@@ -1,14 +1,7 @@
 ﻿using Bibliotecla.geral;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Bibliotecla
 {
@@ -21,45 +14,75 @@ namespace Bibliotecla
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
             frm_Geren_Relatorios novoFormulario = new frm_Geren_Relatorios();
-
-            // 2. Exibe o novo formulário.
             novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
             this.Hide();
         }
 
-        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
+        // Verifica se JSON existe e tem conteúdo (não vazio, não [] ou {})
+        private bool JsonTemConteudo(string jsonFileName)
         {
-<<<<<<< Updated upstream
+            if (string.IsNullOrWhiteSpace(jsonFileName)) return false;
+            string relDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+            string caminho = Path.Combine(relDir, jsonFileName);
+            if (!File.Exists(caminho)) return false;
+            string texto = File.ReadAllText(caminho).Trim();
+            if (string.IsNullOrWhiteSpace(texto) || texto == "[]" || texto == "{}") return false;
+            return true;
+        }
+
+        private void GeneratePdfBySelection()
+        {
             try
             {
                 string selecionado = cmb_Filtro.SelectedItem as string;
-                if (string.IsNullOrEmpty(selecionado))
+                if (string.IsNullOrWhiteSpace(selecionado))
                 {
                     MessageBox.Show("Selecione um filtro.");
                     return;
                 }
 
-                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("dano", selecionado);
+                // Atualiza JSONs antes de gerar
+                try { CriacaoDJson.AtualizarTodosJson(); } catch (Exception exJson) { Console.WriteLine("Falha atualizar JSON: " + exJson.Message); }
 
-                if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
+                string filtroLimpo = selecionado.Trim();
+                string jsonName = filtroLimpo == "Geral" ? "EstadoGeral.json" :
+                                   filtroLimpo == "Novo" ? "EstadoNovo.json" :
+                                   filtroLimpo == "Uso Moderado" ? "EstadoUsoModerado.json" :
+                                   filtroLimpo == "Danos Leves" ? "EstadoDanosLeves.json" :
+                                   filtroLimpo == "Danos Graves" ? "EstadoDanosGraves.json" : null;
+
+                if (jsonName == null)
                 {
-                    MessageBox.Show("Sem informação");
+                    MessageBox.Show("Filtro desconhecido.");
                     return;
                 }
 
-                MessageBox.Show("PDF gerado em: " + pdfPath);
+                if (!JsonTemConteudo(jsonName))
+                {
+                    MessageBox.Show("Nenhum dado disponível para o filtro selecionado. JSON=" + jsonName, "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("dano", filtroLimpo);
+
+                if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
+                {
+                    MessageBox.Show("Falha ao gerar PDF (arquivo não encontrado).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                MessageBox.Show("Relatório gerado com sucesso!\nArquivo: " + pdfPath, "Relatório Danos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao gerar PDFs: " + ex.Message);
+                MessageBox.Show("Erro ao gerar PDF: " + ex.Message);
             }
-=======
-            
->>>>>>> Stashed changes
+        }
+
+        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
+        {
+            GeneratePdfBySelection();
         }
     }
 }

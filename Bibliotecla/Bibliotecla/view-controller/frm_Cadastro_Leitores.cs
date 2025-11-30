@@ -1,21 +1,12 @@
 ﻿using Bibliotecla.DAO;
 using Bibliotecla.model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Bibliotecla
 {
     public partial class frm_Cadastro_Leitores : Form
     {
-
         private readonly LeitorFuncioDAO leitorFuncioDAO = new LeitorFuncioDAO();
 
         public frm_Cadastro_Leitores()
@@ -47,7 +38,7 @@ namespace Bibliotecla
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
-            VerificaCampos();
+            if (!VerificaCampos()) return;
 
             string cpf = txt_Cpf.Text.Trim();
             string nome = txt_Nome.Text.Trim();
@@ -62,34 +53,20 @@ namespace Bibliotecla
 
             try
             {
-                LeitorFuncio ObjLeitor = new LeitorFuncio(cpf, telefone, cargo, email, nome, cep, rua, numRes, bairro, cidade);
-                leitorFuncioDAO.Inserir(ObjLeitor);
-
-                //MensagensPadrao.msgCadastroSucesso(MensagensPadrao.Entidade.Leitor);
-
-                txt_Cpf.Clear();
-                txt_Nome.Clear();   
-                txt_Endereco.Clear();
-                txt_Email.Clear();
-                txt_Telefone.Clear();
-                txt_CEP.Clear();
-                txt_Num.Clear();
-                txt_Cidade.Clear();
-                txt_Bairro.Clear();
-
-                MessageBox.Show("Cadastro feito com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LeitorFuncio obj = new LeitorFuncio(cpf, telefone, cargo, email, nome, cep, rua, numRes, bairro, cidade);
+                leitorFuncioDAO.Inserir(obj);
+                txt_Cpf.Clear(); txt_Nome.Clear(); txt_Endereco.Clear(); txt_Email.Clear(); txt_Telefone.Clear(); txt_CEP.Clear(); txt_Num.Clear(); txt_Cidade.Clear(); txt_Bairro.Clear();
+                MessageBox.Show("Cadastro feito com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                //MensagensPadrao.msgFalhaCadastro(MensagensPadrao.Entidade.Leitor, ex);
                 MessageBox.Show("Erro ao cadastrar leitor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            VerificaCampos();
+            if (!VerificaCampos()) return;
 
             string cpf = txt_Cpf.Text.Trim();
             string nome = txt_Nome.Text.Trim();
@@ -104,10 +81,9 @@ namespace Bibliotecla
 
             try
             {
-                LeitorFuncio ObjLeitor = new LeitorFuncio(cpf, telefone, cargo, email, nome, cep, rua, numRes, bairro, cidade);
-                leitorFuncioDAO.Alterar(ObjLeitor);
-
-                MessageBox.Show("Edição feita com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LeitorFuncio obj = new LeitorFuncio(cpf, telefone, cargo, email, nome, cep, rua, numRes, bairro, cidade);
+                leitorFuncioDAO.Alterar(obj);
+                MessageBox.Show("Edição feita com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

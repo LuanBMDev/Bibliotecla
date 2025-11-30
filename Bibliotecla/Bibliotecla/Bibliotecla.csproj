@@ -167,8 +167,10 @@
     <Compile Include="DAO\LeitorFuncioDAO.cs" />
     <Compile Include="DAO\MultaDAO.cs" />
     <Compile Include="DAO\TituloDAO.cs" />
+    <Compile Include="geral\CadastroEdicao.cs" />
     <Compile Include="geral\CriacaoDJson.cs" />
     <Compile Include="geral\FazerJsonemPDF.cs" />
+    <Compile Include="geral\MensagensPadrao.cs" />
     <Compile Include="model\Emprestimo.cs" />
     <Compile Include="model\Espera.cs" />
     <Compile Include="model\Exemplar.cs" />
@@ -289,6 +291,10 @@
     <Compile Include="view-controller\frm_Relatorio_Pref.Designer.cs">
       <DependentUpon>frm_Relatorio_Pref.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Form1.resx" />
+    <EmbeddedResource Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Resources.resx" />
+    <EmbeddedResource Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna_UI_Activation.Form1.resources" />
+    <EmbeddedResource Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna_UI_Activation.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -352,6 +358,36 @@
     <EmbeddedResource Include="view-controller\frm_Relatorio_Pref.resx">
       <DependentUpon>frm_Relatorio_Pref.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\Bibliotecla.exe.config" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\app.config" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Settings.settings" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbproj.AssemblyReference.cache" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbproj.GenerateResource.Cache" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbprojResolveAssemblyReference.cache" />
+    <None Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\README.md" />
+    <None Include="bin\Debug\relatorios\AtrasoGeral.json" />
+    <None Include="bin\Debug\relatorios\AtrasoNaoQuitados.json" />
+    <None Include="bin\Debug\relatorios\AtrasoNaoQuitados.pdf" />
+    <None Include="bin\Debug\relatorios\AtrasoQuitado.json" />
+    <None Include="bin\Debug\relatorios\AtrasoQuitado.pdf" />
+    <None Include="bin\Debug\relatorios\DanoGraves.json" />
+    <None Include="bin\Debug\relatorios\DanoLeves.json" />
+    <None Include="bin\Debug\relatorios\DanoLeves.pdf" />
+    <None Include="bin\Debug\relatorios\DanosGeral.json" />
+    <None Include="bin\Debug\relatorios\DanosNovos.json" />
+    <None Include="bin\Debug\relatorios\DanosNovos.pdf" />
+    <None Include="bin\Debug\relatorios\emprestimos.json" />
+    <None Include="bin\Debug\relatorios\emprestimos.pdf" />
+    <None Include="bin\Debug\relatorios\exemplares.json" />
+    <None Include="bin\Debug\relatorios\leitores.json" />
+    <None Include="bin\Debug\relatorios\multas.json" />
+    <None Include="bin\Debug\relatorios\preferenciaGeral.json" />
+    <None Include="bin\Debug\relatorios\preferenciaMaisEsperado.json" />
+    <None Include="bin\Debug\relatorios\titulos.json" />
+    <None Include="bin\Debug\relatorios\UsoModerado.json" />
+    <None Include="bin\Debug\relatorios\UsoModerado.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -368,6 +404,80 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Bibliotecla.exe" />
+    <Content Include="bin\Debug\Bibliotecla.pdb" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\BouncyCastle.Cryptography.dll" />
+    <Content Include="bin\Debug\BouncyCastle.Cryptography.xml" />
+    <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Bunifu_UI_v1.52.dll" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\.gitattributes" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\.gitignore" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.exe" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.pdb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.vshost.exe" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.xml" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna.UI.dll" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Form1.Designer.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Form1.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\icon.ico" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Application.Designer.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Application.myapp" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\AssemblyInfo.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Resources.Designer.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Settings.Designer.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.vb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.exe" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.pdb" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbproj.FileListAbsolute.txt" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.xml" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 2.0\Guna.UI.dll" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 3.5\Guna.UI.dll" />
+    <Content Include="bin\Debug\Framework\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.pdb" />
+    <Content Include="bin\Debug\Google.Protobuf.xml" />
+    <Content Include="bin\Debug\Guna.UI.dll" />
+    <Content Include="bin\Debug\itextsharp.dll" />
+    <Content Include="bin\Debug\itextsharp.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.xml" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.xml" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.CodeDom.dll" />
+    <Content Include="bin\Debug\System.CodeDom.xml" />
+    <Content Include="bin\Debug\System.Configuration.ConfigurationManager.dll" />
+    <Content Include="bin\Debug\System.Configuration.ConfigurationManager.xml" />
+    <Content Include="bin\Debug\System.IO.Pipelines.dll" />
+    <Content Include="bin\Debug\System.IO.Pipelines.xml" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Debug\ZstdSharp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\arm64\" />
+    <Folder Include="bin\Debug\x64\" />
+    <Folder Include="bin\Debug\x86\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.3.119.1\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.3.119.1\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
