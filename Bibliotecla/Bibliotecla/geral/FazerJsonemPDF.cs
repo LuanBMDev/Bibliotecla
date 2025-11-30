@@ -66,6 +66,8 @@ namespace Bibliotecla.geral
             {
                 keysList = objetos.SelectMany(o => o.Properties().Select(p => p.Name)).Distinct().ToList();
             }
+            // Remove coluna TipoDano se existir
+            keysList = keysList.Where(k => !string.Equals(k, "TipoDano", StringComparison.OrdinalIgnoreCase)).ToList();
             if (keysList.Count == 0) return null;
 
             // Determina largura disponível para conteúdo
