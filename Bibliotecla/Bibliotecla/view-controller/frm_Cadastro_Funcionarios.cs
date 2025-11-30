@@ -86,5 +86,48 @@ namespace Bibliotecla
                 MessageBox.Show("Erro ao cadastrar funcionário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            VerificaCampos();
+
+            string cpf = txt_Cpf.Text.Trim();
+            string nome = txt_Nome.Text.Trim();
+            string rua = txt_Endereco.Text.Trim();
+            string numRes = txt_Num.Text.Trim();
+            string cep = txt_CEP.Text.Trim();
+            string cidade = txt_Cidade.Text.Trim();
+            string bairro = txt_Bairro.Text.Trim();
+            string email = txt_Email.Text.Trim();
+            string telefone = txt_Telefone.Text.Trim();
+            string cargo = cmb_Cargo.Text;
+            string usuario = txt_Usuario.Text.Trim();
+            string senha = txt_Senha.Text.Trim();
+
+            try
+            {
+                LeitorFuncio ObjFuncio = new LeitorFuncio(cargo, usuario, senha, cpf, telefone, email, nome, cep, rua, numRes, bairro, cidade);
+                leitorFuncioDAO.Alterar(ObjFuncio);
+
+                txt_Cpf.Clear();
+                txt_Nome.Clear();
+                txt_Endereco.Clear();
+                txt_Num.Clear();
+                txt_CEP.Clear();
+                txt_Cidade.Clear();
+                txt_Bairro.Clear();
+                txt_Email.Clear();
+                txt_Telefone.Clear();
+                cmb_Cargo.SelectedIndex = -1;
+                txt_Usuario.Clear();
+                txt_Senha.Clear();
+
+                MessageBox.Show("Edição feita com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar funcionário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

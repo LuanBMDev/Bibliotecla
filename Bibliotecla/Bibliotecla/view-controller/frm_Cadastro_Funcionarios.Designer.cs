@@ -199,6 +199,7 @@
             this.btn_Editar.TabIndex = 62;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Voltar
             // 
