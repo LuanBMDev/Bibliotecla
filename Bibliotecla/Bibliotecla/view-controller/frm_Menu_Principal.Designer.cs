@@ -35,6 +35,7 @@
             this.btn_Livros = new Guna.UI.WinForms.GunaButton();
             this.btn_Emp_Dev = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_InfoAcesso = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // btn_Sair
@@ -199,12 +200,24 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Bibliotecla";
             // 
-            // Menu_Principal
+            // lbl_InfoAcesso
+            // 
+            this.lbl_InfoAcesso.AutoSize = true;
+            this.lbl_InfoAcesso.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_InfoAcesso.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lbl_InfoAcesso.Location = new System.Drawing.Point(690, 9);
+            this.lbl_InfoAcesso.Name = "lbl_InfoAcesso";
+            this.lbl_InfoAcesso.Size = new System.Drawing.Size(50, 15);
+            this.lbl_InfoAcesso.TabIndex = 15;
+            this.lbl_InfoAcesso.Text = "Acesso: ";
+            // 
+            // frm_Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.lbl_InfoAcesso);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_relatorio);
             this.Controls.Add(this.btn_Geren_Cad);
@@ -214,7 +227,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Menu_Principal";
+            this.Name = "frm_Menu_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Principal";
             this.ResumeLayout(false);
@@ -231,5 +244,6 @@
         private Guna.UI.WinForms.GunaButton btn_Livros;
         private Guna.UI.WinForms.GunaButton btn_Emp_Dev;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaLabel lbl_InfoAcesso;
     }
 }

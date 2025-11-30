@@ -57,10 +57,16 @@ namespace Bibliotecla
                     if (funcionario.Count > 0)
                     {
                         UsuarioLogado.SetUsuario(funcionario[0]);
+
+                        MessageBox.Show("BEM VINDO(A) - " + UsuarioLogado.GetUsuario().Nome,
+                            "Boas Vindas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Navegacao.TrocarTela(this, new frm_Menu_Principal());
                     }
                     else
                     {
-                        MessageBox.Show("Funcionário não cadastrado.",
+                        MessageBox.Show("Credenciais Inválidas.",
                                     "Erro de Login",
                                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
@@ -76,8 +82,6 @@ namespace Bibliotecla
             {
                 MensagensPadrao.MsgCamposObrigatorios();
             }
-
-                Navegacao.TrocarTela(this, new frm_Menu_Principal());
         }
 
         private void chk_MostrarSenha_CheckedChanged(object sender, EventArgs e)
