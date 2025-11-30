@@ -21,6 +21,7 @@ namespace Bibliotecla
         {
             InitializeComponent();
             cmb_EstExemplar.SelectedIndex = 4;
+            popularTabela(listaInicial());
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
@@ -43,6 +44,20 @@ namespace Bibliotecla
                 return false;
             }
             return true;
+        }
+
+        private List<Exemplar> listaInicial()
+        {
+            try
+            {
+                List<Exemplar> resultados = exemplarDAO.Listar("");
+                return resultados;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar lista inicial: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<Exemplar>();
+            }
         }
 
         private void popularTabela(List<Exemplar> resultados)
