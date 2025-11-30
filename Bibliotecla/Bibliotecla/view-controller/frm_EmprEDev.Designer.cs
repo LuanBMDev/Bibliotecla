@@ -47,6 +47,8 @@
             this.cmb_Per_Emp = new Guna.UI.WinForms.GunaComboBox();
             this.gunaVSeparator1 = new Guna.UI.WinForms.GunaVSeparator();
             this.label1 = new System.Windows.Forms.Label();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.txt_Prazo = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -177,7 +179,7 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel6.Location = new System.Drawing.Point(527, 258);
+            this.gunaLabel6.Location = new System.Drawing.Point(527, 204);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(161, 21);
             this.gunaLabel6.TabIndex = 33;
@@ -188,7 +190,7 @@
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel5.Location = new System.Drawing.Point(527, 183);
+            this.gunaLabel5.Location = new System.Drawing.Point(527, 142);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(82, 21);
             this.gunaLabel5.TabIndex = 32;
@@ -205,7 +207,7 @@
             this.cmb_EstExem_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_EstExem_Dev.ForeColor = System.Drawing.Color.Black;
             this.cmb_EstExem_Dev.FormattingEnabled = true;
-            this.cmb_EstExem_Dev.Location = new System.Drawing.Point(531, 282);
+            this.cmb_EstExem_Dev.Location = new System.Drawing.Point(531, 228);
             this.cmb_EstExem_Dev.Name = "cmb_EstExem_Dev";
             this.cmb_EstExem_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_EstExem_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -223,7 +225,7 @@
             this.cmb_Exem_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Exem_Dev.ForeColor = System.Drawing.Color.Black;
             this.cmb_Exem_Dev.FormattingEnabled = true;
-            this.cmb_Exem_Dev.Location = new System.Drawing.Point(531, 207);
+            this.cmb_Exem_Dev.Location = new System.Drawing.Point(531, 166);
             this.cmb_Exem_Dev.Name = "cmb_Exem_Dev";
             this.cmb_Exem_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Exem_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -241,7 +243,7 @@
             this.cmb_Leitor_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Leitor_Dev.ForeColor = System.Drawing.Color.Black;
             this.cmb_Leitor_Dev.FormattingEnabled = true;
-            this.cmb_Leitor_Dev.Location = new System.Drawing.Point(531, 131);
+            this.cmb_Leitor_Dev.Location = new System.Drawing.Point(531, 108);
             this.cmb_Leitor_Dev.Name = "cmb_Leitor_Dev";
             this.cmb_Leitor_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Leitor_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -253,7 +255,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel4.Location = new System.Drawing.Point(527, 107);
+            this.gunaLabel4.Location = new System.Drawing.Point(527, 84);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(99, 21);
             this.gunaLabel4.TabIndex = 28;
@@ -264,7 +266,7 @@
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel3.Location = new System.Drawing.Point(96, 258);
+            this.gunaLabel3.Location = new System.Drawing.Point(96, 189);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(82, 21);
             this.gunaLabel3.TabIndex = 27;
@@ -281,7 +283,7 @@
             this.cmb_Exem_Emp.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Exem_Emp.ForeColor = System.Drawing.Color.Black;
             this.cmb_Exem_Emp.FormattingEnabled = true;
-            this.cmb_Exem_Emp.Location = new System.Drawing.Point(100, 282);
+            this.cmb_Exem_Emp.Location = new System.Drawing.Point(100, 213);
             this.cmb_Exem_Emp.Name = "cmb_Exem_Emp";
             this.cmb_Exem_Emp.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Exem_Emp.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -299,7 +301,7 @@
             this.cmb_Titulo_Emp.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Titulo_Emp.ForeColor = System.Drawing.Color.Black;
             this.cmb_Titulo_Emp.FormattingEnabled = true;
-            this.cmb_Titulo_Emp.Location = new System.Drawing.Point(100, 207);
+            this.cmb_Titulo_Emp.Location = new System.Drawing.Point(100, 160);
             this.cmb_Titulo_Emp.Name = "cmb_Titulo_Emp";
             this.cmb_Titulo_Emp.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Titulo_Emp.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -311,7 +313,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel2.Location = new System.Drawing.Point(96, 183);
+            this.gunaLabel2.Location = new System.Drawing.Point(96, 136);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(121, 21);
             this.gunaLabel2.TabIndex = 24;
@@ -322,7 +324,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel1.Location = new System.Drawing.Point(96, 107);
+            this.gunaLabel1.Location = new System.Drawing.Point(96, 84);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(99, 21);
             this.gunaLabel1.TabIndex = 23;
@@ -339,7 +341,7 @@
             this.cmb_Per_Emp.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Per_Emp.ForeColor = System.Drawing.Color.Black;
             this.cmb_Per_Emp.FormattingEnabled = true;
-            this.cmb_Per_Emp.Location = new System.Drawing.Point(100, 131);
+            this.cmb_Per_Emp.Location = new System.Drawing.Point(100, 108);
             this.cmb_Per_Emp.Name = "cmb_Per_Emp";
             this.cmb_Per_Emp.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Per_Emp.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -368,12 +370,33 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Empréstimo e Devolução";
             // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.gunaLabel7.Location = new System.Drawing.Point(96, 242);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(139, 21);
+            this.gunaLabel7.TabIndex = 39;
+            this.gunaLabel7.Text = "Prazo Devolução";
+            // 
+            // txt_Prazo
+            // 
+            this.txt_Prazo.Location = new System.Drawing.Point(100, 266);
+            this.txt_Prazo.Mask = "00/00/0000";
+            this.txt_Prazo.Name = "txt_Prazo";
+            this.txt_Prazo.Size = new System.Drawing.Size(207, 20);
+            this.txt_Prazo.TabIndex = 40;
+            // 
             // frm_EmprEDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.txt_Prazo);
+            this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Devolucao);
             this.Controls.Add(this.btn_Cadas_Leitor);
@@ -424,5 +447,7 @@
         private Guna.UI.WinForms.GunaComboBox cmb_Per_Emp;
         private Guna.UI.WinForms.GunaVSeparator gunaVSeparator1;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private System.Windows.Forms.MaskedTextBox txt_Prazo;
     }
 }
