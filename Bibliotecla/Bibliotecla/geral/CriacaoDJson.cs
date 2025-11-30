@@ -15,7 +15,10 @@ namespace Bibliotecla.geral
         /// <summary>
         /// Gera/atualiza arquivos JSON na pasta "relatorios" para os principais DAOs do projeto.
         /// Cria os arquivos: titulos.json, exemplares.json, emprestimos.json, leitores.json, multas.json
+<<<<<<< Updated upstream
         /// Também cria os relatórios de preferência solicitados.
+=======
+>>>>>>> Stashed changes
         /// </summary>
         public static void AtualizarTodosJson()
         {
@@ -25,6 +28,10 @@ namespace Bibliotecla.geral
             string connectionString = null;
             try
             {
+<<<<<<< Updated upstream
+=======
+                // Abre temporariamente uma conexão apenas para obter a connection string
+>>>>>>> Stashed changes
                 using (var tmp = Conexao.Conectar())
                 {
                     connectionString = tmp.ConnectionString;
@@ -34,14 +41,25 @@ namespace Bibliotecla.geral
             catch (Exception ex)
             {
                 Console.WriteLine("Aviso: não foi possível obter connection string via Conexao.Conectar(): " + ex.Message);
+<<<<<<< Updated upstream
+=======
+                // connectionString permanece nulo; DAOs que abrem sua própria conexão continuarão funcionando
+>>>>>>> Stashed changes
             }
 
             MySqlConnection sharedConn = null;
             if (!string.IsNullOrEmpty(connectionString))
             {
+<<<<<<< Updated upstream
                 sharedConn = new MySqlConnection(connectionString);
             }
 
+=======
+                sharedConn = new MySqlConnection(connectionString); // mantemos fechada; DAOs vão abrir/fechar
+            }
+
+            // Helper local para serializar e salvar
+>>>>>>> Stashed changes
             Action<string, object> salvar = (fileName, data) =>
             {
                 try
@@ -59,9 +77,25 @@ namespace Bibliotecla.geral
             // Títulos
             try
             {
+<<<<<<< Updated upstream
                 var tituloDao = new TituloDAO();
                 List<Titulo> titulos = tituloDao.Listar(string.Empty);
                 salvar("titulos.json", titulos);
+=======
+                if (sharedConn != null)
+                {
+                    var tituloDao = new TituloDAO(sharedConn);
+                    List<Titulo> titulos = tituloDao.Listar(string.Empty).ConvertAll(x => (Titulo)x);
+                    salvar("titulos.json", titulos);
+                }
+                else
+                {
+                    // Tenta instanciar sem passar conexão (algumas versões do DAO abrem a conexão internamente)
+                    var tituloDao = (TituloDAO)Activator.CreateInstance(typeof(TituloDAO), new Titulo[] { null });
+                    List<Titulo> titulos = tituloDao.Listar(string.Empty).ConvertAll(x => (Titulo)x);
+                    salvar("titulos.json", titulos);
+                }
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
@@ -71,9 +105,24 @@ namespace Bibliotecla.geral
             // Exemplares
             try
             {
+<<<<<<< Updated upstream
                 var exemplarDao = new ExemplarDAO();
                 List<Exemplar> exemplares = exemplarDao.Listar(string.Empty);
                 salvar("exemplares.json", exemplares);
+=======
+                if (sharedConn != null)
+                {
+                    var exemplarDao = new ExemplarDAO(sharedConn);
+                    List<Exemplar> exemplares = exemplarDao.Listar(string.Empty).ConvertAll(x => (Exemplar)x);
+                    salvar("exemplares.json", exemplares);
+                }
+                else
+                {
+                    var exemplarDao = (ExemplarDAO)Activator.CreateInstance(typeof(ExemplarDAO), new Exemplar[] { null });
+                    List<Exemplar> exemplares = exemplarDao.Listar(string.Empty).ConvertAll(x => (Exemplar)x);
+                    salvar("exemplares.json", exemplares);
+                }
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
@@ -83,9 +132,24 @@ namespace Bibliotecla.geral
             // Empréstimos
             try
             {
+<<<<<<< Updated upstream
                 var emprestimoDao = sharedConn != null ? new EmprestimoDAO(sharedConn) : new EmprestimoDAO(null);
                 List<Emprestimo> emprestimos = emprestimoDao.Listar(string.Empty);
                 salvar("emprestimos.json", emprestimos);
+=======
+                if (sharedConn != null)
+                {
+                    var emprestimoDao = new EmprestimoDAO(sharedConn);
+                    List<Emprestimo> emprestimos = emprestimoDao.Listar(string.Empty).ConvertAll(x => (Emprestimo)x);
+                    salvar("emprestimos.json", emprestimos);
+                }
+                else
+                {
+                    var emprestimoDao = (EmprestimoDAO)Activator.CreateInstance(typeof(EmprestimoDAO), new Emprestimo[] { null });
+                    List<Emprestimo> emprestimos = emprestimoDao.Listar(string.Empty).ConvertAll(x => (Emprestimo)x);
+                    salvar("emprestimos.json", emprestimos);
+                }
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
@@ -95,20 +159,43 @@ namespace Bibliotecla.geral
             // Multas
             try
             {
+<<<<<<< Updated upstream
                 var multaDao = sharedConn != null ? new MultaDAO(sharedConn) : new MultaDAO(null);
                 var multas = multaDao.Listar(string.Empty);
                 salvar("multas.json", multas);
+=======
+                if (sharedConn != null)
+                {
+                    var multaDao = new MultaDAO(sharedConn);
+                    List<object> multas = multaDao.Listar(string.Empty).ConvertAll(x => (object)x);
+                    salvar("multas.json", multas);
+                }
+                else
+                {
+                    var multaDao = (MultaDAO)Activator.CreateInstance(typeof(MultaDAO), new object[] { null });
+                    List<object> multas = multaDao.Listar(string.Empty).ConvertAll(x => (object)x);
+                    salvar("multas.json", multas);
+                }
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Erro ao gerar JSON de multas: " + ex.Message);
             }
 
+<<<<<<< Updated upstream
             // Leitores (usa Conexao internamente)
             try
             {
                 var leitorDao = new LeitorFuncioDAO();
                 List<LeitorFuncio> leitores = leitorDao.Listar(string.Empty);
+=======
+            // Leitores (LeitorFuncioDAO usa Conexao internamente)
+            try
+            {
+                var leitorDao = new LeitorFuncioDAO();
+                List<LeitorFuncio> leitores = leitorDao.Listar(string.Empty).ConvertAll(x => (LeitorFuncio)x);
+>>>>>>> Stashed changes
                 salvar("leitores.json", leitores);
             }
             catch (Exception ex)
@@ -116,6 +203,7 @@ namespace Bibliotecla.geral
                 Console.WriteLine("Erro ao gerar JSON de leitores: " + ex.Message);
             }
 
+<<<<<<< Updated upstream
             // Novos relatórios de preferência
             try { GerarPreferenciaGeral(sharedConn, diretorio, salvar); }
             catch (Exception ex) { Console.WriteLine("Erro ao gerar preferenciaGeral: " + ex.Message); }
@@ -344,6 +432,17 @@ namespace Bibliotecla.geral
             salvar("UsoModerado.json", usoModerado);
             salvar("DanoLeves.json", danoLeves);
             salvar("DanoGraves.json", danoGraves);
+=======
+            // Cleanup
+            if (sharedConn != null)
+            {
+                try
+                {
+                    sharedConn.Dispose();
+                }
+                catch { }
+            }
+>>>>>>> Stashed changes
         }
     }
 }

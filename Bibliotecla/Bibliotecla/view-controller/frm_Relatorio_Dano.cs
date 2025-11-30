@@ -33,6 +33,7 @@ namespace Bibliotecla
 
         private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             try
             {
                 string selecionado = cmb_Filtro.SelectedItem as string;
@@ -56,6 +57,9 @@ namespace Bibliotecla
             {
                 MessageBox.Show("Erro ao gerar PDFs: " + ex.Message);
             }
+=======
+            
+>>>>>>> Stashed changes
         }
     }
 }

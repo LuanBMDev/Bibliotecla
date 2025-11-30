@@ -170,7 +170,11 @@ namespace Bibliotecla.geral
             }
         }
 
+<<<<<<< Updated upstream
         // --- Relatórios específicos padrão ---
+=======
+        // --- Relatórios específicos ---
+>>>>>>> Stashed changes
         public static string GerarRelatorioTitulosPdf(string outputPdfPath = null)
         {
             try
@@ -180,9 +184,19 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "titulos.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+<<<<<<< Updated upstream
                 return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
             catch { return null; }
+=======
+                bool ok = GerarPdfDeJson(json, pdf);
+                return ok ? pdf : null;
+            }
+            catch
+            {
+                return null;
+            }
+>>>>>>> Stashed changes
         }
 
         public static string GerarRelatorioExemplaresPdf(string outputPdfPath = null)
@@ -194,9 +208,19 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "exemplares.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+<<<<<<< Updated upstream
                 return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
             catch { return null; }
+=======
+                bool ok = GerarPdfDeJson(json, pdf);
+                return ok ? pdf : null;
+            }
+            catch
+            {
+                return null;
+            }
+>>>>>>> Stashed changes
         }
 
         public static string GerarRelatorioEmprestimosPdf(string outputPdfPath = null)
@@ -208,9 +232,19 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "emprestimos.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+<<<<<<< Updated upstream
                 return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
             catch { return null; }
+=======
+                bool ok = GerarPdfDeJson(json, pdf);
+                return ok ? pdf : null;
+            }
+            catch
+            {
+                return null;
+            }
+>>>>>>> Stashed changes
         }
 
         public static string GerarRelatorioLeitoresPdf(string outputPdfPath = null)
@@ -222,9 +256,19 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "leitores.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+<<<<<<< Updated upstream
                 return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
             catch { return null; }
+=======
+                bool ok = GerarPdfDeJson(json, pdf);
+                return ok ? pdf : null;
+            }
+            catch
+            {
+                return null;
+            }
+>>>>>>> Stashed changes
         }
 
         public static string GerarRelatorioMultasPdf(string outputPdfPath = null)
@@ -236,6 +280,7 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "multas.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+<<<<<<< Updated upstream
                 return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
             catch { return null; }
@@ -396,6 +441,15 @@ namespace Bibliotecla.geral
                 return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
             catch { return null; }
+=======
+                bool ok = GerarPdfDeJson(json, pdf);
+                return ok ? pdf : null;
+            }
+            catch
+            {
+                return null;
+            }
+>>>>>>> Stashed changes
         }
 
         // Helper central para gerar PDF por categoria + filtro
