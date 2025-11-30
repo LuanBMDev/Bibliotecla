@@ -13,6 +13,7 @@ using Bibliotecla.DAO;
 using Bibliotecla.model;
 using Bibliotecla.banco;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace Bibliotecla
 {
@@ -51,6 +52,8 @@ namespace Bibliotecla
         {
             PopularLeitoresEmp();
             PopularTitulos();
+            PopularLeitoresDevolucao();
+            PopularExemplaresDevolucao();
             this.comboBox_titulo_livro.SelectedIndexChanged += ComboBox_titulo_livro_SelectedIndexChanged;
             // Define o prazo para 6 dias a partir de hoje
             txt_Prazo.Text = DateTime.Today.AddDays(6).ToString("dd/MM/yyyy");
@@ -119,6 +122,85 @@ namespace Bibliotecla
             catch (Exception ex)
             {
                 MessageBox.Show("Falha ao carregar leitores: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Popula combo de leitores para devolução apenas com leitores que aparecem na tabela Emprestimo
+        private void PopularLeitoresDevolucao()
+        {
+            try
+            {
+                // usa EmprestimoDAO.Listar para obter empréstimos e extrair leitores distintos
+                using (MySqlConnection conn = Conexao.Conectar())
+                {
+                    // EmprestimoDAO espera abrir a conexão internamente; fechamos se estiver aberta
+                    if (conn.State == ConnectionState.Open)
+                        Conexao.Desconectar(conn);
+
+                    var emprestimoDao = new EmprestimoDAO(conn);
+                    var emprestimos = emprestimoDao.Listar("");
+
+                    combo_leitor_devl.Items.Clear();
+                    if (emprestimos != null)
+                    {
+                        var leitores = emprestimos
+                            .Where(e => e.Leitor != null)
+                            .Select(e => e.Leitor)
+                            .GroupBy(l => l.CodPessoa)
+                            .Select(g => g.First())
+                            .OrderBy(l => l.Nome);
+
+                        foreach (var l in leitores)
+                        {
+                            combo_leitor_devl.Items.Add(string.Format("{0} - {1}", l.CodPessoa, l.Nome ?? string.Empty));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao carregar leitores para devolução: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Popula combo de exemplares para devolução apenas com exemplares que aparecem na tabela Emprestimo
+        private void PopularExemplaresDevolucao()
+        {
+            try
+            {
+                using (MySqlConnection conn = Conexao.Conectar())
+                {
+                    if (conn.State == ConnectionState.Open)
+                        Conexao.Desconectar(conn);
+
+                    var emprestimoDao = new EmprestimoDAO(conn);
+                    var emprestimos = emprestimoDao.Listar("");
+
+                    cmb_EstExem_Dev.Items.Clear();
+                    if (emprestimos != null)
+                    {
+                        var exemplares = emprestimos
+                            .Where(e => e.Exemplar != null)
+                            .Select(e => e.Exemplar)
+                            .GroupBy(x => x.CodExemplar)
+                            .Select(g => g.First())
+                            .OrderBy(x => x.CodExemplar);
+
+                        foreach (var ex in exemplares)
+                        {
+                            // exibir id e, se possível, o título
+                            string titulo = ex.Titulo != null ? ex.Titulo.NomeTitulo : null;
+                            if (!string.IsNullOrEmpty(titulo))
+                                cmb_EstExem_Dev.Items.Add(string.Format("{0} - {1}", ex.CodExemplar, titulo));
+                            else
+                                cmb_EstExem_Dev.Items.Add(ex.CodExemplar.ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao carregar exemplares para devolução: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -192,7 +274,7 @@ namespace Bibliotecla
                 {
                     DataEmprestimo = dataEmprestimo,
                     PrazoDevol = prazoDevol,
-                    DataDevol = string.Empty,
+                    DataDevol = "0",
                     IsAtrasado = 0
                 };
                 using (MySqlConnection conn = Conexao.Conectar())
@@ -208,6 +290,9 @@ namespace Bibliotecla
                     if (ok)
                     {
                         MessageBox.Show("Empréstimo registrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // atualizar combos de devolução
+                        PopularLeitoresDevolucao();
+                        PopularExemplaresDevolucao();
                     }
                     else
                     {
@@ -218,6 +303,103 @@ namespace Bibliotecla
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao registrar empréstimo: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_Devolucao_Click(object sender, EventArgs e)
+        {
+            // Validar seleção
+            if (string.IsNullOrWhiteSpace(combo_leitor_devl.Text) || string.IsNullOrWhiteSpace(cmb_EstExem_Dev.Text))
+            {
+                MessageBox.Show("Selecione leitor e exemplar para devolução.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // extrair ids
+            int codLeitor;
+            var leitorTexto = combo_leitor_devl.Text.Trim();
+            int sep = leitorTexto.IndexOf('-');
+            string leitorIdStr = sep > 0 ? leitorTexto.Substring(0, sep).Trim() : leitorTexto;
+            if (!int.TryParse(leitorIdStr, out codLeitor))
+            {
+                MessageBox.Show("Leitor inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int codExemplar;
+            var exTexto = cmb_EstExem_Dev.Text.Trim();
+            sep = exTexto.IndexOf('-');
+            string exIdStr = sep > 0 ? exTexto.Substring(0, sep).Trim() : exTexto;
+            if (!int.TryParse(exIdStr, out codExemplar))
+            {
+                MessageBox.Show("Exemplar inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection conn = Conexao.Conectar())
+                {
+                    if (conn.State == ConnectionState.Open)
+                        Conexao.Desconectar(conn);
+
+                    var emprestimoDao = new EmprestimoDAO(conn);
+                    // procura empréstimos em aberto (DataDevol = '0') para o leitor e exemplar selecionados
+                    var lista = emprestimoDao.Listar($"CodExemplar = {codExemplar} AND CodLeitor = {codLeitor} AND DataDevol = '0'");
+
+                    if (lista == null || lista.Count == 0)
+                    {
+                        MessageBox.Show("Nenhum empréstimo em aberto encontrado para o leitor/exemplar selecionado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    // escolher o empréstimo mais recente (maior id) - sem lambda
+                    Emprestimo emprestimo = null;
+                    int maxCod = int.MinValue;
+                    foreach (var item in lista)
+                    {
+                        if (item != null && item.CodEmprestimo > maxCod)
+                        {
+                            maxCod = item.CodEmprestimo;
+                            emprestimo = item;
+                        }
+                    }
+
+                    if (emprestimo == null)
+                    {
+                        MessageBox.Show("Nenhum empréstimo válido encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    // definir DataDevol como data atual e verificar atraso
+                    string dataDevolAtual = DateTime.Today.ToString("yyyy-MM-dd");
+                    emprestimo.DataDevol = dataDevolAtual;
+
+                    int isAtrasado = 0;
+                    DateTime prazo;
+                    if (!string.IsNullOrWhiteSpace(emprestimo.PrazoDevol) && DateTime.TryParseExact(emprestimo.PrazoDevol, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out prazo))
+                    {
+                        if (DateTime.Today > prazo) isAtrasado = 1;
+                    }
+                    emprestimo.IsAtrasado = isAtrasado;
+
+                    bool ok = emprestimoDao.Alterar(emprestimo);
+                    if (ok)
+                    {
+                        MessageBox.Show("Devolução registrada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PopularLeitoresDevolucao();
+                        PopularExemplaresDevolucao();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao registrar devolução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mostrar stacktrace completo para diagnosticar o erro
+                MessageBox.Show("Erro ao registrar devolução: " + ex.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

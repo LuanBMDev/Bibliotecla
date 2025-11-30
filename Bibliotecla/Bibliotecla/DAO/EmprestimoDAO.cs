@@ -22,8 +22,9 @@ namespace Bibliotecla.DAO
 
         public bool Inserir(Emprestimo entity)
         {
-            string sql = "INSERT INTO Emprestimo (CodExemplar, CodLeitor, DataEmpres, PrazoDevol, isAtrasado) " +
-                         "VALUES (@CodExemplar, @CodLeitor, @DataEmpres, @PrazoDevol, @isAtrasado)";
+            // Inclui DataDevol no INSERT; se não houver data definida armazena "0"
+            string sql = "INSERT INTO Emprestimo (CodExemplar, CodLeitor, DataEmpres, DataDevol, PrazoDevol, isAtrasado) " +
+                         "VALUES (@CodExemplar, @CodLeitor, @DataEmpres, @DataDevol, @PrazoDevol, @isAtrasado)";
 
             int linhas_afetadas = 0;
 
@@ -34,6 +35,9 @@ namespace Bibliotecla.DAO
                 cmd.Parameters.AddWithValue("@CodExemplar", entity.Exemplar.CodExemplar);
                 cmd.Parameters.AddWithValue("@CodLeitor", entity.Leitor.CodPessoa);
                 cmd.Parameters.AddWithValue("@DataEmpres", entity.DataEmprestimo);
+                // armazena "0" quando não houver data de devolução
+                string dataDevol = string.IsNullOrWhiteSpace(entity.DataDevol) ? "0" : entity.DataDevol;
+                cmd.Parameters.AddWithValue("@DataDevol", dataDevol);
                 cmd.Parameters.AddWithValue("@PrazoDevol", entity.PrazoDevol);
                 cmd.Parameters.AddWithValue("@isAtrasado", entity.IsAtrasado);
 
@@ -50,13 +54,14 @@ namespace Bibliotecla.DAO
 
         public bool Alterar(Emprestimo entity)
         {
+            // SQL corrigido: separadores e espaços adequados entre atribuições
             string sql = "UPDATE Emprestimo SET " +
                          "CodExemplar = @CodExemplar, " +
                          "CodLeitor = @CodLeitor, " +
-                         "DataEmpres = @DataEmpres" +
-                         "DataDevol = @DataDevol" +
-                         "PrazoDevol = @PrazoDevol" +
-                         "isAtrasado = @isAtrasado" +
+                         "DataEmpres = @DataEmpres, " +
+                         "DataDevol = @DataDevol, " +
+                         "PrazoDevol = @PrazoDevol, " +
+                         "isAtrasado = @isAtrasado " +
                          "WHERE CodEmpres = @CodEmpres";
             int linhas_afetadas = 0;
 

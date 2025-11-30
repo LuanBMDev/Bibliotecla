@@ -33,20 +33,20 @@
             this.btn_Cadas_Leitor = new Guna.UI.WinForms.GunaButton();
             this.btn_Multa = new Guna.UI.WinForms.GunaButton();
             this.btn_Emprestimo = new Guna.UI.WinForms.GunaButton();
-            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
-            this.cmb_EstExem_Dev = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.cmb_Exem_Emp = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaVSeparator1 = new Guna.UI.WinForms.GunaVSeparator();
-            this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.txt_Prazo = new System.Windows.Forms.MaskedTextBox();
             this.comboBox_titulo_livro = new System.Windows.Forms.ComboBox();
             this.combo_leitor_emp = new System.Windows.Forms.ComboBox();
             this.combo_leitor_devl = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_EstExem_Dev = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -97,6 +97,7 @@
             this.btn_Devolucao.TabIndex = 37;
             this.btn_Devolucao.Text = "Devolução";
             this.btn_Devolucao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Devolucao.Click += new System.EventHandler(this.btn_Devolucao_Click);
             // 
             // btn_Cadas_Leitor
             // 
@@ -172,35 +173,6 @@
             this.btn_Emprestimo.Text = "Fazer Empréstimo";
             this.btn_Emprestimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaLabel6
-            // 
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel6.Location = new System.Drawing.Point(527, 142);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(161, 21);
-            this.gunaLabel6.TabIndex = 33;
-            this.gunaLabel6.Text = "Estado do Exemplar";
-            // 
-            // cmb_EstExem_Dev
-            // 
-            this.cmb_EstExem_Dev.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_EstExem_Dev.BaseColor = System.Drawing.Color.White;
-            this.cmb_EstExem_Dev.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_EstExem_Dev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_EstExem_Dev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_EstExem_Dev.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_EstExem_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_EstExem_Dev.ForeColor = System.Drawing.Color.Black;
-            this.cmb_EstExem_Dev.FormattingEnabled = true;
-            this.cmb_EstExem_Dev.Location = new System.Drawing.Point(531, 166);
-            this.cmb_EstExem_Dev.Name = "cmb_EstExem_Dev";
-            this.cmb_EstExem_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_EstExem_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_EstExem_Dev.Size = new System.Drawing.Size(207, 26);
-            this.cmb_EstExem_Dev.TabIndex = 31;
-            // 
             // gunaLabel4
             // 
             this.gunaLabel4.AutoSize = true;
@@ -273,18 +245,6 @@
             this.gunaVSeparator1.TabIndex = 21;
             this.gunaVSeparator1.Thickness = 3;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria Math", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(107, -99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(631, 262);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Empréstimo e Devolução";
-            // 
             // gunaLabel7
             // 
             this.gunaLabel7.AutoSize = true;
@@ -330,6 +290,47 @@
             this.combo_leitor_devl.Size = new System.Drawing.Size(207, 21);
             this.combo_leitor_devl.TabIndex = 43;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria Math", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label1.Location = new System.Drawing.Point(107, -99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(631, 262);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Empréstimo e Devolução";
+            // 
+            // cmb_EstExem_Dev
+            // 
+            this.cmb_EstExem_Dev.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_EstExem_Dev.BaseColor = System.Drawing.Color.White;
+            this.cmb_EstExem_Dev.BorderColor = System.Drawing.Color.Silver;
+            this.cmb_EstExem_Dev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_EstExem_Dev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_EstExem_Dev.FocusedColor = System.Drawing.Color.Empty;
+            this.cmb_EstExem_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmb_EstExem_Dev.ForeColor = System.Drawing.Color.Black;
+            this.cmb_EstExem_Dev.FormattingEnabled = true;
+            this.cmb_EstExem_Dev.Location = new System.Drawing.Point(531, 166);
+            this.cmb_EstExem_Dev.Name = "cmb_EstExem_Dev";
+            this.cmb_EstExem_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmb_EstExem_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmb_EstExem_Dev.Size = new System.Drawing.Size(207, 26);
+            this.cmb_EstExem_Dev.TabIndex = 31;
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.gunaLabel6.Location = new System.Drawing.Point(527, 142);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(161, 21);
+            this.gunaLabel6.TabIndex = 33;
+            this.gunaLabel6.Text = "Estado do Exemplar";
+            // 
             // frm_EmprEDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,19 +374,19 @@
         private Guna.UI.WinForms.GunaButton btn_Cadas_Leitor;
         private Guna.UI.WinForms.GunaButton btn_Multa;
         private Guna.UI.WinForms.GunaButton btn_Emprestimo;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaComboBox cmb_EstExem_Dev;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaComboBox cmb_Exem_Emp;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaVSeparator gunaVSeparator1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private System.Windows.Forms.MaskedTextBox txt_Prazo;
         private System.Windows.Forms.ComboBox comboBox_titulo_livro;
         private System.Windows.Forms.ComboBox combo_leitor_emp;
         private System.Windows.Forms.ComboBox combo_leitor_devl;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaComboBox cmb_EstExem_Dev;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
     }
 }
