@@ -170,7 +170,7 @@ namespace Bibliotecla.geral
             }
         }
 
-        // --- Relatórios específicos ---
+        // --- Relatórios específicos padrão ---
         public static string GerarRelatorioTitulosPdf(string outputPdfPath = null)
         {
             try
@@ -180,13 +180,9 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "titulos.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
-                bool ok = GerarPdfDeJson(json, pdf);
-                return ok ? pdf : null;
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
 
         public static string GerarRelatorioExemplaresPdf(string outputPdfPath = null)
@@ -198,13 +194,9 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "exemplares.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
-                bool ok = GerarPdfDeJson(json, pdf);
-                return ok ? pdf : null;
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
 
         public static string GerarRelatorioEmprestimosPdf(string outputPdfPath = null)
@@ -216,13 +208,9 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "emprestimos.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
-                bool ok = GerarPdfDeJson(json, pdf);
-                return ok ? pdf : null;
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
 
         public static string GerarRelatorioLeitoresPdf(string outputPdfPath = null)
@@ -234,13 +222,9 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "leitores.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
-                bool ok = GerarPdfDeJson(json, pdf);
-                return ok ? pdf : null;
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
 
         public static string GerarRelatorioMultasPdf(string outputPdfPath = null)
@@ -252,13 +236,166 @@ namespace Bibliotecla.geral
                 string json = Path.Combine(dir, "multas.json");
                 if (!File.Exists(json)) return null;
                 string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
-                bool ok = GerarPdfDeJson(json, pdf);
-                return ok ? pdf : null;
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
-            catch
+            catch { return null; }
+        }
+
+        // --- Relatórios específicos novos (preferências) ---
+        public static string GerarPreferenciaGeralPdf(string outputPdfPath = null)
+        {
+            try
             {
-                return null;
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "preferenciaGeral.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
             }
+            catch { return null; }
+        }
+
+        public static string GerarPreferenciaMaisEscolhidoPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "preferenciaMaisEscolhido.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarPreferenciaMaisEsperadoPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "preferenciaMaisEsperado.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        // --- Relatórios de Atrasos ---
+        public static string GerarAtrasoGeralPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "AtrasoGeral.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarAtrasoNaoQuitadosPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "AtrasoNaoQuitados.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarAtrasoQuitadoPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "AtrasoQuitado.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        // --- Relatórios de Danos ---
+        public static string GerarDanosGeralPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "DanosGeral.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarDanosNovosPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "DanosNovos.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarUsoModeradoPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "UsoModerado.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarDanoLevesPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "DanoLeves.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
+        }
+
+        public static string GerarDanoGravesPdf(string outputPdfPath = null)
+        {
+            try
+            {
+                CriacaoDJson.AtualizarTodosJson();
+                string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                string json = Path.Combine(dir, "DanoGraves.json");
+                if (!File.Exists(json)) return null;
+                string pdf = outputPdfPath ?? Path.ChangeExtension(json, ".pdf");
+                return GerarPdfDeJson(json, pdf) ? pdf : null;
+            }
+            catch { return null; }
         }
     }
 }

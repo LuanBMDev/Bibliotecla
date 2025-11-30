@@ -35,17 +35,38 @@ namespace Bibliotecla
         {
             try
             {
-                // Para relatório de atrasos usamos o relatório de empréstimos (contém campo isAtrasado)
-                string pdfPath = FazerJsonemPDF.GerarRelatorioEmprestimosPdf();
+                string selecionado = cmb_Filtro.SelectedItem as string;
+                string pdfPath = null;
 
-                if (!string.IsNullOrEmpty(pdfPath) && File.Exists(pdfPath))
+                if (string.IsNullOrEmpty(selecionado))
                 {
-                    MessageBox.Show("PDF gerado em: " + pdfPath);
+                    MessageBox.Show("Selecione um filtro.");
+                    return;
                 }
-                else
+
+                switch (selecionado)
                 {
-                    MessageBox.Show("Falha ao gerar o PDF de atrasos.");
+                    case "Geral":
+                        pdfPath = FazerJsonemPDF.GerarAtrasoGeralPdf();
+                        break;
+                    case "Atrasos Não Quitados":
+                        pdfPath = FazerJsonemPDF.GerarAtrasoNaoQuitadosPdf();
+                        break;
+                    case "Atrasos Quitados":
+                        pdfPath = FazerJsonemPDF.GerarAtrasoQuitadoPdf();
+                        break;
+                    default:
+                        MessageBox.Show("Filtro desconhecido.");
+                        return;
                 }
+
+                if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
+                {
+                    MessageBox.Show("Sem informação");
+                    return;
+                }
+
+                MessageBox.Show("PDF gerado em: " + pdfPath);
             }
             catch (Exception ex)
             {

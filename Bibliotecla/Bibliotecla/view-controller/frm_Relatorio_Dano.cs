@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Bibliotecla
 {
@@ -32,7 +33,50 @@ namespace Bibliotecla
 
         private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string selecionado = cmb_Filtro.SelectedItem as string;
+                if (string.IsNullOrEmpty(selecionado))
+                {
+                    MessageBox.Show("Selecione um filtro.");
+                    return;
+                }
+
+                string pdfPath = null;
+                switch (selecionado)
+                {
+                    case "Geral":
+                        pdfPath = FazerJsonemPDF.GerarDanosGeralPdf();
+                        break;
+                    case "Novo":
+                        pdfPath = FazerJsonemPDF.GerarDanosNovosPdf();
+                        break;
+                    case "Uso Moderado":
+                        pdfPath = FazerJsonemPDF.GerarUsoModeradoPdf();
+                        break;
+                    case "Danos Leves":
+                        pdfPath = FazerJsonemPDF.GerarDanoLevesPdf();
+                        break;
+                    case "Danos Graves":
+                        pdfPath = FazerJsonemPDF.GerarDanoGravesPdf();
+                        break;
+                    default:
+                        MessageBox.Show("Filtro desconhecido.");
+                        return;
+                }
+
+                if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
+                {
+                    MessageBox.Show("Sem informação");
+                    return;
+                }
+
+                MessageBox.Show("PDF gerado em: " + pdfPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gerar PDFs: " + ex.Message);
+            }
         }
     }
 }
