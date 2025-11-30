@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Excluir = new Guna.UI.WinForms.GunaButton();
             this.btn_Editar = new Guna.UI.WinForms.GunaButton();
             this.btn_Voltar = new Guna.UI.WinForms.GunaButton();
@@ -37,6 +40,18 @@
             this.txt_Leitor = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Pesquisar = new Guna.UI.WinForms.GunaButton();
+            this.Dgv_Consul_Leitor = new Guna.UI.WinForms.GunaDataGridView();
+            this.Col_Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_NumRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Devendo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_Leitor)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Excluir
@@ -134,6 +149,17 @@
             this.cmb_Filtro.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Filtro.ForeColor = System.Drawing.Color.Black;
             this.cmb_Filtro.FormattingEnabled = true;
+            this.cmb_Filtro.Items.AddRange(new object[] {
+            "cpf",
+            "telefone",
+            "email",
+            "nome",
+            "cep",
+            "rua",
+            "numRes",
+            "bairro",
+            "cidade",
+            "devedor"});
             this.cmb_Filtro.Location = new System.Drawing.Point(513, 97);
             this.cmb_Filtro.Name = "cmb_Filtro";
             this.cmb_Filtro.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -148,9 +174,9 @@
             this.gunaLabel1.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.gunaLabel1.Location = new System.Drawing.Point(84, 73);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(54, 21);
+            this.gunaLabel1.Size = new System.Drawing.Size(77, 21);
             this.gunaLabel1.TabIndex = 65;
-            this.gunaLabel1.Text = "Leitor";
+            this.gunaLabel1.Text = "Pesquisa";
             // 
             // txt_Leitor
             // 
@@ -203,6 +229,135 @@
             this.btn_Pesquisar.TabIndex = 71;
             this.btn_Pesquisar.Text = "Pesquisar";
             this.btn_Pesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
+            // 
+            // Dgv_Consul_Leitor
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Leitor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_Consul_Leitor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_Consul_Leitor.BackgroundColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Leitor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_Consul_Leitor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Consul_Leitor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Consul_Leitor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_Consul_Leitor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Consul_Leitor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Nome,
+            this.Col_Cpf,
+            this.Col_Email,
+            this.Col_Telefone,
+            this.Col_Cep,
+            this.Col_Rua,
+            this.Col_NumRes,
+            this.Col_Cidade,
+            this.Col_Bairro,
+            this.Col_Devendo});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_Consul_Leitor.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Dgv_Consul_Leitor.EnableHeadersVisualStyles = false;
+            this.Dgv_Consul_Leitor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Leitor.Location = new System.Drawing.Point(88, 129);
+            this.Dgv_Consul_Leitor.Name = "Dgv_Consul_Leitor";
+            this.Dgv_Consul_Leitor.RowHeadersVisible = false;
+            this.Dgv_Consul_Leitor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_Consul_Leitor.Size = new System.Drawing.Size(677, 212);
+            this.Dgv_Consul_Leitor.TabIndex = 72;
+            this.Dgv_Consul_Leitor.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.Dgv_Consul_Leitor.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Leitor.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.Dgv_Consul_Leitor.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_Leitor.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_Leitor.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_Leitor.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Leitor.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.Height = 21;
+            this.Dgv_Consul_Leitor.ThemeStyle.ReadOnly = false;
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.Height = 22;
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Col_Nome
+            // 
+            this.Col_Nome.HeaderText = "Nome";
+            this.Col_Nome.Name = "Col_Nome";
+            this.Col_Nome.ReadOnly = true;
+            // 
+            // Col_Cpf
+            // 
+            this.Col_Cpf.HeaderText = "Cpf";
+            this.Col_Cpf.Name = "Col_Cpf";
+            this.Col_Cpf.ReadOnly = true;
+            // 
+            // Col_Email
+            // 
+            this.Col_Email.HeaderText = "Email";
+            this.Col_Email.Name = "Col_Email";
+            this.Col_Email.ReadOnly = true;
+            // 
+            // Col_Telefone
+            // 
+            this.Col_Telefone.HeaderText = "Tel";
+            this.Col_Telefone.Name = "Col_Telefone";
+            this.Col_Telefone.ReadOnly = true;
+            // 
+            // Col_Cep
+            // 
+            this.Col_Cep.HeaderText = "Cep";
+            this.Col_Cep.Name = "Col_Cep";
+            this.Col_Cep.ReadOnly = true;
+            // 
+            // Col_Rua
+            // 
+            this.Col_Rua.HeaderText = "Rua";
+            this.Col_Rua.Name = "Col_Rua";
+            this.Col_Rua.ReadOnly = true;
+            // 
+            // Col_NumRes
+            // 
+            this.Col_NumRes.HeaderText = "N°Res";
+            this.Col_NumRes.Name = "Col_NumRes";
+            this.Col_NumRes.ReadOnly = true;
+            // 
+            // Col_Cidade
+            // 
+            this.Col_Cidade.HeaderText = "Cidade";
+            this.Col_Cidade.Name = "Col_Cidade";
+            this.Col_Cidade.ReadOnly = true;
+            // 
+            // Col_Bairro
+            // 
+            this.Col_Bairro.HeaderText = "Bairro";
+            this.Col_Bairro.Name = "Col_Bairro";
+            this.Col_Bairro.ReadOnly = true;
+            // 
+            // Col_Devendo
+            // 
+            this.Col_Devendo.HeaderText = "Devendo";
+            this.Col_Devendo.Name = "Col_Devendo";
+            this.Col_Devendo.ReadOnly = true;
             // 
             // frm_Consulta_Leitor
             // 
@@ -210,6 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.Dgv_Consul_Leitor);
             this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.btn_Editar);
@@ -224,6 +380,7 @@
             this.Name = "frm_Consulta_Leitor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta_Leitor";
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_Leitor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +397,16 @@
         private Guna.UI.WinForms.GunaTextBox txt_Leitor;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton btn_Pesquisar;
+        private Guna.UI.WinForms.GunaDataGridView Dgv_Consul_Leitor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Rua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_NumRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Devendo;
     }
 }
