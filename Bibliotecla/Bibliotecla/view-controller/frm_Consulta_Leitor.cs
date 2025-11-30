@@ -25,6 +25,7 @@ namespace Bibliotecla
             InitializeComponent();
             cmb_Filtro.SelectedIndex = 3;
             btn_Editar.Click += btn_Editar_Click;
+            btn_Excluir.Click += btn_Excluir_Click; // associa exclusão
             popularTabela(listaInicial());
         }
 
@@ -206,6 +207,50 @@ namespace Bibliotecla
         private void Dgv_Consul_Leitor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void frm_Consulta_Leitor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Excluir_Click(object sender, EventArgs e)
+        {
+            if (Dgv_Consul_Leitor.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione ao menos um leitor para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (MessageBox.Show("Confirma exclusão dos registros selecionados?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            int sucesso = 0; int falha = 0;
+            foreach (DataGridViewRow row in Dgv_Consul_Leitor.SelectedRows)
+            {
+                if (row.Tag is int cod && cod > 0)
+                {
+                    try
+                    {
+                        if (leitorFuncioDAO.Remover(new LeitorFuncio { CodPessoa = cod })) sucesso++; else falha++;
+                    }
+                    catch (Exception ex)
+                    {
+                        falha++;
+                        string msg = ex.Message.ToLowerInvariant();
+                        if (msg.Contains("foreign key") && (msg.Contains("emprest") || msg.Contains("multa") || msg.Contains("espera")))
+                        {
+                            MessageBox.Show("Existem registros relacionados (empréstimos/multas/esperas) deste leitor; não é possível deletá-lo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao excluir leitor Cod=" + cod + ": " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else falha++;
+            }
+            MessageBox.Show($"Excluídos: {sucesso}\nFalhas: {falha}", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try { popularTabela(leitorFuncioDAO.Listar("Cargo IN ('Leitor')")); } catch { }
         }
     }
 }

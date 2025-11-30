@@ -19,9 +19,24 @@ namespace Bibliotecla
         public frm_Consul_Funcionario()
         {
             InitializeComponent();
+            // Força seleção por linha (apenas uma linha)
+            Dgv_Consul_Funcionario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Dgv_Consul_Funcionario.MultiSelect = false; // agora só permite 1 seleção
+            Dgv_Consul_Funcionario.CellClick += Dgv_Consul_Funcionario_CellClick;
+
             cmb_Filtro.SelectedIndex = 3;
             btn_Editar.Click += btn_Editar_Click;
+            btn_Excluir.Click += btn_Excluir_Click; // associa exclusão
             popularTabela(listaInicial());
+        }
+
+        private void Dgv_Consul_Funcionario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < Dgv_Consul_Funcionario.Rows.Count)
+            {
+                Dgv_Consul_Funcionario.ClearSelection();
+                Dgv_Consul_Funcionario.Rows[e.RowIndex].Selected = true;
+            }
         }
 
         public bool verificaCampos()
@@ -217,6 +232,43 @@ namespace Bibliotecla
         private void btn_Editar_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Excluir_Click(object sender, EventArgs e)
+        {
+            if (Dgv_Consul_Funcionario.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Selecione exatamente um funcionário para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (MessageBox.Show("Confirma exclusão do registro selecionado?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            var row = Dgv_Consul_Funcionario.SelectedRows[0];
+            int sucesso = 0; int falha = 0;
+            if (row.Tag is int cod && cod > 0)
+            {
+                try
+                {
+                    if (leitorFuncioDAO.Remover(new LeitorFuncio { CodPessoa = cod })) sucesso++; else falha++;
+                }
+                catch (Exception ex)
+                {
+                    falha++;
+                    var msg = ex.Message.ToLowerInvariant();
+                    if (msg.Contains("foreign key") && (msg.Contains("emprest") || msg.Contains("mult") || msg.Contains("espera")))
+                    {
+                        MessageBox.Show("Existem registros relacionados (empréstimos/multas/esperas) deste funcionário; não é possível deletá-lo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao excluir funcionário Cod=" + cod + ": " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else falha++;
+            MessageBox.Show($"Excluídos: {sucesso}\nFalhas: {falha}", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try { popularTabela(leitorFuncioDAO.ListarFuncionario("cargo IN ('bibliotecario', 'gerente', 'diretora')")); } catch { }
         }
     }
 }
