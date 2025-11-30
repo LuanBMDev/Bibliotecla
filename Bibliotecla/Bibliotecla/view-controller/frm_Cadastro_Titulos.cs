@@ -36,14 +36,13 @@ namespace Bibliotecla
             {
                 btn_Editar.Enabled = false;
                 btn_Editar.Text = "Editar";
-                tip.SetToolTip(btn_Editar, 
-                              "Selecione um Título na tela de Consulta para editá-lo...");
+                lbl_Dica.Visible = true;
             }
             else
             {
                 btn_Editar.Enabled = true;
                 btn_Editar.Text = "Editar Titulo N°" + this.titulo.CodTitulo;
-                tip.SetToolTip(btn_Editar, "");
+                lbl_Dica.Visible = false;
             }
         }
 
