@@ -1,7 +1,7 @@
 ﻿using Bibliotecla.banco;
 using Bibliotecla.DAO;
+using Bibliotecla.geral;
 using Bibliotecla.model;
-using Bibliotecla.geral; // adiciona interface CadastroEdicao e MensagensPadrao
 using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
@@ -22,17 +22,32 @@ namespace Bibliotecla
             AlternarBtnEditar();
         }
 
+        // Tornar internal para manter consistência de acessibilidade com a classe Titulo (internal)
+        internal void CarregarTitulo(Titulo t)
+        {
+            this.titulo = t;
+            if (t != null)
+            {
+                txt_Titulo.Text = t.NomeTitulo ?? string.Empty;
+                txt_Autor.Text = t.AutorTitulo ?? string.Empty;
+                txt_Genero.Text = t.GeneroTitulo ?? string.Empty;
+            }
+            AlternarBtnEditar();
+        }
+
         private void AlternarBtnEditar()
         {
             if (titulo == null)
             {
                 btn_Editar.Enabled = false;
+                btn_Cadastrar.Enabled = true;
                 btn_Editar.Text = "Editar";
                 lbl_Dica.Visible = true;
             }
             else
             {
                 btn_Editar.Enabled = true;
+                btn_Cadastrar.Enabled = false;
                 btn_Editar.Text = "Editar Titulo N°" + this.titulo.CodTitulo;
                 lbl_Dica.Visible = false;
             }
@@ -54,14 +69,8 @@ namespace Bibliotecla
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.titulo = null;
-
-            // 1. Cria uma instância do novo formulário.
             frm_Geren_Livros novoFormulario = new frm_Geren_Livros();
-
-            // 2. Exibe o novo formulário.
             novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
             this.Hide();
         }
 
@@ -89,6 +98,11 @@ namespace Bibliotecla
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
+            if (titulo == null)
+            {
+                MessageBox.Show("Nenhum título carregado para edição.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (VerificarCampos())
             {
                 string t = txt_Titulo.Text.Trim();
@@ -99,6 +113,10 @@ namespace Bibliotecla
                     Titulo objTitulo = new Titulo(this.titulo.CodTitulo, t, g, a);
                     tituloDAO.Alterar(objTitulo);
                     MensagensPadrao.MsgEdicaoSucesso(MensagensPadrao.Entidade.Titulo);
+                    // Após editar, limpar e voltar ao estado de cadastro sem o título da consulta
+                    LimparCampos();
+                    this.titulo = null;
+                    AlternarBtnEditar();
                 }
                 catch (MySqlException ex)
                 {

@@ -21,17 +21,6 @@ namespace Bibliotecla
             this.Hide();
         }
 
-        private bool JsonTemConteudo(string jsonFileName)
-        {
-            if (string.IsNullOrWhiteSpace(jsonFileName)) return false;
-            string relDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
-            string caminho = Path.Combine(relDir, jsonFileName);
-            if (!File.Exists(caminho)) return false;
-            string texto = File.ReadAllText(caminho).Trim();
-            if (string.IsNullOrWhiteSpace(texto) || texto == "[]" || texto == "{}") return false;
-            return true;
-        }
-
         private void GeneratePdfBySelection()
         {
             try
@@ -46,28 +35,19 @@ namespace Bibliotecla
                 // Garante atualização dos JSON antes de gerar
                 try { CriacaoDJson.AtualizarTodosJson(); } catch (Exception exJson) { Console.WriteLine("Falha atualizar JSON: " + exJson.Message); }
 
-                string filtroLimpo = selecionado.Trim();
-                string jsonName = filtroLimpo == "Geral" ? "PreferenciaGeral.json" :
-                                   filtroLimpo == "Mais Escolhido" ? "PreferenciaMaisEscolido.json" :
-                                   filtroLimpo == "Mais Esperado" ? "PreferenciaMaisEsperado.json" : null;
-
-                if (jsonName == null)
-                {
-                    MessageBox.Show("Filtro desconhecido.");
-                    return;
-                }
-
-                if (!JsonTemConteudo(jsonName))
-                {
-                    MessageBox.Show("Nenhum dado disponível para o filtro selecionado. JSON=" + jsonName, "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("preferencia", filtroLimpo);
+                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("preferencia", selecionado.Trim());
 
                 if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
                 {
-                    MessageBox.Show("Falha ao gerar PDF (arquivo não encontrado).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Mostra diagnóstico básico
+                    string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string relDir = Path.Combine(baseDir, "relatorios");
+                    string jsonName = selecionado.Trim() == "Geral" ? "PreferenciaGeral.json" :
+                                      selecionado.Trim() == "Mais Escolhido" ? "PreferenciaMaisEscolido.json" :
+                                      selecionado.Trim() == "Mais Esperado" ? "PreferenciaMaisEsperado.json" : "(desconhecido)";
+                    string jsonPath = Path.Combine(relDir, jsonName);
+                    bool jsonExiste = File.Exists(jsonPath);
+                    MessageBox.Show("Nenhum dado disponível. JSON=" + jsonName + " existe=" + jsonExiste);
                     return;
                 }
 

@@ -19,18 +19,6 @@ namespace Bibliotecla
             this.Hide();
         }
 
-        private bool JsonTemConteudo(string jsonFileName)
-        {
-            if (string.IsNullOrWhiteSpace(jsonFileName)) return false;
-            string relDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
-            string caminho = Path.Combine(relDir, jsonFileName);
-            if (!File.Exists(caminho)) return false;
-            string texto = File.ReadAllText(caminho).Trim();
-            if (string.IsNullOrWhiteSpace(texto)) return false;
-            if (texto == "[]" || texto == "{}") return false;
-            return true;
-        }
-
         private void GeneratePdfBySelection()
         {
             try
@@ -45,27 +33,16 @@ namespace Bibliotecla
                 try { CriacaoDJson.AtualizarTodosJson(); } catch (Exception exJson) { Console.WriteLine("Falha atualizar JSON: " + exJson.Message); }
 
                 string filtroLimpo = selecionado.Trim();
-                string jsonName = filtroLimpo == "Geral" ? "AtrasosGeral.json" :
-                                   filtroLimpo == "Atrasos Não Quitados" ? "AtrasosNaoQuitados.json" :
-                                   filtroLimpo == "Atrasos Quitados" ? "AtrasoQuitados.json" : null;
-
-                if (jsonName == null)
-                {
-                    MessageBox.Show("Filtro desconhecido.");
-                    return;
-                }
-
-                if (!JsonTemConteudo(jsonName))
-                {
-                    MessageBox.Show("Nenhum dado disponível para o filtro selecionado. JSON=" + jsonName, "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
                 string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("atraso", filtroLimpo);
 
                 if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
                 {
-                    MessageBox.Show("Falha ao gerar PDF (arquivo não encontrado).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    string relDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "relatorios");
+                    string jsonName = filtroLimpo == "Geral" ? "AtrasosGeral.json" :
+                                      filtroLimpo == "Atrasos Não Quitados" ? "AtrasosNaoQuitados.json" :
+                                      filtroLimpo == "Atrasos Quitados" ? "AtrasoQuitados.json" : "(desconhecido)";
+                    bool jsonExiste = File.Exists(Path.Combine(relDir, jsonName));
+                    MessageBox.Show("Nenhum dado disponível. JSON=" + jsonName + " existe=" + jsonExiste);
                     return;
                 }
 
