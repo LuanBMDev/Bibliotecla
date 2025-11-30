@@ -72,10 +72,10 @@ CREATE TABLE Espera
 	CodEmpres INT,
 	CodExemplar INT,
 	FOREIGN KEY (CodEmpres) REFERENCES Emprestimo(CodEmpres),
-	FOREIGN KEY (DataDevol) REFERENCES Emprestimo(DataDevol),
 	FOREIGN KEY (CodPessoa) REFERENCES LeitorFuncio(CodPessoa),
 	FOREIGN KEY (CodExemplar) REFERENCES Emprestimo(CodExemplar)
 );
+
 
 
 
