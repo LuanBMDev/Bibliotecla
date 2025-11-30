@@ -36,6 +36,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.txt_Leitor = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Pesquisar = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // btn_Excluir
@@ -50,7 +51,7 @@
             this.btn_Excluir.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btn_Excluir.Image = null;
             this.btn_Excluir.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Excluir.Location = new System.Drawing.Point(570, 347);
+            this.btn_Excluir.Location = new System.Drawing.Point(88, 347);
             this.btn_Excluir.Name = "btn_Excluir";
             this.btn_Excluir.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Excluir.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -74,7 +75,7 @@
             this.btn_Editar.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btn_Editar.Image = null;
             this.btn_Editar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Editar.Location = new System.Drawing.Point(153, 347);
+            this.btn_Editar.Location = new System.Drawing.Point(633, 347);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Editar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -98,7 +99,7 @@
             this.btn_Voltar.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btn_Voltar.Image = null;
             this.btn_Voltar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Voltar.Location = new System.Drawing.Point(362, 403);
+            this.btn_Voltar.Location = new System.Drawing.Point(347, 403);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Voltar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -116,7 +117,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel2.Location = new System.Drawing.Point(557, 73);
+            this.gunaLabel2.Location = new System.Drawing.Point(509, 73);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(57, 21);
             this.gunaLabel2.TabIndex = 67;
@@ -133,11 +134,11 @@
             this.cmb_Filtro.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Filtro.ForeColor = System.Drawing.Color.Black;
             this.cmb_Filtro.FormattingEnabled = true;
-            this.cmb_Filtro.Location = new System.Drawing.Point(561, 97);
+            this.cmb_Filtro.Location = new System.Drawing.Point(513, 97);
             this.cmb_Filtro.Name = "cmb_Filtro";
             this.cmb_Filtro.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Filtro.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Filtro.Size = new System.Drawing.Size(176, 26);
+            this.cmb_Filtro.Size = new System.Drawing.Size(160, 26);
             this.cmb_Filtro.TabIndex = 66;
             // 
             // gunaLabel1
@@ -164,7 +165,7 @@
             this.txt_Leitor.Name = "txt_Leitor";
             this.txt_Leitor.PasswordChar = '\0';
             this.txt_Leitor.SelectedText = "";
-            this.txt_Leitor.Size = new System.Drawing.Size(467, 26);
+            this.txt_Leitor.Size = new System.Drawing.Size(419, 26);
             this.txt_Leitor.TabIndex = 64;
             // 
             // label1
@@ -179,12 +180,37 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "Consulta de Leitores";
             // 
+            // btn_Pesquisar
+            // 
+            this.btn_Pesquisar.AnimationHoverSpeed = 0.07F;
+            this.btn_Pesquisar.AnimationSpeed = 0.03F;
+            this.btn_Pesquisar.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Pesquisar.BorderColor = System.Drawing.Color.Black;
+            this.btn_Pesquisar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Pesquisar.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Pesquisar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pesquisar.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_Pesquisar.Image = null;
+            this.btn_Pesquisar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Pesquisar.Location = new System.Drawing.Point(679, 97);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Pesquisar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Pesquisar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Pesquisar.OnHoverImage = null;
+            this.btn_Pesquisar.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Pesquisar.Size = new System.Drawing.Size(86, 26);
+            this.btn_Pesquisar.TabIndex = 71;
+            this.btn_Pesquisar.Text = "Pesquisar";
+            this.btn_Pesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frm_Consulta_Leitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Voltar);
@@ -213,5 +239,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox txt_Leitor;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaButton btn_Pesquisar;
     }
 }
