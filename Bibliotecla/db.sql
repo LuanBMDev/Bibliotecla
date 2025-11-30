@@ -31,7 +31,7 @@ CREATE TABLE Titulo
 CREATE TABLE Exemplar
 ( 
 	CodExemplar INT PRIMARY KEY AUTO_INCREMENT,
-	AnoPibli VARCHAR(10),
+	AnoPubli VARCHAR(10),
 	EstadoFisc VARCHAR(100),
 	Editora VARCHAR(100),
   	CodTitulo INT,

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Bibliotecla
 {
@@ -84,6 +85,34 @@ namespace Bibliotecla
                 MessageBox.Show("Erro ao cadastrar leitor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            VerificaCampos();
+
+            string cpf = txt_Cpf.Text.Trim();
+            string nome = txt_Nome.Text.Trim();
+            string email = txt_Email.Text.Trim();
+            string telefone = txt_Telefone.Text.Trim();
+            string cep = txt_CEP.Text.Trim();
+            string rua = txt_Endereco.Text.Trim();
+            string numRes = txt_Num.Text.Trim();
+            string cidade = txt_Cidade.Text.Trim();
+            string bairro = txt_Bairro.Text.Trim();
+            string cargo = "leitor";
+
+            try
+            {
+                LeitorFuncio ObjLeitor = new LeitorFuncio(cpf, telefone, cargo, email, nome, cep, rua, numRes, bairro, cidade);
+                leitorFuncioDAO.Alterar(ObjLeitor);
+
+                MessageBox.Show("Edição feita com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar leitor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

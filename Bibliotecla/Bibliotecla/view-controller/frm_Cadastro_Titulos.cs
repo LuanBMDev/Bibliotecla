@@ -83,14 +83,12 @@ namespace Bibliotecla
 
                 try
                 {
-                    Titulo objTitulo = new Titulo(titulo, autor, genero);
+                    Titulo objTitulo = new Titulo(titulo, genero, autor);
                     tituloDAO.Inserir(objTitulo);
 
                     MensagensPadrao.MsgCadastroSucesso(MensagensPadrao.Entidade.Titulo);
 
-                    txt_Titulo.Clear();
-                    txt_Autor.Clear();
-                    txt_Genero.Clear();
+                    LimparCampos();
                 }
                 catch (MySqlException ex)
                 {
@@ -113,20 +111,27 @@ namespace Bibliotecla
 
                 try
                 {
-                    Titulo objTitulo = new Titulo(this.titulo.CodTitulo, titulo, autor, genero);
+                    Titulo objTitulo = new Titulo(this.titulo.CodTitulo, titulo, genero, autor);
                     tituloDAO.Alterar(objTitulo);
 
-                    MensagensPadrao.MsgCadastroSucesso(MensagensPadrao.Entidade.Titulo);
+                    MensagensPadrao.MsgEdicaoSucesso(MensagensPadrao.Entidade.Titulo);
                 }
                 catch (MySqlException ex)
                 {
-                    MensagensPadrao.MsgFalhaCadastro(MensagensPadrao.Entidade.Titulo, ex);
+                    MensagensPadrao.MsgFalhaEdicao(MensagensPadrao.Entidade.Titulo, ex);
                 }
             }
             else
             {
                 MensagensPadrao.MsgCamposObrigatorios();
             }
+        }
+
+        public void LimparCampos()
+        {
+            txt_Titulo.Clear();
+            txt_Autor.Clear();
+            txt_Genero.Clear();
         }
     }
 }
