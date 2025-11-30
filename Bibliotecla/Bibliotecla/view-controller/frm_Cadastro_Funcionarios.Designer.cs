@@ -44,10 +44,18 @@
             this.txt_Email = new Guna.UI.WinForms.GunaTextBox();
             this.cmb_Cargo = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
+            this.txt_Usuario = new Guna.UI.WinForms.GunaTextBox();
+            this.txt_Senha = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.txt_Num = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
+            this.txt_Bairro = new Guna.UI.WinForms.GunaTextBox();
+            this.txt_Cidade = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
+            this.txt_CEP = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -67,11 +75,11 @@
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel3.Location = new System.Drawing.Point(368, 171);
+            this.gunaLabel3.Location = new System.Drawing.Point(295, 171);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(81, 21);
+            this.gunaLabel3.Size = new System.Drawing.Size(39, 21);
             this.gunaLabel3.TabIndex = 56;
-            this.gunaLabel3.Text = "Endereço";
+            this.gunaLabel3.Text = "Rua";
             // 
             // txt_Endereco
             // 
@@ -86,7 +94,7 @@
             this.txt_Endereco.Name = "txt_Endereco";
             this.txt_Endereco.PasswordChar = '\0';
             this.txt_Endereco.SelectedText = "";
-            this.txt_Endereco.Size = new System.Drawing.Size(626, 26);
+            this.txt_Endereco.Size = new System.Drawing.Size(474, 26);
             this.txt_Endereco.TabIndex = 55;
             // 
             // gunaLabel2
@@ -155,7 +163,7 @@
             this.btn_Cadastrar.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btn_Cadastrar.Image = null;
             this.btn_Cadastrar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Cadastrar.Location = new System.Drawing.Point(560, 347);
+            this.btn_Cadastrar.Location = new System.Drawing.Point(560, 403);
             this.btn_Cadastrar.Name = "btn_Cadastrar";
             this.btn_Cadastrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Cadastrar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -166,6 +174,7 @@
             this.btn_Cadastrar.TabIndex = 63;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // btn_Editar
             // 
@@ -179,7 +188,7 @@
             this.btn_Editar.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btn_Editar.Image = null;
             this.btn_Editar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Editar.Location = new System.Drawing.Point(143, 347);
+            this.btn_Editar.Location = new System.Drawing.Point(143, 403);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Editar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -221,7 +230,7 @@
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel5.Location = new System.Drawing.Point(576, 223);
+            this.gunaLabel5.Location = new System.Drawing.Point(574, 277);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(76, 21);
             this.gunaLabel5.TabIndex = 60;
@@ -236,7 +245,7 @@
             this.txt_Telefone.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txt_Telefone.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_Telefone.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_Telefone.Location = new System.Drawing.Point(490, 247);
+            this.txt_Telefone.Location = new System.Drawing.Point(488, 301);
             this.txt_Telefone.Name = "txt_Telefone";
             this.txt_Telefone.PasswordChar = '\0';
             this.txt_Telefone.SelectedText = "";
@@ -248,7 +257,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel4.Location = new System.Drawing.Point(267, 223);
+            this.gunaLabel4.Location = new System.Drawing.Point(265, 277);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(53, 21);
             this.gunaLabel4.TabIndex = 58;
@@ -263,7 +272,7 @@
             this.txt_Email.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txt_Email.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_Email.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_Email.Location = new System.Drawing.Point(108, 247);
+            this.txt_Email.Location = new System.Drawing.Point(106, 301);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.PasswordChar = '\0';
             this.txt_Email.SelectedText = "";
@@ -281,7 +290,11 @@
             this.cmb_Cargo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Cargo.ForeColor = System.Drawing.Color.Black;
             this.cmb_Cargo.FormattingEnabled = true;
-            this.cmb_Cargo.Location = new System.Drawing.Point(108, 303);
+            this.cmb_Cargo.Items.AddRange(new object[] {
+            "bibliotecario",
+            "gerente",
+            "diretora"});
+            this.cmb_Cargo.Location = new System.Drawing.Point(106, 357);
             this.cmb_Cargo.Name = "cmb_Cargo";
             this.cmb_Cargo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Cargo.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -293,50 +306,50 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel6.Location = new System.Drawing.Point(183, 279);
+            this.gunaLabel6.Location = new System.Drawing.Point(181, 333);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(55, 21);
             this.gunaLabel6.TabIndex = 65;
             this.gunaLabel6.Text = "Cargo";
             // 
-            // gunaTextBox1
+            // txt_Usuario
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(316, 303);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(209, 26);
-            this.gunaTextBox1.TabIndex = 66;
+            this.txt_Usuario.BaseColor = System.Drawing.Color.White;
+            this.txt_Usuario.BorderColor = System.Drawing.Color.Silver;
+            this.txt_Usuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Usuario.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_Usuario.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_Usuario.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_Usuario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Usuario.Location = new System.Drawing.Point(314, 357);
+            this.txt_Usuario.Name = "txt_Usuario";
+            this.txt_Usuario.PasswordChar = '\0';
+            this.txt_Usuario.SelectedText = "";
+            this.txt_Usuario.Size = new System.Drawing.Size(209, 26);
+            this.txt_Usuario.TabIndex = 66;
             // 
-            // gunaTextBox2
+            // txt_Senha
             // 
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(531, 303);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(203, 26);
-            this.gunaTextBox2.TabIndex = 67;
+            this.txt_Senha.BaseColor = System.Drawing.Color.White;
+            this.txt_Senha.BorderColor = System.Drawing.Color.Silver;
+            this.txt_Senha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Senha.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_Senha.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_Senha.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_Senha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Senha.Location = new System.Drawing.Point(529, 357);
+            this.txt_Senha.Name = "txt_Senha";
+            this.txt_Senha.PasswordChar = '\0';
+            this.txt_Senha.SelectedText = "";
+            this.txt_Senha.Size = new System.Drawing.Size(203, 26);
+            this.txt_Senha.TabIndex = 67;
             // 
             // gunaLabel7
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel7.Location = new System.Drawing.Point(388, 279);
+            this.gunaLabel7.Location = new System.Drawing.Point(386, 333);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(69, 21);
             this.gunaLabel7.TabIndex = 68;
@@ -347,11 +360,119 @@
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel8.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel8.Location = new System.Drawing.Point(597, 279);
+            this.gunaLabel8.Location = new System.Drawing.Point(595, 333);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(57, 21);
             this.gunaLabel8.TabIndex = 69;
             this.gunaLabel8.Text = "Senha";
+            // 
+            // txt_Num
+            // 
+            this.txt_Num.BaseColor = System.Drawing.Color.White;
+            this.txt_Num.BorderColor = System.Drawing.Color.Silver;
+            this.txt_Num.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Num.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_Num.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_Num.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_Num.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Num.Location = new System.Drawing.Point(588, 195);
+            this.txt_Num.Name = "txt_Num";
+            this.txt_Num.PasswordChar = '\0';
+            this.txt_Num.SelectedText = "";
+            this.txt_Num.Size = new System.Drawing.Size(146, 26);
+            this.txt_Num.TabIndex = 71;
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel9.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.gunaLabel9.Location = new System.Drawing.Point(619, 171);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(73, 21);
+            this.gunaLabel9.TabIndex = 70;
+            this.gunaLabel9.Text = "Número";
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel10.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.gunaLabel10.Location = new System.Drawing.Point(603, 223);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(56, 21);
+            this.gunaLabel10.TabIndex = 77;
+            this.gunaLabel10.Text = "Bairro";
+            // 
+            // txt_Bairro
+            // 
+            this.txt_Bairro.BaseColor = System.Drawing.Color.White;
+            this.txt_Bairro.BorderColor = System.Drawing.Color.Silver;
+            this.txt_Bairro.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Bairro.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_Bairro.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_Bairro.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_Bairro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Bairro.Location = new System.Drawing.Point(544, 247);
+            this.txt_Bairro.Name = "txt_Bairro";
+            this.txt_Bairro.PasswordChar = '\0';
+            this.txt_Bairro.SelectedText = "";
+            this.txt_Bairro.Size = new System.Drawing.Size(188, 26);
+            this.txt_Bairro.TabIndex = 76;
+            // 
+            // txt_Cidade
+            // 
+            this.txt_Cidade.BaseColor = System.Drawing.Color.White;
+            this.txt_Cidade.BorderColor = System.Drawing.Color.Silver;
+            this.txt_Cidade.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Cidade.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_Cidade.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_Cidade.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_Cidade.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Cidade.Location = new System.Drawing.Point(299, 247);
+            this.txt_Cidade.Name = "txt_Cidade";
+            this.txt_Cidade.PasswordChar = '\0';
+            this.txt_Cidade.SelectedText = "";
+            this.txt_Cidade.Size = new System.Drawing.Size(239, 26);
+            this.txt_Cidade.TabIndex = 75;
+            // 
+            // gunaLabel11
+            // 
+            this.gunaLabel11.AutoSize = true;
+            this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel11.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.gunaLabel11.Location = new System.Drawing.Point(386, 223);
+            this.gunaLabel11.Name = "gunaLabel11";
+            this.gunaLabel11.Size = new System.Drawing.Size(63, 21);
+            this.gunaLabel11.TabIndex = 74;
+            this.gunaLabel11.Text = "Cidade";
+            // 
+            // txt_CEP
+            // 
+            this.txt_CEP.BaseColor = System.Drawing.Color.White;
+            this.txt_CEP.BorderColor = System.Drawing.Color.Silver;
+            this.txt_CEP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_CEP.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_CEP.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_CEP.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_CEP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_CEP.Location = new System.Drawing.Point(106, 247);
+            this.txt_CEP.Name = "txt_CEP";
+            this.txt_CEP.PasswordChar = '\0';
+            this.txt_CEP.SelectedText = "";
+            this.txt_CEP.Size = new System.Drawing.Size(187, 26);
+            this.txt_CEP.TabIndex = 73;
+            // 
+            // gunaLabel12
+            // 
+            this.gunaLabel12.AutoSize = true;
+            this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel12.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.gunaLabel12.Location = new System.Drawing.Point(181, 223);
+            this.gunaLabel12.Name = "gunaLabel12";
+            this.gunaLabel12.Size = new System.Drawing.Size(39, 21);
+            this.gunaLabel12.TabIndex = 72;
+            this.gunaLabel12.Text = "CEP";
             // 
             // frm_Cadastro_Funcionarios
             // 
@@ -359,10 +480,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.gunaLabel10);
+            this.Controls.Add(this.txt_Bairro);
+            this.Controls.Add(this.txt_Cidade);
+            this.Controls.Add(this.gunaLabel11);
+            this.Controls.Add(this.txt_CEP);
+            this.Controls.Add(this.gunaLabel12);
+            this.Controls.Add(this.txt_Num);
+            this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaLabel7);
-            this.Controls.Add(this.gunaTextBox2);
-            this.Controls.Add(this.gunaTextBox1);
+            this.Controls.Add(this.txt_Senha);
+            this.Controls.Add(this.txt_Usuario);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.cmb_Cargo);
             this.Controls.Add(this.btn_Cadastrar);
@@ -407,9 +536,17 @@
         private Guna.UI.WinForms.GunaTextBox txt_Email;
         private Guna.UI.WinForms.GunaComboBox cmb_Cargo;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaTextBox txt_Usuario;
+        private Guna.UI.WinForms.GunaTextBox txt_Senha;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
+        private Guna.UI.WinForms.GunaTextBox txt_Num;
+        private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private Guna.UI.WinForms.GunaLabel gunaLabel10;
+        private Guna.UI.WinForms.GunaTextBox txt_Bairro;
+        private Guna.UI.WinForms.GunaTextBox txt_Cidade;
+        private Guna.UI.WinForms.GunaLabel gunaLabel11;
+        private Guna.UI.WinForms.GunaTextBox txt_CEP;
+        private Guna.UI.WinForms.GunaLabel gunaLabel12;
     }
 }

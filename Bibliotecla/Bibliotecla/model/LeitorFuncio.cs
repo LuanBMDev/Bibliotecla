@@ -66,11 +66,23 @@ namespace Bibliotecla.model
             this.cargo = cargo;
         }
 
-        public LeitorFuncio(string cargo, string usuario, string senha)
+        public LeitorFuncio(string cargo, string usuario, string senha,
+                            string cpf, string telefone, string email,
+                            string nome, string cep, string rua, string numRes, 
+                            string bairro, string cidade)
         {
             this.cargo = cargo;
             this.usuario = usuario;
             this.senha = senha;
+            this.cpf = cpf;
+            this.telefone = telefone;
+            this.email = email;
+            this.nome = nome;
+            this.cep = cep;
+            this.rua = rua;
+            this.numRes = numRes;
+            this.bairro = bairro;
+            this.cidade = cidade;
         }
 
         public int CodPessoa { get => codPessoa; set => codPessoa = value; }
