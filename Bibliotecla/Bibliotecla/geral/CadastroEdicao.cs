@@ -9,5 +9,7 @@ namespace Bibliotecla.geral
     internal interface CadastroEdicao
     {
         bool VerificarCampos();
+
+        void LimparCampos();
     }
 }
