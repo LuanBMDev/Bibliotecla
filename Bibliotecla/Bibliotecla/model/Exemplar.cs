@@ -43,6 +43,11 @@ namespace Bibliotecla.model
             this.editoraExemplar = editoraExemplar;
         }
 
+        // Adicione um construtor sem parâmetros para permitir inicialização via inicializador de objeto.
+        public Exemplar()
+        {
+        }
+
         public int CodExemplar { get => codExemplar; set => codExemplar = value; }
         public string AnoPubli { get => anoPubli; set => anoPubli = value; }
         public string EstadoFisico { get => estadoFisico; set => estadoFisico = value; }

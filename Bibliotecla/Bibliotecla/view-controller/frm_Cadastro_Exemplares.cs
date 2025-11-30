@@ -21,17 +21,36 @@ namespace Bibliotecla
             AlternarBtnEditar();
         }
 
+        internal void CarregarExemplar(Exemplar e)
+        {
+            exemplar = e;
+            if (e != null)
+            {
+                // Preenche título e derivados
+                cmb_Titulos.Text = e.Titulo != null ? (e.Titulo.CodTitulo + " - " + e.Titulo.NomeTitulo) : string.Empty;
+                txt_Autor.Text = e.Titulo != null ? e.Titulo.AutorTitulo : string.Empty;
+                txt_Genero.Text = e.Titulo != null ? e.Titulo.GeneroTitulo : string.Empty;
+                // Demais campos
+                txt_Ano_Publi.Text = e.AnoPubli ?? string.Empty;
+                txt_Editora.Text = e.EditoraExemplar ?? string.Empty;
+                cmb_Estado.Text = e.EstadoFisico ?? (cmb_Estado.Items.Count > 0 ? cmb_Estado.Items[0].ToString() : string.Empty);
+            }
+            AlternarBtnEditar();
+        }
+
         private void AlternarBtnEditar()
         {
             if (exemplar == null)
             {
                 btn_Editar.Enabled = false;
+                btn_Cadastrar.Enabled = true;
                 btn_Editar.Text = "Editar";
                 lbl_Dica.Visible = true;
             }
             else
             {
                 btn_Editar.Enabled = true;
+                btn_Cadastrar.Enabled = false;
                 btn_Editar.Text = "Editar Exemplar N°" + this.exemplar.CodExemplar;
                 lbl_Dica.Visible = false;
             }
@@ -53,21 +72,14 @@ namespace Bibliotecla
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.exemplar = null;
-
-            // 1. Cria uma instância do novo formulário.
             frm_Geren_Livros novoFormulario = new frm_Geren_Livros();
-
-            // 2. Exibe o novo formulário.
             novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
             this.Hide();
         }
 
         private void cmb_Titulos_SelectedIndexChanged(object sender, EventArgs e)
         {
             Titulo titulo = ExtrairIDComboBox();
-            
             txt_Autor.Text = titulo.AutorTitulo;
             txt_Genero.Text = titulo.GeneroTitulo;
         }
@@ -75,13 +87,10 @@ namespace Bibliotecla
         private Titulo ExtrairIDComboBox()
         {
             string[] tituloComID = cmb_Titulos.Text.Split();
-
             int id = int.Parse(tituloComID[0].Trim());
-
             TituloDAO tituloDAO = new TituloDAO();
             Titulo titulo = new Titulo(id, null, null, null);
             titulo = tituloDAO.BuscarID(titulo);
-
             return titulo;
         }
 
@@ -136,6 +145,11 @@ namespace Bibliotecla
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
+            if (exemplar == null)
+            {
+                MessageBox.Show("Nenhum exemplar carregado para edição.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (VerificarCampos())
             {
                 Titulo titulo = ExtrairIDComboBox();
@@ -147,6 +161,10 @@ namespace Bibliotecla
                     Exemplar att = new Exemplar(this.exemplar.CodExemplar, anoPubli, estadoFisico, editora, titulo);
                     exemplarDAO.Alterar(att);
                     MensagensPadrao.MsgEdicaoSucesso(MensagensPadrao.Entidade.Exemplar);
+                    // reset pós edição
+                    LimparCampos();
+                    exemplar = null;
+                    AlternarBtnEditar();
                 }
                 catch (MySqlException ex)
                 {

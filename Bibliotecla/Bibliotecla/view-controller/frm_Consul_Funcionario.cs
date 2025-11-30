@@ -214,5 +214,10 @@ namespace Bibliotecla
         {
             
         }
+
+        private void btn_Editar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
