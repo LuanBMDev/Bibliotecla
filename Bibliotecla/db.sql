@@ -9,7 +9,7 @@ CREATE TABLE LeitorFuncio
 	Telefone VARCHAR(10),
 	Email VARCHAR(100),
 	Nome VARCHAR(100),
-	Cargo VARCHAR(12),
+	Cargo VARCHAR(13),
   	Usuario VARCHAR(20),
 	Senha VARCHAR(10),
 	CEP VARCHAR(9),
