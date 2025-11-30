@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Excluir = new Guna.UI.WinForms.GunaButton();
             this.btn_Editar = new Guna.UI.WinForms.GunaButton();
             this.btn_Voltar = new Guna.UI.WinForms.GunaButton();
@@ -37,6 +40,13 @@
             this.txt_Titulo = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Pesquisar = new Guna.UI.WinForms.GunaButton();
+            this.Dgv_Consul_Exemplar = new Guna.UI.WinForms.GunaDataGridView();
+            this.Col_Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Ano_Publicado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Editora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Estado_Fisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cod_Exemplar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_Exemplar)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Excluir
@@ -134,6 +144,12 @@
             this.cmb_EstExemplar.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_EstExemplar.ForeColor = System.Drawing.Color.Black;
             this.cmb_EstExemplar.FormattingEnabled = true;
+            this.cmb_EstExemplar.Items.AddRange(new object[] {
+            "codExemplar",
+            "anopubli",
+            "estadofisc",
+            "editora",
+            "titulo"});
             this.cmb_EstExemplar.Location = new System.Drawing.Point(488, 106);
             this.cmb_EstExemplar.Name = "cmb_EstExemplar";
             this.cmb_EstExemplar.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -203,6 +219,100 @@
             this.btn_Pesquisar.TabIndex = 72;
             this.btn_Pesquisar.Text = "Pesquisar";
             this.btn_Pesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
+            // 
+            // Dgv_Consul_Exemplar
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Exemplar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.Dgv_Consul_Exemplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_Consul_Exemplar.BackgroundColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Exemplar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_Consul_Exemplar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Consul_Exemplar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Consul_Exemplar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.Dgv_Consul_Exemplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Consul_Exemplar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Titulo,
+            this.Col_Ano_Publicado,
+            this.Col_Editora,
+            this.Col_Estado_Fisico,
+            this.Col_Cod_Exemplar});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_Consul_Exemplar.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Dgv_Consul_Exemplar.EnableHeadersVisualStyles = false;
+            this.Dgv_Consul_Exemplar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Exemplar.Location = new System.Drawing.Point(85, 138);
+            this.Dgv_Consul_Exemplar.Name = "Dgv_Consul_Exemplar";
+            this.Dgv_Consul_Exemplar.RowHeadersVisible = false;
+            this.Dgv_Consul_Exemplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_Consul_Exemplar.Size = new System.Drawing.Size(649, 203);
+            this.Dgv_Consul_Exemplar.TabIndex = 73;
+            this.Dgv_Consul_Exemplar.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.Dgv_Consul_Exemplar.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Exemplar.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.Dgv_Consul_Exemplar.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_Exemplar.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_Exemplar.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_Exemplar.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Exemplar.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Exemplar.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Exemplar.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Dgv_Consul_Exemplar.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.Dgv_Consul_Exemplar.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Exemplar.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Consul_Exemplar.ThemeStyle.HeaderStyle.Height = 21;
+            this.Dgv_Consul_Exemplar.ThemeStyle.ReadOnly = false;
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.Height = 22;
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_Exemplar.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Col_Titulo
+            // 
+            this.Col_Titulo.HeaderText = "Titulo";
+            this.Col_Titulo.Name = "Col_Titulo";
+            this.Col_Titulo.ReadOnly = true;
+            // 
+            // Col_Ano_Publicado
+            // 
+            this.Col_Ano_Publicado.HeaderText = "Ano Publicado";
+            this.Col_Ano_Publicado.Name = "Col_Ano_Publicado";
+            this.Col_Ano_Publicado.ReadOnly = true;
+            // 
+            // Col_Editora
+            // 
+            this.Col_Editora.HeaderText = "Editora";
+            this.Col_Editora.Name = "Col_Editora";
+            this.Col_Editora.ReadOnly = true;
+            // 
+            // Col_Estado_Fisico
+            // 
+            this.Col_Estado_Fisico.HeaderText = "Estado";
+            this.Col_Estado_Fisico.Name = "Col_Estado_Fisico";
+            this.Col_Estado_Fisico.ReadOnly = true;
+            // 
+            // Col_Cod_Exemplar
+            // 
+            this.Col_Cod_Exemplar.HeaderText = "ID";
+            this.Col_Cod_Exemplar.Name = "Col_Cod_Exemplar";
+            this.Col_Cod_Exemplar.ReadOnly = true;
             // 
             // frm_Consul_Exemplares
             // 
@@ -210,6 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.Dgv_Consul_Exemplar);
             this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.btn_Editar);
@@ -224,6 +335,7 @@
             this.Name = "frm_Consul_Exemplares";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consul_Exemplares";
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_Exemplar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +352,11 @@
         private Guna.UI.WinForms.GunaTextBox txt_Titulo;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton btn_Pesquisar;
+        private Guna.UI.WinForms.GunaDataGridView Dgv_Consul_Exemplar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Ano_Publicado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Editora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Estado_Fisico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cod_Exemplar;
     }
 }
