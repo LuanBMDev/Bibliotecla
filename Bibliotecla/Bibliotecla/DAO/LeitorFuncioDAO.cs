@@ -21,8 +21,8 @@ namespace Bibliotecla.DAO
                      entity.Cargo.ToLower() == "gerente" ||
                      entity.Cargo.ToLower() == "diretora")
             {
-                string sql = "INSERT INTO LeitorFuncio (CPF, Telefone, Email, Nome, Cargo, Usuario, Senha, CEP, Rua, NumRes, Bairro, Cidade) " +
-                             "VALUES (@CPF, @Telefone, @Email, @Nome, @Cargo, @Usuario, @Senha, @CEP, @Rua, @NumRes, @Bairro, @Cidade)";
+                string sql = "INSERT INTO LeitorFuncio (CPF, Telefone, Email, Nome, Cargo, Usuario, Senha, CEP, Rua, NumRes, Bairro, Cidade, isDevedor) " +
+                             "VALUES (@CPF, @Telefone, @Email, @Nome, @Cargo, @Usuario, @Senha, @CEP, @Rua, @NumRes, @Bairro, @Cidade, @isDevedor)";
 
                 conexao = Conexao.Conectar();
 
@@ -40,6 +40,7 @@ namespace Bibliotecla.DAO
                     cmd.Parameters.AddWithValue("@NumRes", entity.NumRes);
                     cmd.Parameters.AddWithValue("@Bairro", entity.Bairro);
                     cmd.Parameters.AddWithValue("@Cidade", entity.Cidade);
+                    cmd.Parameters.AddWithValue("@isDevedor", entity.IsDevedor);
 
                     linhas_afetadas = cmd.ExecuteNonQuery();
                 }
@@ -231,6 +232,51 @@ namespace Bibliotecla.DAO
         public List<LeitorFuncio> Listar(string critério)
         {
             string sql = "SELECT * FROM LeitorFuncio";
+            if (!string.IsNullOrEmpty(critério))
+            {
+                sql += " WHERE " + critério;
+            }
+
+            List<LeitorFuncio> lista = new List<LeitorFuncio>();
+
+            conexao = Conexao.Conectar();
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+            {
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        LeitorFuncio leitorFuncio = new LeitorFuncio
+                        {
+                            CodPessoa = reader.GetInt32("CodPessoa"),
+                            CPF = reader.GetString("CPF"),
+                            Telefone = reader.GetString("Telefone"),
+                            Email = reader.GetString("Email"),
+                            Nome = reader.GetString("Nome"),
+                            Cargo = reader.GetString("Cargo"),
+                            Usuario = reader.IsDBNull(reader.GetOrdinal("Usuario")) ? null : reader.GetString("Usuario"),
+                            Senha = reader.IsDBNull(reader.GetOrdinal("Senha")) ? null : reader.GetString("Senha"),
+                            CEP = reader.GetString("CEP"),
+                            Rua = reader.GetString("Rua"),
+                            NumRes = reader.GetString("NumRes"),
+                            Bairro = reader.GetString("Bairro"),
+                            Cidade = reader.GetString("Cidade"),
+                            IsDevedor = reader.IsDBNull(reader.GetOrdinal("IsDevedor")) ? 0 : reader.GetInt32("IsDevedor")
+                        };
+                        lista.Add(leitorFuncio);
+                    }
+                }
+
+                Conexao.Desconectar(conexao);
+            }
+
+            return lista;
+        }
+
+        public List<LeitorFuncio> ListarFuncionario(string critério)
+        {
+            string sql = "SELECT codpessoa, cpf, telefone, email, nome, cargo, usuario, senha, cep, rua, numRes, cidade, bairro, isDevedor FROM LeitorFuncio";
             if (!string.IsNullOrEmpty(critério))
             {
                 sql += " WHERE " + critério;
