@@ -106,7 +106,7 @@
             this.txt_senha.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_senha.Location = new System.Drawing.Point(335, 221);
             this.txt_senha.Name = "txt_senha";
-            this.txt_senha.PasswordChar = '\0';
+            this.txt_senha.PasswordChar = '●';
             this.txt_senha.SelectedText = "";
             this.txt_senha.Size = new System.Drawing.Size(164, 30);
             this.txt_senha.TabIndex = 7;
@@ -127,7 +127,7 @@
             this.txt_cadastro.Size = new System.Drawing.Size(164, 30);
             this.txt_cadastro.TabIndex = 6;
             // 
-            // Login
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +141,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Login";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);

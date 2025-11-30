@@ -17,6 +17,10 @@ namespace Bibliotecla
         public frm_Menu_Principal()
         {
             InitializeComponent();
+
+            MessageBox.Show("BEM VINDO(A) - " + UsuarioLogado.GetUsuario().Nome,
+                            "Boas Vindas",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_Emp_Dev_Click(object sender, EventArgs e)
