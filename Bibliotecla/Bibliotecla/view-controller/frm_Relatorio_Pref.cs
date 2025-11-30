@@ -16,9 +16,7 @@ namespace Bibliotecla
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            frm_Geren_Relatorios novoFormulario = new frm_Geren_Relatorios();
-            novoFormulario.Show();
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Relatorios());
         }
 
         private void GeneratePdfBySelection()
