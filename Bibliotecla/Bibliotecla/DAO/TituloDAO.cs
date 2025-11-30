@@ -7,6 +7,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bibliotecla.geral;
 
 namespace Bibliotecla.DAO
 {
@@ -33,7 +34,13 @@ namespace Bibliotecla.DAO
                 Conexao.Desconectar(conexao);
             }
 
-            return linhas_afetadas >= 1;
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+
+            return ok;
         }
 
         public bool Alterar(Titulo entity)
@@ -56,7 +63,13 @@ namespace Bibliotecla.DAO
                 Conexao.Desconectar(conexao);
             }
 
-            return linhas_afetadas >= 1;
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+
+            return ok;
         }
 
         public bool Remover(Titulo entity)
@@ -74,7 +87,13 @@ namespace Bibliotecla.DAO
                 Conexao.Desconectar(conexao);
             }
 
-            return linhas_afetadas >= 1;
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+
+            return ok;
         }
 
         public Titulo BuscarID(Titulo entity)

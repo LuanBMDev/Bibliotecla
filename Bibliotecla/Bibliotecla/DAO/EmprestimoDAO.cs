@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Bibliotecla.model;
 using System.Runtime.InteropServices;
+using Bibliotecla.geral;
 
 namespace Bibliotecla.DAO
 {
@@ -38,7 +39,12 @@ namespace Bibliotecla.DAO
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
-            return linhas_afetadas >= 1;
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+            return ok;
         }
 
         public bool Alterar(Emprestimo entity)
@@ -68,7 +74,12 @@ namespace Bibliotecla.DAO
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
-            return linhas_afetadas >= 1;
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+            return ok;
         }
 
         public bool Remover(Emprestimo entity)
@@ -84,7 +95,12 @@ namespace Bibliotecla.DAO
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
-            return linhas_afetadas >= 1;
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+            return ok;
         }
 
         public Emprestimo BuscarID(Emprestimo entity)

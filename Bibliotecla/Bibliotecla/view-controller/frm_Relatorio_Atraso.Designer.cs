@@ -58,6 +58,7 @@
             this.btn_Gerar_Relatorio.TabIndex = 92;
             this.btn_Gerar_Relatorio.Text = "Gerar";
             this.btn_Gerar_Relatorio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Gerar_Relatorio.Click += new System.EventHandler(this.btn_Gerar_Relatorio_Click);
             // 
             // btn_Voltar
             // 
@@ -106,6 +107,10 @@
             this.cmb_Filtro.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Filtro.ForeColor = System.Drawing.Color.Black;
             this.cmb_Filtro.FormattingEnabled = true;
+            this.cmb_Filtro.Items.AddRange(new object[] {
+            "Geral",
+            "Atrasos Não Quitados",
+            "Atrasos Quitados"});
             this.cmb_Filtro.Location = new System.Drawing.Point(166, 186);
             this.cmb_Filtro.Name = "cmb_Filtro";
             this.cmb_Filtro.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibliotecla.geral;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,11 @@ namespace Bibliotecla
 
             // 3. Fecha o formulário atual.
             this.Hide();
+        }
+
+        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

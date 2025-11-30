@@ -58,6 +58,10 @@
             this.cmb_Filtro.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Filtro.ForeColor = System.Drawing.Color.Black;
             this.cmb_Filtro.FormattingEnabled = true;
+            this.cmb_Filtro.Items.AddRange(new object[] {
+            "Geral",
+            "Mais Escolhido",
+            "Mais Esperado"});
             this.cmb_Filtro.Location = new System.Drawing.Point(163, 181);
             this.cmb_Filtro.Name = "cmb_Filtro";
             this.cmb_Filtro.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));

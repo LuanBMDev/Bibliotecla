@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bibliotecla.geral;
 
 namespace Bibliotecla.DAO
 {
@@ -35,6 +36,11 @@ namespace Bibliotecla.DAO
 
                 conexao.Close();
             }
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
             return linhas_afetadas >= 1;
         }
 
@@ -60,6 +66,11 @@ namespace Bibliotecla.DAO
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
             return linhas_afetadas >= 1;
         }
 
@@ -76,6 +87,11 @@ namespace Bibliotecla.DAO
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
                 conexao.Close();
+            }
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
             }
             return linhas_afetadas >= 1;
         }

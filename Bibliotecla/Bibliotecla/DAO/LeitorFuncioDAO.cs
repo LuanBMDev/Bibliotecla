@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bibliotecla.geral;
 
 namespace Bibliotecla.DAO
 {
@@ -76,6 +77,12 @@ namespace Bibliotecla.DAO
                 throw new ArgumentException("Cargo inválido!");
             }
 
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+
             return linhas_afetadas >= 1;
         }
 
@@ -139,7 +146,7 @@ namespace Bibliotecla.DAO
                              "IsDevedor = @IsDevedor " +
                              "WHERE CodPessoa = @CodPessoa";
 
-                    
+                conexao = Conexao.Conectar();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
                 {
@@ -164,6 +171,12 @@ namespace Bibliotecla.DAO
                 throw new ArgumentException("Alteração inválida para o cargo informado!");
             }
 
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
+
             return linhas_afetadas >= 1;
         }
 
@@ -183,6 +196,12 @@ namespace Bibliotecla.DAO
             }
 
             Conexao.Desconectar(conexao);
+
+            bool ok = linhas_afetadas >= 1;
+            if (ok)
+            {
+                try { CriacaoDJson.AtualizarTodosJson(); } catch { }
+            }
 
             return linhas_afetadas >= 1;
         }
