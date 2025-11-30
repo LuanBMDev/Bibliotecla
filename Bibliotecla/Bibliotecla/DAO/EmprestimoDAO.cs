@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using Bibliotecla.model;
 using System.Runtime.InteropServices;
 using Bibliotecla.geral;
+using System.Data;
 
 namespace Bibliotecla.DAO
 {
@@ -22,7 +23,7 @@ namespace Bibliotecla.DAO
         public bool Inserir(Emprestimo entity)
         {
             string sql = "INSERT INTO Emprestimo (CodExemplar, CodLeitor, DataEmpres, PrazoDevol, isAtrasado) " +
-                         "VALUES (@CodExemplar, @CodLeitor, @DataEmprestimo, @PrazoDevol, @isAtrasado)";
+                         "VALUES (@CodExemplar, @CodLeitor, @DataEmpres, @PrazoDevol, @isAtrasado)";
 
             int linhas_afetadas = 0;
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -196,6 +197,12 @@ namespace Bibliotecla
                 };
                 using (MySqlConnection conn = Conexao.Conectar())
                 {
+                    // Se a conexão vier aberta (Conexao.Conectar abre), fechamos aqui para que o DAO possa abrir quando precisar.
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        Conexao.Desconectar(conn);
+                    }
+
                     var empDAO = new EmprestimoDAO(conn);
                     bool ok = empDAO.Inserir(emp);
                     if (ok)
