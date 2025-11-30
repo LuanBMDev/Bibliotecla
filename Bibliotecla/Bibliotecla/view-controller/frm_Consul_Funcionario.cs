@@ -77,6 +77,7 @@ namespace Bibliotecla
                 row.Cells["Col_Bairro"].Value = r.Bairro ?? string.Empty;
                 row.Cells["Col_Usuario"].Value = r.Usuario ?? string.Empty;
                 row.Cells["Col_Senha"].Value = r.Senha ?? string.Empty;
+                row.Cells["Col_Cargo"].Value = r.Cargo ?? string.Empty;
             }
 
             // Ajustes finais opcionais: selecionar primeira linha
@@ -150,6 +151,10 @@ namespace Bibliotecla
 
                         case "senha":
                             parametroParaDAO = $"Senha LIKE '%{escaped}%'";
+                            break;
+
+                        case"cargo":
+                            parametroParaDAO = $"Cargo LIKE '%{escaped}%'";
                             break;
 
                         default:

@@ -52,6 +52,7 @@
             this.Col_Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_Funcionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,7 +264,8 @@
             this.Col_Cidade,
             this.Col_Bairro,
             this.Col_Usuario,
-            this.Col_Senha});
+            this.Col_Senha,
+            this.Col_Cargo});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -370,6 +372,12 @@
             this.Col_Senha.Name = "Col_Senha";
             this.Col_Senha.ReadOnly = true;
             // 
+            // Col_Cargo
+            // 
+            this.Col_Cargo.HeaderText = "Cargo";
+            this.Col_Cargo.Name = "Col_Cargo";
+            this.Col_Cargo.ReadOnly = true;
+            // 
             // frm_Consul_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +428,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cargo;
     }
 }
