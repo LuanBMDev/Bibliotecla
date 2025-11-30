@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibliotecla.geral;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,37 +21,19 @@ namespace Bibliotecla
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            frm_Menu_Principal novoFormulario = new frm_Menu_Principal();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Menu_Principal());
         }
 
         private void btn_Cadas_Leitor_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            frm_Cadastro_Leitores novoFormulario = new frm_Cadastro_Leitores();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Cadastro_Leitores());
         }
 
         private void btn_Multa_Click(object sender, EventArgs e)
         {
             // 1. Cria uma instância do novo formulário.
-            frm_Multa novoFormulario = new frm_Multa();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Multa());
         }
     }
 }

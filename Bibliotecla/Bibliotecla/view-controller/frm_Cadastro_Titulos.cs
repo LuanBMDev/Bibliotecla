@@ -69,9 +69,7 @@ namespace Bibliotecla
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.titulo = null;
-            frm_Geren_Livros novoFormulario = new frm_Geren_Livros();
-            novoFormulario.Show();
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Livros());
         }
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)

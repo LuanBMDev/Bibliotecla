@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibliotecla.geral;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,67 +21,32 @@ namespace Bibliotecla
 
         private void btn_Emp_Dev_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_EmprEDev novoFormulario = new frm_EmprEDev();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_EmprEDev());
         }
 
         private void btn_Livros_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Geren_Livros novoFormulario = new frm_Geren_Livros();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Livros());
         }
 
         private void btn_Multa_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Multa novoFormulario = new frm_Multa();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Multa());
         }
 
         private void btn_Geren_Cad_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Geren_Cadastro novoFormulario = new frm_Geren_Cadastro();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Cadastro());
         }
 
         private void btn_relatorio_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
-            frm_Geren_Relatorios novoFormulario = new frm_Geren_Relatorios();
-
-            // 2. Exibe o novo formulário.
-            novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
-            this.Hide();
+            Navegacao.TrocarTela(this, new frm_Geren_Relatorios());
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)
         {
-
+            Navegacao.TrocarTela(this, new Form1());
         }
     }
 }
