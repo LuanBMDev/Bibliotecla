@@ -79,5 +79,17 @@ namespace Bibliotecla
 
                 Navegacao.TrocarTela(this, new frm_Menu_Principal());
         }
+
+        private void chk_MostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chk_MostrarSenha.Checked)
+            {
+                txt_senha.PasswordChar = '●';
+            }
+            else
+            {
+                txt_senha.PasswordChar = '\0';
+            }
+        }
     }
 }
