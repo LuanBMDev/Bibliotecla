@@ -36,29 +36,13 @@ namespace Bibliotecla
             try
             {
                 string selecionado = cmb_Filtro.SelectedItem as string;
-                string pdfPath = null;
-
                 if (string.IsNullOrEmpty(selecionado))
                 {
                     MessageBox.Show("Selecione um filtro.");
                     return;
                 }
 
-                switch (selecionado)
-                {
-                    case "Geral":
-                        pdfPath = FazerJsonemPDF.GerarAtrasoGeralPdf();
-                        break;
-                    case "Atrasos Não Quitados":
-                        pdfPath = FazerJsonemPDF.GerarAtrasoNaoQuitadosPdf();
-                        break;
-                    case "Atrasos Quitados":
-                        pdfPath = FazerJsonemPDF.GerarAtrasoQuitadoPdf();
-                        break;
-                    default:
-                        MessageBox.Show("Filtro desconhecido.");
-                        return;
-                }
+                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("atraso", selecionado);
 
                 if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
                 {

@@ -104,6 +104,7 @@
             this.btn_Gerar_Relatorio.TabIndex = 82;
             this.btn_Gerar_Relatorio.Text = "Gerar";
             this.btn_Gerar_Relatorio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Gerar_Relatorio.Click += new System.EventHandler(this.btn_Gerar_Relatorio_Click_1);
             // 
             // btn_Voltar
             // 

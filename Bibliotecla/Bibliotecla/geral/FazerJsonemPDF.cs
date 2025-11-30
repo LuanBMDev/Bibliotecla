@@ -397,5 +397,49 @@ namespace Bibliotecla.geral
             }
             catch { return null; }
         }
+
+        // Helper central para gerar PDF por categoria + filtro
+        public static string GerarPdfPorTipo(string categoria, string filtro)
+        {
+            if (string.IsNullOrEmpty(categoria) || string.IsNullOrEmpty(filtro)) return null;
+            categoria = categoria.Trim().ToLowerInvariant();
+            filtro = filtro.Trim();
+
+            switch (categoria)
+            {
+                case "dano":
+                case "danos":
+                    switch (filtro)
+                    {
+                        case "Geral": return GerarDanosGeralPdf();
+                        case "Novo": return GerarDanosNovosPdf();
+                        case "Uso Moderado": return GerarUsoModeradoPdf();
+                        case "Danos Leves": return GerarDanoLevesPdf();
+                        case "Danos Graves": return GerarDanoGravesPdf();
+                        default: return null;
+                    }
+                case "atraso":
+                case "atrasos":
+                    switch (filtro)
+                    {
+                        case "Geral": return GerarAtrasoGeralPdf();
+                        case "Atrasos Não Quitados": return GerarAtrasoNaoQuitadosPdf();
+                        case "Atrasos Quitados": return GerarAtrasoQuitadoPdf();
+                        default: return null;
+                    }
+                case "preferencia":
+                case "pref":
+                case "preferências":
+                    switch (filtro)
+                    {
+                        case "Geral": return GerarPreferenciaGeralPdf();
+                        case "Mais Escolhido": return GerarPreferenciaMaisEscolhidoPdf();
+                        case "Mais Esperado": return GerarPreferenciaMaisEsperadoPdf();
+                        default: return null;
+                    }
+                default:
+                    return null;
+            }
+        }
     }
 }

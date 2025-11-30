@@ -35,7 +35,7 @@ namespace Bibliotecla
             this.Hide();
         }
 
-        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
+        private void GeneratePdfBySelection()
         {
             try
             {
@@ -46,22 +46,7 @@ namespace Bibliotecla
                     return;
                 }
 
-                string pdfPath = null;
-                switch (selecionado)
-                {
-                    case "Geral":
-                        pdfPath = FazerJsonemPDF.GerarPreferenciaGeralPdf();
-                        break;
-                    case "Mais Escolhido":
-                        pdfPath = FazerJsonemPDF.GerarPreferenciaMaisEscolhidoPdf();
-                        break;
-                    case "Mais Esperado":
-                        pdfPath = FazerJsonemPDF.GerarPreferenciaMaisEsperadoPdf();
-                        break;
-                    default:
-                        MessageBox.Show("Filtro desconhecido.");
-                        return;
-                }
+                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("preferencia", selecionado);
 
                 if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
                 {
@@ -75,6 +60,17 @@ namespace Bibliotecla
             {
                 MessageBox.Show("Erro ao gerar PDFs: " + ex.Message);
             }
+        }
+
+        private void btn_Gerar_Relatorio_Click(object sender, EventArgs e)
+        {
+            GeneratePdfBySelection();
+        }
+
+        // designer might wire another handler name; ensure it calls the same logic
+        private void btn_Gerar_Relatorio_Click_1(object sender, EventArgs e)
+        {
+            GeneratePdfBySelection();
         }
     }
 }

@@ -42,28 +42,7 @@ namespace Bibliotecla
                     return;
                 }
 
-                string pdfPath = null;
-                switch (selecionado)
-                {
-                    case "Geral":
-                        pdfPath = FazerJsonemPDF.GerarDanosGeralPdf();
-                        break;
-                    case "Novo":
-                        pdfPath = FazerJsonemPDF.GerarDanosNovosPdf();
-                        break;
-                    case "Uso Moderado":
-                        pdfPath = FazerJsonemPDF.GerarUsoModeradoPdf();
-                        break;
-                    case "Danos Leves":
-                        pdfPath = FazerJsonemPDF.GerarDanoLevesPdf();
-                        break;
-                    case "Danos Graves":
-                        pdfPath = FazerJsonemPDF.GerarDanoGravesPdf();
-                        break;
-                    default:
-                        MessageBox.Show("Filtro desconhecido.");
-                        return;
-                }
+                string pdfPath = FazerJsonemPDF.GerarPdfPorTipo("dano", selecionado);
 
                 if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
                 {
