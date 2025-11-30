@@ -10,7 +10,7 @@ namespace Bibliotecla.banco
     internal class Conexao
     {
         private static readonly string strConexao =
-            "Server=localhost;Database=bibliotecladb;Uid=root;";
+            "Server=localhost;Database=bibliotecla;Uid=root;";
 
         public static MySqlConnection Conectar()
         {

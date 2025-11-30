@@ -7,6 +7,7 @@ CREATE TABLE LeitorFuncio
 	CodPessoa INT PRIMARY KEY AUTO_INCREMENT,
 	CPF VARCHAR(14),
 	Telefone VARCHAR(10),
+	Email VARCHAR(100),
 	Nome VARCHAR(100),
 	Cargo VARCHAR(12),
   	Usuario VARCHAR(20),
@@ -15,7 +16,7 @@ CREATE TABLE LeitorFuncio
 	Rua VARCHAR(100),
 	NumRes VARCHAR(100),
 	Cidade VARCHAR(100),
-	Bairo VARCHAR(100),
+	Bairro VARCHAR(100),
 	isDevedor INT
 );
 
