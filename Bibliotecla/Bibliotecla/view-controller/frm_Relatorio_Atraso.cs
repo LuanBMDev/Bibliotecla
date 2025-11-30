@@ -35,6 +35,7 @@ namespace Bibliotecla
         {
             try
             {
+<<<<<<< Updated upstream
                 string selecionado = cmb_Filtro.SelectedItem as string;
                 string pdfPath = null;
 
@@ -67,6 +68,19 @@ namespace Bibliotecla
                 }
 
                 MessageBox.Show("PDF gerado em: " + pdfPath);
+=======
+                // Para relatório de atrasos usamos o relatório de empréstimos (contém campo isAtrasado)
+                string pdfPath = FazerJsonemPDF.GerarRelatorioEmprestimosPdf();
+
+                if (!string.IsNullOrEmpty(pdfPath) && File.Exists(pdfPath))
+                {
+                    MessageBox.Show("PDF gerado em: " + pdfPath);
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao gerar o PDF de atrasos.");
+                }
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
