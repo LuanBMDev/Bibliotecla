@@ -48,8 +48,8 @@ namespace Bibliotecla.DAO
             }
             else if (entity.Cargo.ToLower() == "leitor")
             {
-                string sql = "INSERT INTO LeitorFuncio (CPF, Telefone, Email, Nome, CEP, Rua, NumRes, Bairro, Cidade, IsDevedor) " +
-                             "VALUES (@CPF, @Telefone, @Email, @Nome, @CEP, @Rua, @NumRes, @Bairro, @Cidade, @IsDevedor)";
+                string sql = "INSERT INTO LeitorFuncio (CPF, Telefone, Email, Nome, Cargo, CEP, Rua, NumRes, Bairro, Cidade, IsDevedor) " +
+                             "VALUES (@CPF, @Telefone, @Email, @Nome, @Cargo, @CEP, @Rua, @NumRes, @Bairro, @Cidade, @IsDevedor)";
 
                 conexao = Conexao.Conectar();
 
@@ -59,6 +59,7 @@ namespace Bibliotecla.DAO
                     cmd.Parameters.AddWithValue("@Telefone", entity.Telefone);
                     cmd.Parameters.AddWithValue("@Email", entity.Email);
                     cmd.Parameters.AddWithValue("@Nome", entity.Nome);
+                    cmd.Parameters.AddWithValue("@Cargo", entity.Cargo);
                     cmd.Parameters.AddWithValue("@CEP", entity.CEP);
                     cmd.Parameters.AddWithValue("@Rua", entity.Rua);
                     cmd.Parameters.AddWithValue("@NumRes", entity.NumRes);
@@ -131,6 +132,7 @@ namespace Bibliotecla.DAO
                              "Telefone = @Telefone, " +
                              "Email = @Email, " +
                              "Nome = @Nome, " +
+                             "Cargo = @Cargo, " +
                              "CEP = @CEP, " +
                              "Rua = @Rua, " +
                              "NumRes = @NumRes, " +
