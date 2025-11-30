@@ -155,12 +155,8 @@
     <Compile Include="DAO\LeitorFuncioDAO.cs" />
     <Compile Include="DAO\MultaDAO.cs" />
     <Compile Include="DAO\TituloDAO.cs" />
-    <Compile Include="DAO\DAO.cs" />
-    <Compile Include="DAO\EmprestimoDAO.cs" />
-    <Compile Include="DAO\ExemplarDAO.cs" />
-    <Compile Include="DAO\LeitorFuncioDAO.cs" />
-    <Compile Include="DAO\MultaDAO.cs" />
-    <Compile Include="DAO\TituloDAO.cs" />
+    <Compile Include="geral\CadastroEdicao.cs" />
+    <Compile Include="geral\MensagensPadrao.cs" />
     <Compile Include="model\Emprestimo.cs" />
     <Compile Include="model\Exemplar.cs" />
     <Compile Include="geral\Relatorio.cs" />

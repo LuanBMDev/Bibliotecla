@@ -1,4 +1,5 @@
 ﻿using Bibliotecla.model;
+using Bibliotecla.banco;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,7 @@ namespace Bibliotecla.DAO
 {
     internal class TituloDAO : DAO<Titulo>
     {
-        private readonly MySqlConnection conexao;
-
-        public TituloDAO(MySqlConnection conexao)
-        {
-            this.conexao = conexao;
-        }
+        private MySqlConnection conexao;
 
         public bool Inserir(Titulo entity)
         {
@@ -25,7 +21,7 @@ namespace Bibliotecla.DAO
 
             int linhas_afetadas = 0;
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -34,7 +30,7 @@ namespace Bibliotecla.DAO
                 cmd.Parameters.AddWithValue("@Autor", entity.AutorTitulo);
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return linhas_afetadas >= 1;
@@ -48,7 +44,7 @@ namespace Bibliotecla.DAO
                          "Autor = @Autor " +
                          "WHERE CodTitulo = @CodTitulo";
             int linhas_afetadas = 0;
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -57,7 +53,7 @@ namespace Bibliotecla.DAO
                 cmd.Parameters.AddWithValue("@Autor", entity.AutorTitulo);
                 cmd.Parameters.AddWithValue("@CodTitulo", entity.CodTitulo);
                 linhas_afetadas = cmd.ExecuteNonQuery();
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return linhas_afetadas >= 1;
@@ -69,13 +65,13 @@ namespace Bibliotecla.DAO
 
             int linhas_afetadas = 0;
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
                 cmd.Parameters.AddWithValue("@CodTitulo", entity.CodTitulo);
                 linhas_afetadas = cmd.ExecuteNonQuery();
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return linhas_afetadas >= 1;
@@ -85,7 +81,7 @@ namespace Bibliotecla.DAO
         {
             string sql = "SELECT * FROM Titulo WHERE CodTitulo = @CodTitulo";
             Titulo titulo = null;
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -103,7 +99,7 @@ namespace Bibliotecla.DAO
                         };
                     }
                 }
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return titulo;
@@ -120,7 +116,7 @@ namespace Bibliotecla.DAO
             List<Titulo> titulos = new List<Titulo>();
             Titulo titulo = null;
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -138,7 +134,7 @@ namespace Bibliotecla.DAO
                         titulos.Add(titulo);
                     }
                 }
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
             return titulos;
         }

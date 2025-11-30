@@ -1,4 +1,5 @@
-﻿using Bibliotecla.model;
+﻿using Bibliotecla.banco;
+using Bibliotecla.model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,15 @@ namespace Bibliotecla.DAO
 {
     internal class ExemplarDAO : DAO<Exemplar>
     {
-        private readonly MySqlConnection conexao;
+        private MySqlConnection conexao;
 
-        public ExemplarDAO(MySqlConnection conexao)
-        {
-            this.conexao = conexao;
-        }
 
         public bool Inserir(Exemplar entity)
         {
             string sql = "INSERT INTO Exemplar (AnoPubli, EstadoFisc, Editora, CodTitulo) " +
                          "VALUES (@AnoPubli, @EstadoFisc, @Editora, @CodTitulo)";
             int linhas_afetadas = 0;
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -31,7 +28,7 @@ namespace Bibliotecla.DAO
                 cmd.Parameters.AddWithValue("@Editora", entity.EditoraExemplar);
                 cmd.Parameters.AddWithValue("@CodTitulo", entity.Titulo.CodTitulo);
                 linhas_afetadas = cmd.ExecuteNonQuery();
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return linhas_afetadas >= 1;
@@ -47,7 +44,7 @@ namespace Bibliotecla.DAO
                          "WHERE CodExempl = @CodExempl";
             int linhas_afetadas = 0;
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -59,7 +56,7 @@ namespace Bibliotecla.DAO
 
                 linhas_afetadas = cmd.ExecuteNonQuery();
 
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return linhas_afetadas >= 1;
@@ -69,13 +66,13 @@ namespace Bibliotecla.DAO
         {
             string sql = "DELETE FROM Exemplar WHERE CodExempl = @CodExempl";
             int linhas_afetadas = 0;
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
                 cmd.Parameters.AddWithValue("@CodExempl", entity.CodExemplar);
                 linhas_afetadas = cmd.ExecuteNonQuery();
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return linhas_afetadas >= 1;
@@ -85,7 +82,7 @@ namespace Bibliotecla.DAO
         {
             string sql = "SELECT * FROM Exemplar WHERE CodExempl = @CodExempl";
             Exemplar exemplar = null;
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -99,12 +96,12 @@ namespace Bibliotecla.DAO
                         string estadoFisico = reader.GetString("EstadoFisc");
                         string editoraExemplar = reader.GetString("Editora");
                         int codTitulo = reader.GetInt32("CodTitulo");
-                        TituloDAO tituloDAO = new TituloDAO(conexao);
+                        TituloDAO tituloDAO = new TituloDAO();
                         Titulo titulo = tituloDAO.BuscarID(new Titulo { CodTitulo = codTitulo });
                         exemplar = new Exemplar(codExemplar, anoPubli, estadoFisico, editoraExemplar, titulo);
                     }
                 }
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return exemplar;
@@ -120,7 +117,7 @@ namespace Bibliotecla.DAO
 
             List<Exemplar> exemplares = new List<Exemplar>();
 
-            conexao.Open();
+            conexao = Conexao.Conectar();
 
             using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
             {
@@ -133,13 +130,13 @@ namespace Bibliotecla.DAO
                         string estadoFisico = reader.GetString("EstadoFisc");
                         string editoraExemplar = reader.GetString("Editora");
                         int codTitulo = reader.GetInt32("CodTitulo");
-                        TituloDAO tituloDAO = new TituloDAO(conexao);
+                        TituloDAO tituloDAO = new TituloDAO();
                         Titulo titulo = tituloDAO.BuscarID(new Titulo { CodTitulo = codTitulo });
                         Exemplar exemplar = new Exemplar(codExemplar, anoPubli, estadoFisico, editoraExemplar, titulo);
                         exemplares.Add(exemplar);
                     }
                 }
-                conexao.Close();
+                Conexao.Desconectar(conexao);
             }
 
             return exemplares;

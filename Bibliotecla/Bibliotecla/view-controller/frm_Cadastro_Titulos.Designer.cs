@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Titulo = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -38,6 +39,8 @@
             this.btn_Voltar = new Guna.UI.WinForms.GunaButton();
             this.btn_Editar = new Guna.UI.WinForms.GunaButton();
             this.btn_Cadastrar = new Guna.UI.WinForms.GunaButton();
+            this.tip = new System.Windows.Forms.ToolTip(this.components);
+            this.lbl_Dica = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -181,6 +184,7 @@
             this.btn_Editar.TabIndex = 40;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Cadastrar
             // 
@@ -205,6 +209,19 @@
             this.btn_Cadastrar.TabIndex = 41;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
+            // 
+            // lbl_Dica
+            // 
+            this.lbl_Dica.AutoSize = true;
+            this.lbl_Dica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Dica.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_Dica.Location = new System.Drawing.Point(271, 357);
+            this.lbl_Dica.Name = "lbl_Dica";
+            this.lbl_Dica.Size = new System.Drawing.Size(14, 16);
+            this.lbl_Dica.TabIndex = 42;
+            this.lbl_Dica.Text = "?";
+            this.tip.SetToolTip(this.lbl_Dica, "Selecione um Título na tela de Consulta para editá-lo...");
             // 
             // frm_Cadastro_Titulos
             // 
@@ -212,6 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.lbl_Dica);
             this.Controls.Add(this.btn_Cadastrar);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Voltar);
@@ -244,5 +262,7 @@
         private Guna.UI.WinForms.GunaButton btn_Voltar;
         private Guna.UI.WinForms.GunaButton btn_Editar;
         private Guna.UI.WinForms.GunaButton btn_Cadastrar;
+        private System.Windows.Forms.ToolTip tip;
+        private System.Windows.Forms.Label lbl_Dica;
     }
 }
