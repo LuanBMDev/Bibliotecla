@@ -34,21 +34,19 @@
             this.btn_Multa = new Guna.UI.WinForms.GunaButton();
             this.btn_Emprestimo = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.cmb_EstExem_Dev = new Guna.UI.WinForms.GunaComboBox();
-            this.cmb_Exem_Dev = new Guna.UI.WinForms.GunaComboBox();
-            this.cmb_Leitor_Dev = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.cmb_Exem_Emp = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.cmb_Per_Emp = new Guna.UI.WinForms.GunaComboBox();
             this.gunaVSeparator1 = new Guna.UI.WinForms.GunaVSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.txt_Prazo = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_titulo_livro = new System.Windows.Forms.ComboBox();
+            this.combo_leitor_emp = new System.Windows.Forms.ComboBox();
+            this.combo_leitor_devl = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -179,22 +177,11 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel6.Location = new System.Drawing.Point(527, 204);
+            this.gunaLabel6.Location = new System.Drawing.Point(527, 142);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(161, 21);
             this.gunaLabel6.TabIndex = 33;
             this.gunaLabel6.Text = "Estado do Exemplar";
-            // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel5.Location = new System.Drawing.Point(527, 142);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(82, 21);
-            this.gunaLabel5.TabIndex = 32;
-            this.gunaLabel5.Text = "Exemplar";
             // 
             // cmb_EstExem_Dev
             // 
@@ -207,48 +194,12 @@
             this.cmb_EstExem_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_EstExem_Dev.ForeColor = System.Drawing.Color.Black;
             this.cmb_EstExem_Dev.FormattingEnabled = true;
-            this.cmb_EstExem_Dev.Location = new System.Drawing.Point(531, 228);
+            this.cmb_EstExem_Dev.Location = new System.Drawing.Point(531, 166);
             this.cmb_EstExem_Dev.Name = "cmb_EstExem_Dev";
             this.cmb_EstExem_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_EstExem_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cmb_EstExem_Dev.Size = new System.Drawing.Size(207, 26);
             this.cmb_EstExem_Dev.TabIndex = 31;
-            // 
-            // cmb_Exem_Dev
-            // 
-            this.cmb_Exem_Dev.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_Exem_Dev.BaseColor = System.Drawing.Color.White;
-            this.cmb_Exem_Dev.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_Exem_Dev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_Exem_Dev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Exem_Dev.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_Exem_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_Exem_Dev.ForeColor = System.Drawing.Color.Black;
-            this.cmb_Exem_Dev.FormattingEnabled = true;
-            this.cmb_Exem_Dev.Location = new System.Drawing.Point(531, 166);
-            this.cmb_Exem_Dev.Name = "cmb_Exem_Dev";
-            this.cmb_Exem_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_Exem_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Exem_Dev.Size = new System.Drawing.Size(207, 26);
-            this.cmb_Exem_Dev.TabIndex = 30;
-            // 
-            // cmb_Leitor_Dev
-            // 
-            this.cmb_Leitor_Dev.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_Leitor_Dev.BaseColor = System.Drawing.Color.White;
-            this.cmb_Leitor_Dev.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_Leitor_Dev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_Leitor_Dev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Leitor_Dev.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_Leitor_Dev.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_Leitor_Dev.ForeColor = System.Drawing.Color.Black;
-            this.cmb_Leitor_Dev.FormattingEnabled = true;
-            this.cmb_Leitor_Dev.Location = new System.Drawing.Point(531, 108);
-            this.cmb_Leitor_Dev.Name = "cmb_Leitor_Dev";
-            this.cmb_Leitor_Dev.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_Leitor_Dev.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Leitor_Dev.Size = new System.Drawing.Size(207, 26);
-            this.cmb_Leitor_Dev.TabIndex = 29;
             // 
             // gunaLabel4
             // 
@@ -312,24 +263,6 @@
             this.gunaLabel1.TabIndex = 23;
             this.gunaLabel1.Text = "Perfil Leitor";
             // 
-            // cmb_Per_Emp
-            // 
-            this.cmb_Per_Emp.BackColor = System.Drawing.Color.Transparent;
-            this.cmb_Per_Emp.BaseColor = System.Drawing.Color.White;
-            this.cmb_Per_Emp.BorderColor = System.Drawing.Color.Silver;
-            this.cmb_Per_Emp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_Per_Emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Per_Emp.FocusedColor = System.Drawing.Color.Empty;
-            this.cmb_Per_Emp.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmb_Per_Emp.ForeColor = System.Drawing.Color.Black;
-            this.cmb_Per_Emp.FormattingEnabled = true;
-            this.cmb_Per_Emp.Location = new System.Drawing.Point(100, 108);
-            this.cmb_Per_Emp.Name = "cmb_Per_Emp";
-            this.cmb_Per_Emp.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmb_Per_Emp.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Per_Emp.Size = new System.Drawing.Size(207, 26);
-            this.cmb_Per_Emp.TabIndex = 22;
-            // 
             // gunaVSeparator1
             // 
             this.gunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -365,20 +298,37 @@
             // 
             // txt_Prazo
             // 
+            this.txt_Prazo.Enabled = false;
             this.txt_Prazo.Location = new System.Drawing.Point(100, 266);
             this.txt_Prazo.Mask = "00/00/0000";
             this.txt_Prazo.Name = "txt_Prazo";
             this.txt_Prazo.Size = new System.Drawing.Size(207, 20);
             this.txt_Prazo.TabIndex = 40;
             // 
-            // comboBox1
+            // comboBox_titulo_livro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 13;
-            this.comboBox1.Location = new System.Drawing.Point(100, 160);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 21);
-            this.comboBox1.TabIndex = 41;
+            this.comboBox_titulo_livro.FormattingEnabled = true;
+            this.comboBox_titulo_livro.ItemHeight = 13;
+            this.comboBox_titulo_livro.Location = new System.Drawing.Point(100, 160);
+            this.comboBox_titulo_livro.Name = "comboBox_titulo_livro";
+            this.comboBox_titulo_livro.Size = new System.Drawing.Size(207, 21);
+            this.comboBox_titulo_livro.TabIndex = 41;
+            // 
+            // combo_leitor_emp
+            // 
+            this.combo_leitor_emp.FormattingEnabled = true;
+            this.combo_leitor_emp.Location = new System.Drawing.Point(100, 108);
+            this.combo_leitor_emp.Name = "combo_leitor_emp";
+            this.combo_leitor_emp.Size = new System.Drawing.Size(207, 21);
+            this.combo_leitor_emp.TabIndex = 42;
+            // 
+            // combo_leitor_devl
+            // 
+            this.combo_leitor_devl.FormattingEnabled = true;
+            this.combo_leitor_devl.Location = new System.Drawing.Point(531, 108);
+            this.combo_leitor_devl.Name = "combo_leitor_devl";
+            this.combo_leitor_devl.Size = new System.Drawing.Size(207, 21);
+            this.combo_leitor_devl.TabIndex = 43;
             // 
             // frm_EmprEDev
             // 
@@ -386,7 +336,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.combo_leitor_devl);
+            this.Controls.Add(this.combo_leitor_emp);
+            this.Controls.Add(this.comboBox_titulo_livro);
             this.Controls.Add(this.txt_Prazo);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.btn_Voltar);
@@ -395,16 +347,12 @@
             this.Controls.Add(this.btn_Multa);
             this.Controls.Add(this.btn_Emprestimo);
             this.Controls.Add(this.gunaLabel6);
-            this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.cmb_EstExem_Dev);
-            this.Controls.Add(this.cmb_Exem_Dev);
-            this.Controls.Add(this.cmb_Leitor_Dev);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.cmb_Exem_Emp);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.cmb_Per_Emp);
             this.Controls.Add(this.gunaVSeparator1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -412,6 +360,7 @@
             this.Name = "frm_EmprEDev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmprEDev";
+            this.Load += new System.EventHandler(this.frm_EmprEDev_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,20 +374,18 @@
         private Guna.UI.WinForms.GunaButton btn_Multa;
         private Guna.UI.WinForms.GunaButton btn_Emprestimo;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaComboBox cmb_EstExem_Dev;
-        private Guna.UI.WinForms.GunaComboBox cmb_Exem_Dev;
-        private Guna.UI.WinForms.GunaComboBox cmb_Leitor_Dev;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaComboBox cmb_Exem_Emp;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaComboBox cmb_Per_Emp;
         private Guna.UI.WinForms.GunaVSeparator gunaVSeparator1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private System.Windows.Forms.MaskedTextBox txt_Prazo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_titulo_livro;
+        private System.Windows.Forms.ComboBox combo_leitor_emp;
+        private System.Windows.Forms.ComboBox combo_leitor_devl;
     }
 }
