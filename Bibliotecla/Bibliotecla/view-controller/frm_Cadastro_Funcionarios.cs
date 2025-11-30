@@ -15,11 +15,41 @@ namespace Bibliotecla
 {
     public partial class frm_Cadastro_Funcionarios : Form
     {
-
         private readonly LeitorFuncioDAO leitorFuncioDAO = new LeitorFuncioDAO();
+        private LeitorFuncio funcionario = null;
+
         public frm_Cadastro_Funcionarios()
         {
             InitializeComponent();
+            AlternarEstadoEdicao();
+        }
+
+        internal void CarregarFuncionario(LeitorFuncio f)
+        {
+            funcionario = f;
+            if (f != null)
+            {
+                txt_Cpf.Text = f.CPF ?? string.Empty;
+                txt_Nome.Text = f.Nome ?? string.Empty;
+                txt_Endereco.Text = f.Rua ?? string.Empty;
+                txt_Num.Text = f.NumRes ?? string.Empty;
+                txt_CEP.Text = f.CEP ?? string.Empty;
+                txt_Cidade.Text = f.Cidade ?? string.Empty;
+                txt_Bairro.Text = f.Bairro ?? string.Empty;
+                txt_Email.Text = f.Email ?? string.Empty;
+                txt_Telefone.Text = f.Telefone ?? string.Empty;
+                cmb_Cargo.Text = f.Cargo ?? string.Empty;
+                txt_Usuario.Text = f.Usuario ?? string.Empty;
+                txt_Senha.Text = f.Senha ?? string.Empty;
+            }
+            AlternarEstadoEdicao();
+        }
+
+        private void AlternarEstadoEdicao()
+        {
+            bool editando = funcionario != null;
+            btn_Editar.Enabled = editando;
+            btn_Cadastrar.Enabled = !editando;
         }
 
         public bool VerificaCampos()
@@ -34,13 +64,9 @@ namespace Bibliotecla
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            // 1. Cria uma instância do novo formulário.
+            funcionario = null;
             frm_Geren_Cadastro novoFormulario = new frm_Geren_Cadastro();
-
-            // 2. Exibe o novo formulário.
             novoFormulario.Show();
-
-            // 3. Fecha o formulário atual.
             this.Hide();
         }
 
@@ -48,7 +74,6 @@ namespace Bibliotecla
         {
             if (VerificaCampos())
             {
-
                 string cpf = txt_Cpf.Text.Trim();
                 string nome = txt_Nome.Text.Trim();
                 string rua = txt_Endereco.Text.Trim();
@@ -68,31 +93,25 @@ namespace Bibliotecla
                     LeitorFuncio ObjFuncio = new LeitorFuncio(cpf, telefone, email, nome, cargo, usuario, senha, cep, rua, numRes, bairro, cidade, isDevedor);
                     leitorFuncioDAO.Inserir(ObjFuncio);
 
-                    txt_Cpf.Clear();
-                    txt_Nome.Clear();
-                    txt_Endereco.Clear();
-                    txt_Num.Clear();
-                    txt_CEP.Clear();
-                    txt_Cidade.Clear();
-                    txt_Bairro.Clear();
-                    txt_Email.Clear();
-                    txt_Telefone.Clear();
-                    cmb_Cargo.SelectedIndex = -1;
-                    txt_Usuario.Clear();
-                    txt_Senha.Clear();
-
+                    LimparCampos();
                     MessageBox.Show("Cadastro feito com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao cadastrar funcionário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var msg = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                    MessageBox.Show("Erro ao cadastrar funcionário: " + msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            VerificaCampos();
+            if (funcionario == null)
+            {
+                MessageBox.Show("Nenhum funcionário carregado para edição.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!VerificaCampos()) return;
 
             string cpf = txt_Cpf.Text.Trim();
             string nome = txt_Nome.Text.Trim();
@@ -110,27 +129,35 @@ namespace Bibliotecla
             try
             {
                 LeitorFuncio ObjFuncio = new LeitorFuncio(cargo, usuario, senha, cpf, telefone, email, nome, cep, rua, numRes, bairro, cidade);
+                ObjFuncio.CodPessoa = funcionario.CodPessoa;
                 leitorFuncioDAO.Alterar(ObjFuncio);
 
-                txt_Cpf.Clear();
-                txt_Nome.Clear();
-                txt_Endereco.Clear();
-                txt_Num.Clear();
-                txt_CEP.Clear();
-                txt_Cidade.Clear();
-                txt_Bairro.Clear();
-                txt_Email.Clear();
-                txt_Telefone.Clear();
-                cmb_Cargo.SelectedIndex = -1;
-                txt_Usuario.Clear();
-                txt_Senha.Clear();
-
+                LimparCampos();
+                funcionario = null;
+                AlternarEstadoEdicao();
                 MessageBox.Show("Edição feita com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao editar funcionário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var msg = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                MessageBox.Show("Erro ao editar funcionário: " + msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void LimparCampos()
+        {
+            txt_Cpf.Clear();
+            txt_Nome.Clear();
+            txt_Endereco.Clear();
+            txt_Num.Clear();
+            txt_CEP.Clear();
+            txt_Cidade.Clear();
+            txt_Bairro.Clear();
+            txt_Email.Clear();
+            txt_Telefone.Clear();
+            cmb_Cargo.SelectedIndex = -1;
+            txt_Usuario.Clear();
+            txt_Senha.Clear();
         }
     }
 }

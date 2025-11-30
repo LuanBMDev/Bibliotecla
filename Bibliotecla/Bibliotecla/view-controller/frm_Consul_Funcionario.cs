@@ -19,6 +19,7 @@ namespace Bibliotecla
         {
             InitializeComponent();
             cmb_Filtro.SelectedIndex = 3;
+            btn_Editar.Click += btn_Editar_Click;
             popularTabela(listaInicial());
         }
 
@@ -64,6 +65,7 @@ namespace Bibliotecla
                 int rowIndex = Dgv_Consul_Funcionario.Rows.Add();
                 var row = Dgv_Consul_Funcionario.Rows[rowIndex];
 
+                row.Tag = r.CodPessoa;
                 row.Cells["Col_Nome"].Value = r.Nome ?? string.Empty;
                 row.Cells["Col_Cpf"].Value = r.CPF ?? string.Empty;
                 row.Cells["Col_Email"].Value = r.Email ?? string.Empty;
@@ -171,6 +173,46 @@ namespace Bibliotecla
                 }
 
             }
+        }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            if (Dgv_Consul_Funcionario.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Selecione um único funcionário para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var row = Dgv_Consul_Funcionario.SelectedRows[0];
+            if (!(row.Tag is int cod) || cod <= 0)
+            {
+                MessageBox.Show("Registro inválido selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            LeitorFuncio funcio = new LeitorFuncio
+            {
+                CodPessoa = cod,
+                Nome = Convert.ToString(row.Cells["Col_Nome"].Value),
+                CPF = Convert.ToString(row.Cells["Col_Cpf"].Value),
+                Email = Convert.ToString(row.Cells["Col_Email"].Value),
+                Telefone = Convert.ToString(row.Cells["Col_Telefone"].Value),
+                CEP = Convert.ToString(row.Cells["Col_Cep"].Value),
+                Rua = Convert.ToString(row.Cells["Col_Rua"].Value),
+                NumRes = Convert.ToString(row.Cells["Col_NumRes"].Value),
+                Cidade = Convert.ToString(row.Cells["Col_Cidade"].Value),
+                Bairro = Convert.ToString(row.Cells["Col_Bairro"].Value),
+                Usuario = Convert.ToString(row.Cells["Col_Usuario"].Value),
+                Senha = Convert.ToString(row.Cells["Col_Senha"].Value),
+                Cargo = "bibliotecario"
+            };
+            var frm = new frm_Cadastro_Funcionarios();
+            frm.CarregarFuncionario(funcio);
+            frm.Show();
+            this.Hide();
+        }
+
+        private void Dgv_Consul_Funcionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

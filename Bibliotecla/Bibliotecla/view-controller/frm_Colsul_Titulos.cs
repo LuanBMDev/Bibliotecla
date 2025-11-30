@@ -157,5 +157,10 @@ namespace Bibliotecla
             if (Dgv_Consul_Titulo.Rows.Count > 0)
                 Dgv_Consul_Titulo.CurrentCell = Dgv_Consul_Titulo.Rows[0].Cells[0];
         }
+
+        private void Dgv_Consul_Titulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

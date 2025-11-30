@@ -137,5 +137,10 @@ namespace Bibliotecla
                 }
             }
         }
+
+        private void Dgv_Consul_Exemplar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

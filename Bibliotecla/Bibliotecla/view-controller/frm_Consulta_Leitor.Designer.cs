@@ -248,7 +248,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_Consul_Leitor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Dgv_Consul_Leitor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Consul_Leitor.ColumnHeadersHeight = 21;
             this.Dgv_Consul_Leitor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Nome,
             this.Col_Cpf,
@@ -288,7 +288,7 @@
             this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.Dgv_Consul_Leitor.ThemeStyle.HeaderStyle.Height = 21;
             this.Dgv_Consul_Leitor.ThemeStyle.ReadOnly = false;
             this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -298,6 +298,7 @@
             this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.Height = 22;
             this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.Dgv_Consul_Leitor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Dgv_Consul_Leitor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Consul_Leitor_CellContentClick);
             // 
             // Col_Nome
             // 

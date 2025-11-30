@@ -220,8 +220,7 @@ namespace Bibliotecla.geral
                 {
                     sb.AppendLine($"({Escape(l)}) Tj T*");
                 }
-                // número da página
-                sb.AppendLine($"(Pag {p + 1}/{pageCount}) Tj T*");
+                // Removido texto final (rodapé) com número da página e possíveis rótulos
                 sb.AppendLine("ET");
                 contentStreams.Add(Encoding.UTF8.GetBytes(sb.ToString()));
             }
