@@ -61,10 +61,11 @@ namespace Bibliotecla
                 string cargo = cmb_Cargo.Text;
                 string usuario = txt_Usuario.Text.Trim();
                 string senha = txt_Senha.Text.Trim();
+                int isDevedor = 0;
 
                 try
                 {
-                    LeitorFuncio ObjFuncio = new LeitorFuncio(cargo, usuario, senha, cpf, telefone, email, nome, cep, rua, numRes, bairro, cidade);
+                    LeitorFuncio ObjFuncio = new LeitorFuncio(cpf, telefone, email, nome, cargo, usuario, senha, cep, rua, numRes, bairro, cidade, isDevedor);
                     leitorFuncioDAO.Inserir(ObjFuncio);
 
                     txt_Cpf.Clear();

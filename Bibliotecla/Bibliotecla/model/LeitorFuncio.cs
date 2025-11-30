@@ -85,6 +85,27 @@ namespace Bibliotecla.model
             this.cidade = cidade;
         }
 
+        public LeitorFuncio(string cpf, string telefone,
+                            string email, string nome, string cargo,
+                            string usuario, string senha, string cep,
+                            string rua, string numRes, string bairro, string cidade,
+                            int isDevedor)
+        {
+            this.cpf = cpf;
+            this.telefone = telefone;
+            this.email = email;
+            this.nome = nome;
+            this.cargo = cargo;
+            this.usuario = usuario;
+            this.senha = senha;
+            this.cep = cep;
+            this.rua = rua;
+            this.numRes = numRes;
+            this.bairro = bairro;
+            this.cidade = cidade;
+            this.isDevedor = isDevedor;
+        }
+
         public int CodPessoa { get => codPessoa; set => codPessoa = value; }
         public string CPF { get => cpf; set => cpf = value; }
         public string Telefone { get => telefone; set => telefone = value; }

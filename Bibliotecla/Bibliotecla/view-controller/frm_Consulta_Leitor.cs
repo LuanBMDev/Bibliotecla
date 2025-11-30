@@ -53,6 +53,9 @@ namespace Bibliotecla
 
         private void popularTabela(List<LeitorFuncio> resultados)
         {
+
+            Dgv_Consul_Leitor.Rows.Clear();
+
             // Atualiza o DataGridView
             Dgv_Consul_Leitor.DataSource = null;
 
