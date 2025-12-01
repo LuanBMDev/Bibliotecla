@@ -23,6 +23,8 @@ namespace Bibliotecla
         {
             InitializeComponent();
             btn_Emprestimo.Click += btn_Emprestimo_Click; // associa handler
+            // Desabilitar botão Multa nesta tela
+            btn_Multa.Enabled = false;
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)

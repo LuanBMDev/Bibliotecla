@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.cmb_Filtro = new Guna.UI.WinForms.GunaComboBox();
@@ -35,6 +38,17 @@
             this.txt_Pesquisa = new Guna.UI.WinForms.GunaTextBox();
             this.btn_Pago = new Guna.UI.WinForms.GunaButton();
             this.btn_Cancelar = new Guna.UI.WinForms.GunaButton();
+            this.Dgv_Consul_multa = new Guna.UI.WinForms.GunaDataGridView();
+            this.btn_Pesquisar_multa = new Guna.UI.WinForms.GunaButton();
+            this.Col_Leitor_multa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CodLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nome_Exemplar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_exemplar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_dataemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_datedevl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Valor_Multa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_multa)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +68,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel2.Location = new System.Drawing.Point(561, 81);
+            this.gunaLabel2.Location = new System.Drawing.Point(505, 81);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(57, 21);
             this.gunaLabel2.TabIndex = 77;
@@ -71,11 +85,11 @@
             this.cmb_Filtro.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmb_Filtro.ForeColor = System.Drawing.Color.Black;
             this.cmb_Filtro.FormattingEnabled = true;
-            this.cmb_Filtro.Location = new System.Drawing.Point(565, 105);
+            this.cmb_Filtro.Location = new System.Drawing.Point(509, 105);
             this.cmb_Filtro.Name = "cmb_Filtro";
             this.cmb_Filtro.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmb_Filtro.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmb_Filtro.Size = new System.Drawing.Size(176, 26);
+            this.cmb_Filtro.Size = new System.Drawing.Size(140, 26);
             this.cmb_Filtro.TabIndex = 76;
             // 
             // gunaLabel1
@@ -102,7 +116,7 @@
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.PasswordChar = '\0';
             this.txt_Pesquisa.SelectedText = "";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(467, 26);
+            this.txt_Pesquisa.Size = new System.Drawing.Size(411, 26);
             this.txt_Pesquisa.TabIndex = 74;
             // 
             // btn_Pago
@@ -155,12 +169,154 @@
             this.btn_Cancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
+            // Dgv_Consul_multa
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_multa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_Consul_multa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_Consul_multa.BackgroundColor = System.Drawing.Color.White;
+            this.Dgv_Consul_multa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_Consul_multa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Consul_multa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Consul_multa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_Consul_multa.ColumnHeadersHeight = 21;
+            this.Dgv_Consul_multa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Leitor_multa,
+            this.Col_CodLeitor,
+            this.Col_Nome_Exemplar,
+            this.Col_exemplar,
+            this.col_dataemp,
+            this.col_prazo,
+            this.col_datedevl,
+            this.col_Valor_Multa});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_Consul_multa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Dgv_Consul_multa.EnableHeadersVisualStyles = false;
+            this.Dgv_Consul_multa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_multa.Location = new System.Drawing.Point(74, 137);
+            this.Dgv_Consul_multa.Name = "Dgv_Consul_multa";
+            this.Dgv_Consul_multa.RowHeadersVisible = false;
+            this.Dgv_Consul_multa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_Consul_multa.Size = new System.Drawing.Size(684, 212);
+            this.Dgv_Consul_multa.TabIndex = 80;
+            this.Dgv_Consul_multa.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.Dgv_Consul_multa.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_multa.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.Dgv_Consul_multa.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_multa.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_multa.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.Dgv_Consul_multa.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_multa.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_multa.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_multa.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Dgv_Consul_multa.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.Dgv_Consul_multa.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.Dgv_Consul_multa.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.Dgv_Consul_multa.ThemeStyle.HeaderStyle.Height = 21;
+            this.Dgv_Consul_multa.ThemeStyle.ReadOnly = false;
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.Height = 22;
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Dgv_Consul_multa.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Dgv_Consul_multa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Consul_multa_CellContentClick);
+            // 
+            // btn_Pesquisar_multa
+            // 
+            this.btn_Pesquisar_multa.AnimationHoverSpeed = 0.07F;
+            this.btn_Pesquisar_multa.AnimationSpeed = 0.03F;
+            this.btn_Pesquisar_multa.BaseColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Pesquisar_multa.BorderColor = System.Drawing.Color.Black;
+            this.btn_Pesquisar_multa.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Pesquisar_multa.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Pesquisar_multa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pesquisar_multa.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_Pesquisar_multa.Image = null;
+            this.btn_Pesquisar_multa.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Pesquisar_multa.Location = new System.Drawing.Point(655, 105);
+            this.btn_Pesquisar_multa.Name = "btn_Pesquisar_multa";
+            this.btn_Pesquisar_multa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Pesquisar_multa.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Pesquisar_multa.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Pesquisar_multa.OnHoverImage = null;
+            this.btn_Pesquisar_multa.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Pesquisar_multa.Size = new System.Drawing.Size(86, 26);
+            this.btn_Pesquisar_multa.TabIndex = 81;
+            this.btn_Pesquisar_multa.Text = "Pesquisar";
+            this.btn_Pesquisar_multa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Pesquisar_multa.Click += new System.EventHandler(this.btn_Pesquisar_multa_Click);
+            // 
+            // Col_Leitor_multa
+            // 
+            this.Col_Leitor_multa.HeaderText = "leitor";
+            this.Col_Leitor_multa.Name = "Col_Leitor_multa";
+            this.Col_Leitor_multa.ReadOnly = true;
+            // 
+            // Col_CodLeitor
+            // 
+            this.Col_CodLeitor.HeaderText = "CodLeitor";
+            this.Col_CodLeitor.Name = "Col_CodLeitor";
+            this.Col_CodLeitor.ReadOnly = true;
+            // 
+            // Col_Nome_Exemplar
+            // 
+            this.Col_Nome_Exemplar.HeaderText = "exemplar";
+            this.Col_Nome_Exemplar.Name = "Col_Nome_Exemplar";
+            this.Col_Nome_Exemplar.ReadOnly = true;
+            // 
+            // Col_exemplar
+            // 
+            this.Col_exemplar.HeaderText = "Cod exeplar";
+            this.Col_exemplar.Name = "Col_exemplar";
+            this.Col_exemplar.ReadOnly = true;
+            // 
+            // col_dataemp
+            // 
+            this.col_dataemp.HeaderText = "Emprestimo";
+            this.col_dataemp.Name = "col_dataemp";
+            this.col_dataemp.ReadOnly = true;
+            // 
+            // col_prazo
+            // 
+            this.col_prazo.HeaderText = "Prazo devoluçao";
+            this.col_prazo.Name = "col_prazo";
+            this.col_prazo.ReadOnly = true;
+            // 
+            // col_datedevl
+            // 
+            this.col_datedevl.HeaderText = "devoluçao ";
+            this.col_datedevl.Name = "col_datedevl";
+            this.col_datedevl.ReadOnly = true;
+            // 
+            // col_Valor_Multa
+            // 
+            this.col_Valor_Multa.HeaderText = "Valor";
+            this.col_Valor_Multa.Name = "col_Valor_Multa";
+            this.col_Valor_Multa.ReadOnly = true;
+            // 
             // frm_Multa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(830, 457);
+            this.Controls.Add(this.btn_Pesquisar_multa);
+            this.Controls.Add(this.Dgv_Consul_multa);
             this.Controls.Add(this.btn_Pago);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.gunaLabel2);
@@ -173,6 +329,7 @@
             this.Name = "frm_Multa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Multa";
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Consul_multa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +344,15 @@
         private Guna.UI.WinForms.GunaTextBox txt_Pesquisa;
         private Guna.UI.WinForms.GunaButton btn_Pago;
         private Guna.UI.WinForms.GunaButton btn_Cancelar;
+        private Guna.UI.WinForms.GunaDataGridView Dgv_Consul_multa;
+        private Guna.UI.WinForms.GunaButton btn_Pesquisar_multa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Leitor_multa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CodLeitor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nome_Exemplar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_exemplar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_dataemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_prazo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_datedevl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Valor_Multa;
     }
 }

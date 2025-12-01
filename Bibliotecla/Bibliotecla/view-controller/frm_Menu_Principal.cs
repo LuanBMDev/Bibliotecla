@@ -27,6 +27,9 @@ namespace Bibliotecla
 
             lbl_InfoAcesso.Text += usuario.Cargo.ToUpper();
 
+            // Desabilitar botão Multa por padrão
+            btn_Multa.Enabled = false;
+
             switch (usuario.Cargo.ToUpper())
             {
                 case "BIBLIOTECARIO":
@@ -46,7 +49,7 @@ namespace Bibliotecla
                     btn_Livros.Enabled = false;
                     btn_Emp_Dev.Enabled = false;
                     btn_Geren_Cad.Enabled = false;
-                    btn_Multa.Enabled = false;
+                    // btn_Multa already desabilitado acima
                     btn_Sair.Enabled = true;
                     break;
             }
